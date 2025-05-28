@@ -1,0 +1,86 @@
+{
+    "experiment_name": "resnet50_quant_qat_int8_epochs8",
+    "config_details": {
+        "quantization_method_type": "qat_int8",
+        "baseline_model_path": "./best_model.pth",
+        "qat_epochs": 8,
+        "qat_learning_rate": 1e-05,
+        "qat_momentum": 0.9,
+        "qat_weight_decay": 0.0001,
+        "qat_backend": "fbgemm",
+        "batch_size_for_qat": 32,
+        "num_classes": 1000
+    },
+    "epoch_data": [
+        {
+            "epoch": 1,
+            "train_loss": 0.4707422138667138,
+            "train_accuracy": 0.9086775075550438,
+            "val_loss": 0.8823222732543945,
+            "val_accuracy": 0.75
+        },
+        {
+            "epoch": 2,
+            "train_loss": 0.45195992935096674,
+            "train_accuracy": 0.9141747013958843,
+            "val_loss": 0.8687092399597168,
+            "val_accuracy": 0.755
+        },
+        {
+            "epoch": 3,
+            "train_loss": 0.4377153709305672,
+            "train_accuracy": 0.9181752770182761,
+            "val_loss": 0.8582203149795532,
+            "val_accuracy": 0.755
+        },
+        {
+            "epoch": 4,
+            "train_loss": 0.4295882005299711,
+            "train_accuracy": 0.9205065477047057,
+            "val_loss": 0.842888958454132,
+            "val_accuracy": 0.745
+        },
+        {
+            "epoch": 5,
+            "train_loss": 0.4201478037804661,
+            "train_accuracy": 0.9247085911641962,
+            "val_loss": 0.8482941246032715,
+            "val_accuracy": 0.77
+        },
+        {
+            "epoch": 6,
+            "train_loss": 0.41170455478115686,
+            "train_accuracy": 0.9250251834796374,
+            "val_loss": 0.8523716306686402,
+            "val_accuracy": 0.765
+        },
+        {
+            "epoch": 7,
+            "train_loss": 0.40753688999930293,
+            "train_accuracy": 0.9265505828176716,
+            "val_loss": 0.8318810391426087,
+            "val_accuracy": 0.76
+        },
+        {
+            "epoch": 8,
+            "train_loss": 0.40094042891203063,
+            "train_accuracy": 0.9297740682112534,
+            "val_loss": 0.8257622289657592,
+            "val_accuracy": 0.765
+        }
+    ],
+    "training_summary": {
+        "notes": "Quantization Aware Training. Epoch data refers to QAT fine-tuning. Evaluation metrics from original log.",
+        "num_epochs_trained": 8,
+        "total_training_time_seconds": 2333.1191840171814,
+        "best_val_accuracy_during_training": 0.77,
+        "epoch_of_best_val_accuracy": 5,
+        "training_completed_status": true
+    },
+    "original_evaluation_metrics_from_log": {
+        "quantization_method": "qat_int8",
+        "val_accuracy": 0.755,
+        "val_loss": 0.8247842025756836,
+        "model_size_mb": 24.937384605407715
+    }
+}

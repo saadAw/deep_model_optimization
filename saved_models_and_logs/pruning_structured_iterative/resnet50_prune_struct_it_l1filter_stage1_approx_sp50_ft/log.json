@@ -1,0 +1,61 @@
+{
+    "experiment_name": "resnet50_prune_struct_it_l1filter_stage1_approx_sp50_ft",
+    "config_details": {
+        "baseline_model_path": "./best_model.pth",
+        "pruning_strategy_type": "iterative_structured_l1_filter_torch_pruning",
+        "iterative_stage_number": 1,
+        "applied_step_rate_for_this_stage": 0.3,
+        "target_overall_sparsity_approx_for_this_stage": 0.5,
+        "ft_epochs_in_this_stage": 5,
+        "ft_learning_rate": 5e-05,
+        "ft_momentum": 0.9,
+        "ft_weight_decay": 0.0001,
+        "batch_size_for_ft": 32
+    },
+    "epoch_data": [
+        {
+            "epoch": 1,
+            "train_loss": 3.729412130493623,
+            "train_accuracy": 0.3153547272988919,
+            "val_loss": 2.920832466173622,
+            "val_accuracy": 0.3915370889625287
+        },
+        {
+            "epoch": 2,
+            "train_loss": 2.9692699774098337,
+            "train_accuracy": 0.43660958411282197,
+            "val_loss": 2.5780312918960333,
+            "val_accuracy": 0.4435381085903645
+        },
+        {
+            "epoch": 3,
+            "train_loss": 2.7013303160547335,
+            "train_accuracy": 0.48496186501654914,
+            "val_loss": 2.3994563533249114,
+            "val_accuracy": 0.46800917665052255
+        },
+        {
+            "epoch": 4,
+            "train_loss": 2.5361350994862177,
+            "train_accuracy": 0.5167937832781695,
+            "val_loss": 2.3030597989485635,
+            "val_accuracy": 0.48304868722916133
+        },
+        {
+            "epoch": 5,
+            "train_loss": 2.4230484023542265,
+            "train_accuracy": 0.5383796229673334,
+            "val_loss": 2.2260325830444034,
+            "val_accuracy": 0.49936273260260006
+        }
+    ],
+    "training_summary": {
+        "num_epochs_trained_in_stage": 5,
+        "total_training_time_seconds_in_stage": 675.3933851718903,
+        "best_val_accuracy_in_stage": 0.49936273260260006,
+        "epoch_of_best_val_accuracy_in_stage": 5,
+        "training_completed_status_for_stage": true,
+        "achieved_overall_sparsity_percent_after_stage": 49.38555854216561,
+        "accuracy_before_ft_this_stage": 0.0017843487127198571
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "experiment_name": "resnet18pretrained_distilled_quant_kmeans_256clusters_post",
+    "config_details": {
+        "quantization_method_type": "kmeans",
+        "input_model_path": "./student_resnet18_distilled_pretrained.pth",
+        "input_model_type": "distilled_resnet18_pretrained",
+        "batch_size_for_eval": 32,
+        "kmeans_clusters": 256,
+        "num_classes": 1000
+    },
+    "epoch_data": [],
+    "training_summary": {
+        "notes": "K-Means Weight Quantization (256 clusters) applied to a distilled, pretrained ResNet18. No training epochs for quantization step. Evaluation metrics from original log. Codebook info was generated.",
+        "num_epochs_trained": 0,
+        "total_training_time_seconds": 0,
+        "best_val_accuracy_during_training": null,
+        "epoch_of_best_val_accuracy": null,
+        "training_completed_status": true
+    },
+    "quantization_specific_details": {
+        "codebook_info_summary_num_layers": 21
+    },
+    "original_evaluation_metrics_from_log": {
+        "quantization_method": "kmeans_256_clusters",
+        "val_accuracy": 0.635,
+        "val_loss": 1.310340280532837,
+        "model_size_mb": 44.667327880859375
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "experiment_name": "resnet50_quant_kmeans_256clusters_post",
+    "config_details": {
+        "quantization_method_type": "kmeans",
+        "baseline_model_path": "./best_model.pth",
+        "batch_size_for_eval": 32,
+        "kmeans_clusters": 256,
+        "num_classes": 1000
+    },
+    "epoch_data": [],
+    "training_summary": {
+        "notes": "K-Means Weight Quantization (256 clusters). No training epochs for quantization step. Evaluation metrics from original log. Codebook info was generated.",
+        "num_epochs_trained": 0,
+        "total_training_time_seconds": 0,
+        "best_val_accuracy_during_training": null,
+        "epoch_of_best_val_accuracy": null,
+        "training_completed_status": true
+    },
+    "quantization_specific_details": {
+        "codebook_info_summary_num_layers": 53
+    },
+    "original_evaluation_metrics_from_log": {
+        "quantization_method": "kmeans_256_clusters",
+        "val_accuracy": 0.77,
+        "val_loss": 0.8553590130805969,
+        "model_size_mb": 97.7956371307373
+    }
+}

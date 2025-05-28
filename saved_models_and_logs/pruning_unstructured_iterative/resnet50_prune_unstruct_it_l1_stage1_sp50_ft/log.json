@@ -1,0 +1,64 @@
+{
+    "experiment_name": "resnet50_prune_unstruct_it_l1_stage1_sp50_ft",
+    "config_details": {
+        "baseline_model_path": "./resnet50_baseline_e30_run/best_model.pth",
+        "pruning_strategy_type": "iterative_l1",
+        "iterative_stage_number": 1,
+        "target_sparsity_for_this_stage": 0.5,
+        "ft_epochs_in_this_stage": 5,
+        "ft_learning_rate": 5e-05,
+        "ft_momentum": 0.9,
+        "ft_weight_decay": 0.0001,
+        "batch_size_for_ft": 32
+    },
+    "epoch_data": [
+        {
+            "epoch": 1,
+            "train_loss": 1.0783397544938242,
+            "train_accuracy": 0.7866743416318894,
+            "val_loss": 1.41494032709446,
+            "val_accuracy": 0.6525618149375478,
+            "training_duration_seconds": 151.31011509895325
+        },
+        {
+            "epoch": 2,
+            "train_loss": 1.0249866340328144,
+            "train_accuracy": 0.7987624118578213,
+            "val_loss": 1.3980964092827863,
+            "val_accuracy": 0.6530716288554678,
+            "training_duration_seconds": 128.51250195503235
+        },
+        {
+            "epoch": 3,
+            "train_loss": 0.9972572259567405,
+            "train_accuracy": 0.8007770902288099,
+            "val_loss": 1.385323411069778,
+            "val_accuracy": 0.6535814427733877,
+            "training_duration_seconds": 128.53671097755432
+        },
+        {
+            "epoch": 4,
+            "train_loss": 0.9755859051699054,
+            "train_accuracy": 0.8067347819830192,
+            "val_loss": 1.3775748411307918,
+            "val_accuracy": 0.6553657914861075,
+            "training_duration_seconds": 128.34657406806946
+        },
+        {
+            "epoch": 5,
+            "train_loss": 0.9695501341718893,
+            "train_accuracy": 0.8080874946035401,
+            "val_loss": 1.3769705577860551,
+            "val_accuracy": 0.6604639306653072,
+            "training_duration_seconds": 128.42497205734253
+        }
+    ],
+    "training_summary": {
+        "num_epochs_trained_in_stage": 5,
+        "total_training_time_seconds_in_stage": 665.1308741569519,
+        "best_val_accuracy_in_stage": 0.6604639306653072,
+        "epoch_of_best_val_accuracy_in_stage": 5,
+        "training_completed_status_for_stage": true,
+        "achieved_sparsity_after_this_stage": 0.5 
+    }
+}

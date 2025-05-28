@@ -1,0 +1,28 @@
+{
+    "experiment_name": "resnet18pretrained_distilled_quant_ptq_int8_perchannel_post",
+    "config_details": {
+        "quantization_method_type": "ptq_per_channel_manual",
+        "input_model_path": "./student_resnet18_distilled_pretrained.pth",
+        "input_model_type": "distilled_resnet18_pretrained",
+        "batch_size_for_calib_eval": 32,
+        "ptq_calib_dataset_size": 200,
+        "ptq_calib_batches": 10,
+        "ptq_backend": "fbgemm",
+        "num_classes": 1000
+    },
+    "epoch_data": [],
+    "training_summary": {
+        "notes": "Post-Training Quantization (per-channel) applied to a distilled, pretrained ResNet18. No training epochs for quantization step. Evaluation metrics from original log.",
+        "num_epochs_trained": 0,
+        "total_training_time_seconds": 0,
+        "best_val_accuracy_during_training": null,
+        "epoch_of_best_val_accuracy": null,
+        "training_completed_status": true
+    },
+    "original_evaluation_metrics_from_log": {
+        "quantization_method": "ptq_per_channel_manual_qconfig",
+        "val_accuracy": 0.605,
+        "val_loss": 1.4120113277435302,
+        "model_size_mb": 11.302093505859375
+    }
+}

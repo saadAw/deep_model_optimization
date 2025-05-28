@@ -1,0 +1,27 @@
+{
+    "experiment_name": "resnet50_quant_ptq_int8_perchannel_post",
+    "config_details": {
+        "quantization_method_type": "ptq_per_channel_manual",
+        "baseline_model_path": "./best_model.pth",
+        "batch_size_for_calib_eval": 32,
+        "ptq_calib_dataset_size": 200,
+        "ptq_calib_batches": 10,
+        "ptq_backend": "fbgemm",
+        "num_classes": 1000
+    },
+    "epoch_data": [],
+    "training_summary": {
+        "notes": "Post-Training Quantization (per-channel). No training epochs for quantization step. Evaluation metrics from original log.",
+        "num_epochs_trained": 0,
+        "total_training_time_seconds": 0,
+        "best_val_accuracy_during_training": null,
+        "epoch_of_best_val_accuracy": null,
+        "training_completed_status": true
+    },
+    "original_evaluation_metrics_from_log": {
+        "quantization_method": "ptq_per_channel_manual_qconfig",
+        "val_accuracy": 0.74,
+        "val_loss": 0.9571916460990906,
+        "model_size_mb": 24.942371368408203
+    }
+}
