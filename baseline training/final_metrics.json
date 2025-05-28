@@ -1,0 +1,23 @@
+{
+  "evaluation_completed": true,
+  "model_evaluated": "resnet50_baseline_e30_run\\best_model.pth",
+  "final_validation_accuracy": 0.649502931430028,
+  "final_validation_loss": 1.422297681742349,
+  "model_size_mb": 97.79057502746582,
+  "images_per_second": 185.89651225536093,
+  "latency_ms_per_image": 5.3793370723724365,
+  "total_images_measured": 1600,
+  "total_time_seconds": 8.606939315795898,
+  "config": {
+    "data_dir": "C:\\Uni\\deep_model_optimization\\imagenet-mini",
+    "save_dir": "resnet50_baseline_e30_run",
+    "num_epochs": 30,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "num_workers": 4,
+    "use_pretrained": true,
+    "resume_training": false,
+    "evaluate_only": true
+  },
+  "training_completed": true
+}

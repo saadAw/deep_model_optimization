@@ -1,0 +1,159 @@
+{
+  "experiment_type": "nm_sparsity_pruning",
+  "config": {
+    "data_dir": "./imagenet-mini",
+    "save_dir": "resnet50_pruning_nm_2_4_run",
+    "baseline_model_path": "./best_model.pth",
+    "num_epochs_baseline_train": 1,
+    "batch_size": 32,
+    "learning_rate_baseline_train": 0.001,
+    "num_workers": 4,
+    "use_pretrained_imagenet_weights": false,
+    "pruning_technique": "nm_sparsity",
+    "nm_sparsity_n": 2,
+    "nm_sparsity_m": 4,
+    "nm_ignored_module_names": [
+      "fc"
+    ],
+    "ft_epochs": 15,
+    "ft_learning_rate": 5e-05,
+    "ft_momentum": 0.9,
+    "ft_weight_decay": 0.0001,
+    "evaluate_only": false,
+    "pruned_model_to_evaluate": "",
+    "log_file_name": "nm_sparsity_results_v2.json"
+  },
+  "baseline_results": {
+    "run_type": "baseline_evaluation",
+    "model_path": "./best_model.pth",
+    "val_accuracy": 0.649502931430028,
+    "val_loss": 1.422297681742349,
+    "model_size_mb": 97.69538116455078,
+    "parameter_counts": {
+      "total_params": 25557032,
+      "non_zero_params": 25557032
+    },
+    "inference_metrics": {
+      "images_per_second": 103.55808492568069,
+      "latency_ms_per_image": 9.656416500147316,
+      "total_images_measured": 1000,
+      "total_time_seconds": 9.656416500147316
+    }
+  },
+  "pruning_runs": [
+    {
+      "run_type": "pruning_run_nm_sparsity",
+      "pruning_method_name": "2:4_semi_structured_sparsity",
+      "nm_config": {
+        "N": 2,
+        "M": 4,
+        "ignored_modules": [
+          "fc"
+        ]
+      },
+      "achieved_overall_parameter_sparsity_percent": 45.88739412307344,
+      "pruned_model_saved_as": "resnet50_pruning_nm_2_4_run\\resnet50_nm_2_4_ft.pth",
+      "evaluation_after_pruning_before_ft": {
+        "val_accuracy": 0.028549579403517714,
+        "val_loss": 7.322809126618381,
+        "model_size_mb": 120.06372833251953,
+        "parameter_counts": {
+          "total_params": 25557032,
+          "non_zero_params": 13829576
+        }
+      },
+      "fine_tuning_config": {
+        "epochs": 15,
+        "learning_rate": 5e-05,
+        "momentum": 0.9,
+        "weight_decay": 0.0001,
+        "total_time_seconds": 3051.654369831085,
+        "history": {
+          "loss": [
+            1.4880166826942598,
+            1.3175911927775592,
+            1.2386424252139114,
+            1.2125565301944823,
+            1.1802191306213832,
+            1.178935319801975,
+            1.151107536410064,
+            1.135291841195151,
+            1.1290313214977141,
+            1.1096810726523143,
+            1.1019456905003915,
+            1.0949282705569408,
+            1.0769414579324508,
+            1.0685707415568948,
+            1.0732873119078261
+          ],
+          "accuracy": [
+            0.7133112678083178,
+            0.7436177867319038,
+            0.7563678227083034,
+            0.7589293423514175,
+            0.7679666139012807,
+            0.7675924593466685,
+            0.7678514894229386,
+            0.7749316448409843,
+            0.7738955245359045,
+            0.7799107785292848,
+            0.7821844869765434,
+            0.783940135271262,
+            0.7837098863145776,
+            0.7871636206648439,
+            0.7860987192401785
+          ],
+          "val_loss": [
+            1.5997585922730324,
+            1.5497756925371877,
+            1.520888900288872,
+            1.5091334859722583,
+            1.4988187409589828,
+            1.4840924744091866,
+            1.476963772051741,
+            1.4837233438620663,
+            1.4770611771934348,
+            1.4635568047675922,
+            1.4679964887162966,
+            1.457434832092575,
+            1.4601052481089507,
+            1.4571872977556515,
+            1.4524419009609548
+          ],
+          "val_accuracy": [
+            0.6189140963548305,
+            0.6222278868213102,
+            0.6334437930155493,
+            0.6344634208513893,
+            0.6393066530716288,
+            0.6403262809074688,
+            0.6418557226612287,
+            0.6416008157022687,
+            0.6400713739485088,
+            0.6436400713739485,
+            0.6423655365791486,
+            0.6416008157022687,
+            0.6418557226612287,
+            0.6410910017843487,
+            0.6426204435381085
+          ]
+        }
+      },
+      "final_evaluation_metrics": {
+        "val_accuracy": 0.6426204435381085,
+        "val_loss": 1.4524419009609548,
+        "model_size_mb": 97.69538116455078,
+        "parameter_counts": {
+          "total_params": 25557032,
+          "non_zero_params": 13829576
+        },
+        "inference_metrics": {
+          "images_per_second": 118.74699547709666,
+          "latency_ms_per_image": 8.421265700089862,
+          "total_images_measured": 1000,
+          "total_time_seconds": 8.421265700089862
+        }
+      }
+    }
+  ]
+}

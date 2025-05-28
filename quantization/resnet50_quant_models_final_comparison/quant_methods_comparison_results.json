@@ -1,0 +1,179 @@
+{
+  "experiment_type": "quantization",
+  "config": {
+    "data_dir": "./imagenet-mini",
+    "save_dir": "resnet50_quant_models_final_comparison",
+    "baseline_model_path": "./best_model.pth",
+    "batch_size": 32,
+    "num_workers": 4,
+    "use_cuda_if_available": true,
+    "ptq_calib_dataset_size": 200,
+    "ptq_calib_batches": 10,
+    "quick_check_val_samples": 200,
+    "inference_benchmark_samples": 1000,
+    "inference_benchmark_warmup_iters": 20,
+    "run_ptq_per_tensor": true,
+    "run_ptq_per_channel_manual": true,
+    "run_qat": true,
+    "run_kmeans": false,
+    "ptq_backend": "fbgemm",
+    "qat_backend": "fbgemm",
+    "qat_epochs": 8,
+    "qat_learning_rate": 1e-05,
+    "qat_momentum": 0.9,
+    "qat_weight_decay": 0.0001,
+    "qat_log_interval": 10,
+    "kmeans_clusters": 64,
+    "log_file_name": "quant_methods_comparison_results.json"
+  },
+  "num_classes": 1000,
+  "quantization_runs": [
+    {
+      "run_type": "ptq_per_tensor",
+      "quantization_method": "ptq_per_tensor",
+      "model_saved_as": "resnet50_quant_models_final_comparison\\ptq_per_tensor_model.pth",
+      "final_evaluation_metrics": {
+        "val_accuracy": 0.77,
+        "val_loss": 0.8606012487411498,
+        "model_size_mb": 24.940181732177734,
+        "parameter_counts": {
+          "total_params": 0,
+          "non_zero_params": 0
+        },
+        "inference_metrics": {
+          "images_per_second": 18.670686654611316,
+          "latency_ms_per_image": 53.55989410025359,
+          "total_images_measured": 1000,
+          "total_time_seconds": 53.55989410025359
+        },
+        "eval_samples_accuracy": 200,
+        "inf_samples_speed": 1000
+      }
+    },
+    {
+      "run_type": "ptq_per_channel_manual",
+      "quantization_method": "ptq_per_channel_manual_qconfig",
+      "model_saved_as": "resnet50_quant_models_final_comparison\\ptq_per_channel_manual_model.pth",
+      "final_evaluation_metrics": {
+        "val_accuracy": 0.74,
+        "val_loss": 0.9571916460990906,
+        "model_size_mb": 24.942371368408203,
+        "parameter_counts": {
+          "total_params": 0,
+          "non_zero_params": 0
+        },
+        "inference_metrics": {
+          "images_per_second": 18.6346682330871,
+          "latency_ms_per_image": 53.663418499956606,
+          "total_images_measured": 1000,
+          "total_time_seconds": 53.663418499956606
+        },
+        "eval_samples_accuracy": 200,
+        "inf_samples_speed": 1000
+      }
+    },
+    {
+      "run_type": "qat",
+      "quantization_method": "qat_int8",
+      "model_saved_as": "resnet50_quant_models_final_comparison\\qat_model.pth",
+      "final_evaluation_metrics": {
+        "val_accuracy": 0.755,
+        "val_loss": 0.8247842025756836,
+        "model_size_mb": 24.937384605407715,
+        "parameter_counts": {
+          "total_params": 0,
+          "non_zero_params": 0
+        },
+        "inference_metrics": {
+          "images_per_second": 17.10313125039522,
+          "latency_ms_per_image": 58.468825699790614,
+          "total_images_measured": 1000,
+          "total_time_seconds": 58.468825699790614
+        },
+        "eval_samples_accuracy": 200,
+        "inf_samples_speed": 1000
+      },
+      "training_config": {
+        "epochs": 8,
+        "learning_rate": 1e-05,
+        "momentum": 0.9,
+        "weight_decay": 0.0001,
+        "total_time_seconds": 2333.1191840171814,
+        "history": {
+          "loss": [
+            0.4707422138667138,
+            0.45195992935096674,
+            0.4377153709305672,
+            0.4295882005299711,
+            0.4201478037804661,
+            0.41170455478115686,
+            0.40753688999930293,
+            0.40094042891203063
+          ],
+          "accuracy": [
+            0.9086775075550438,
+            0.9141747013958843,
+            0.9181752770182761,
+            0.9205065477047057,
+            0.9247085911641962,
+            0.9250251834796374,
+            0.9265505828176716,
+            0.9297740682112534
+          ],
+          "val_loss": [
+            0.8823222732543945,
+            0.8687092399597168,
+            0.8582203149795532,
+            0.842888958454132,
+            0.8482941246032715,
+            0.8523716306686402,
+            0.8318810391426087,
+            0.8257622289657592
+          ],
+          "val_accuracy": [
+            0.75,
+            0.755,
+            0.755,
+            0.745,
+            0.77,
+            0.765,
+            0.76,
+            0.765
+          ]
+        },
+        "qat_backend": "fbgemm"
+      }
+    }
+  ],
+  "baseline_fp32_cpu_benchmark": {
+    "run_type": "baseline_fp32_cpu_benchmark",
+    "val_accuracy": 0.775,
+    "val_loss": 0.8568591833114624,
+    "model_size_mb": 97.79434013366699,
+    "parameter_counts": {
+      "total_params": 25557032,
+      "non_zero_params": 25557032
+    },
+    "inference_metrics": {
+      "images_per_second": 12.31416789283794,
+      "latency_ms_per_image": 81.20727350011293,
+      "total_images_measured": 1000,
+      "total_time_seconds": 81.20727350011293
+    },
+    "eval_samples_accuracy": 200,
+    "inf_samples_speed": 1000
+  },
+  "baseline_fp32_gpu_benchmark": {
+    "run_type": "baseline_fp32_gpu_benchmark",
+    "val_accuracy": 0.775,
+    "val_loss": 0.8568550968170165,
+    "inference_metrics": {
+      "images_per_second": 121.17228857187457,
+      "latency_ms_per_image": 8.252712000292377,
+      "total_images_measured": 1000,
+      "total_time_seconds": 8.252712000292377
+    },
+    "eval_samples_accuracy": 200,
+    "inf_samples_speed": 1000
+  }
+}

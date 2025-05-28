@@ -1,0 +1,156 @@
+{
+  "experiment_type": "knowledge_distillation",
+  "config": {
+    "DATA_DIR": "./imagenet-mini",
+    "TEACHER_MODEL_PATH": "./models/best_model.pth",
+    "STUDENT_MODEL_SAVE_PATH": "./models/student_resnet18_distilled_pretrained.pth",
+    "RESULTS_JSON_PATH": "./distillation_results_pretrained.json",
+    "STUDENT_ARCHITECTURE": "resnet18",
+    "NUM_CLASSES_initial": -1,
+    "BATCH_SIZE": 32,
+    "EPOCHS": 15,
+    "INITIAL_STUDENT_LR": 0.0001,
+    "TEMPERATURE": 4.0,
+    "ALPHA": 0.7,
+    "DEVICE": "cuda",
+    "NUM_WORKERS": 4,
+    "PIN_MEMORY": true,
+    "NUM_INF_BATCHES_SPEED_TEST": 10,
+    "NUM_CLASSES_final": 1000
+  },
+  "teacher_model_details": {
+    "model_path": "./models/best_model.pth",
+    "architecture": "resnet50",
+    "val_accuracy": 0.649502931430028,
+    "val_loss": 1.422297681742349,
+    "model_size_mb": 97.69538116455078,
+    "parameter_counts": {
+      "total_params": 0,
+      "non_zero_params": 25557032
+    },
+    "inference_metrics": {
+      "images_per_second": 124.99812498838274,
+      "latency_ms_per_image": 8.000120002543554,
+      "total_images_measured": 10,
+      "total_time_seconds": 0.08000120002543554
+    }
+  },
+  "student_distillation_results": {
+    "student_architecture": "resnet18",
+    "training_history": {
+      "train_loss": [
+        3.352926911983855,
+        2.2039722406841866,
+        1.7924150838219257,
+        1.573831171220216,
+        1.4366021651023582,
+        1.2439922169929511,
+        1.1968135428198774,
+        1.1642874421824962,
+        1.153487672310353,
+        1.1354520432673558,
+        1.1153624452675208,
+        1.1098262915732724,
+        1.1064420251678881,
+        1.1074628351883744,
+        1.1059089746075854
+      ],
+      "train_acc": [
+        0.12652180169808605,
+        0.32862282342783133,
+        0.42883868182472296,
+        0.485163332853648,
+        0.5189523672470859,
+        0.5900705137429846,
+        0.6079148078860268,
+        0.613613469563966,
+        0.6183335731759966,
+        0.6240610159735214,
+        0.6389984170384228,
+        0.6340192833501224,
+        0.637501798819974,
+        0.6369549575478486,
+        0.6364656785148942
+      ],
+      "val_loss": [
+        3.4741062007022094,
+        2.695193722817535,
+        2.3883472929613463,
+        2.2547722451698404,
+        2.1621883291083575,
+        2.017667513430924,
+        1.9904932917729343,
+        1.972857893865509,
+        1.9522926885194996,
+        1.9431601457987213,
+        1.9465911362264159,
+        1.9402961214677188,
+        1.9389325374551736,
+        1.9426997612849384,
+        1.9341755588839256
+      ],
+      "val_acc": [
+        0.2543971450420596,
+        0.39357634463420854,
+        0.4346163650267652,
+        0.47310731582972215,
+        0.48559775681876116,
+        0.5200101962783584,
+        0.5228141728269182,
+        0.5296966607188376,
+        0.5314810094315575,
+        0.5307162885546776,
+        0.5335202651032374,
+        0.5360693346928371,
+        0.5345398929390772,
+        0.5368340555697171,
+        0.538108590364517
+      ],
+      "epoch_times": [
+        133.90841484069824,
+        134.1067430973053,
+        134.85668849945068,
+        142.14021611213684,
+        135.4394929409027,
+        138.4991958141327,
+        136.20518970489502,
+        137.71025824546814,
+        136.5373933315277,
+        133.57405996322632,
+        133.20085978507996,
+        133.17794179916382,
+        136.0979323387146,
+        167.98026371002197,
+        133.2828049659729
+      ]
+    },
+    "best_student_model_path": "./models/student_resnet18_distilled_pretrained.pth",
+    "final_evaluation_metrics": {
+      "val_accuracy": 0.538108590364517,
+      "val_loss": 1.9341755588839256,
+      "model_size_mb": 44.62872314453125,
+      "parameter_counts": {
+        "total_params": 11689512,
+        "non_zero_params": 11689512
+      },
+      "inference_metrics": {
+        "images_per_second": 247.1662388442582,
+        "latency_ms_per_image": 4.045860003679991,
+        "total_images_measured": 10,
+        "total_time_seconds": 0.04045860003679991
+      },
+      "achieved_best_val_accuracy_during_training": 0.538108590364517
+    },
+    "distillation_config_snapshot": {
+      "epochs_target": 15,
+      "initial_learning_rate": 0.0001,
+      "temperature": 4.0,
+      "alpha": 0.7,
+      "batch_size": 32,
+      "total_training_time_seconds": 2067.9105548858643,
+      "epochs_completed": 15
+    }
+  },
+  "completed_at": "2025-05-26T23:21:07.191762",
+  "total_experiment_time_seconds": 2131.2078080177307
+}

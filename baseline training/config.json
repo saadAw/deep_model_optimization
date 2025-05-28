@@ -1,0 +1,11 @@
+{
+  "data_dir": "C:\\Uni\\deep_model_optimization\\imagenet-mini",
+  "save_dir": "resnet50_baseline_e30_run",
+  "num_epochs": 30,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "num_workers": 4,
+  "use_pretrained": true,
+  "resume_training": false,
+  "evaluate_only": true
+}

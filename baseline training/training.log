@@ -1,0 +1,102 @@
+2025-05-21 23:40:05,493 - INFO - Using device: cuda
+2025-05-21 23:40:05,493 - INFO - === Training Configuration ===
+2025-05-21 23:40:05,494 - INFO - data_dir: C:\Uni\deep_model_optimization\imagenet-mini
+2025-05-21 23:40:05,494 - INFO - save_dir: resnet50_baseline_e30_run
+2025-05-21 23:40:05,494 - INFO - num_epochs: 30
+2025-05-21 23:40:05,494 - INFO - batch_size: 32
+2025-05-21 23:40:05,495 - INFO - learning_rate: 0.001
+2025-05-21 23:40:05,495 - INFO - num_workers: 4
+2025-05-21 23:40:05,495 - INFO - use_pretrained: True
+2025-05-21 23:40:05,495 - INFO - resume_training: False
+2025-05-21 23:40:06,485 - INFO - === Dataset Information ===
+2025-05-21 23:40:06,485 - INFO - Number of classes: 1000
+2025-05-21 23:40:06,486 - INFO - Training samples: 34,745
+2025-05-21 23:40:06,491 - INFO - Validation samples: 3,923
+2025-05-21 23:40:06,491 - INFO - Setting up ResNet50 (pretrained=True)
+2025-05-21 23:40:07,447 - INFO - Total parameters: 25,557,032
+2025-05-21 23:40:07,447 - INFO - Trainable parameters: 25,557,032
+2025-05-21 23:40:07,447 - INFO - === Starting Training ===
+2025-05-21 23:40:07,448 - INFO - Running for 30 epochs starting from epoch 1
+2025-05-21 23:43:38,981 - INFO - Epoch 1/30 Train Loss: 5.7224 Acc: 0.1175 Val Loss: 3.9523 Acc: 0.3102 Time: 211.5s
+2025-05-21 23:43:39,291 - INFO - Saved latest checkpoint.
+2025-05-21 23:43:39,442 - INFO - New best model saved! Val Acc: 0.3102
+2025-05-21 23:47:12,131 - INFO - Epoch 2/30 Train Loss: 3.6475 Acc: 0.3661 Val Loss: 2.5005 Acc: 0.4805 Time: 212.7s
+2025-05-21 23:47:12,403 - INFO - Saved latest checkpoint.
+2025-05-21 23:47:12,549 - INFO - New best model saved! Val Acc: 0.4805
+2025-05-21 23:50:11,433 - INFO - Epoch 3/30 Train Loss: 2.6892 Acc: 0.5079 Val Loss: 1.9567 Acc: 0.5631 Time: 178.9s
+2025-05-21 23:50:11,714 - INFO - Saved latest checkpoint.
+2025-05-21 23:50:11,870 - INFO - New best model saved! Val Acc: 0.5631
+2025-05-21 23:53:10,868 - INFO - Epoch 4/30 Train Loss: 2.2016 Acc: 0.5797 Val Loss: 1.7206 Acc: 0.6023 Time: 179.0s
+2025-05-21 23:53:11,145 - INFO - Saved latest checkpoint.
+2025-05-21 23:53:11,292 - INFO - New best model saved! Val Acc: 0.6023
+2025-05-21 23:56:09,433 - INFO - Epoch 5/30 Train Loss: 1.9015 Acc: 0.6264 Val Loss: 1.5728 Acc: 0.6215 Time: 178.1s
+2025-05-21 23:56:09,709 - INFO - Saved latest checkpoint.
+2025-05-21 23:56:09,855 - INFO - New best model saved! Val Acc: 0.6215
+2025-05-21 23:59:05,240 - INFO - Epoch 6/30 Train Loss: 1.7114 Acc: 0.6543 Val Loss: 1.5195 Acc: 0.6324 Time: 175.4s
+2025-05-21 23:59:05,511 - INFO - Saved latest checkpoint.
+2025-05-21 23:59:05,654 - INFO - New best model saved! Val Acc: 0.6324
+2025-05-22 00:01:52,709 - INFO - Epoch 7/30 Train Loss: 1.5771 Acc: 0.6753 Val Loss: 1.4658 Acc: 0.6408 Time: 167.1s
+2025-05-22 00:01:52,977 - INFO - Saved latest checkpoint.
+2025-05-22 00:01:53,118 - INFO - New best model saved! Val Acc: 0.6408
+2025-05-22 00:04:51,963 - INFO - Epoch 8/30 Train Loss: 1.4522 Acc: 0.6957 Val Loss: 1.4380 Acc: 0.6357 Time: 178.8s
+2025-05-22 00:04:52,291 - INFO - Saved latest checkpoint.
+2025-05-22 00:07:43,843 - INFO - Epoch 9/30 Train Loss: 1.3647 Acc: 0.7137 Val Loss: 1.4489 Acc: 0.6447 Time: 171.5s
+2025-05-22 00:07:44,110 - INFO - Saved latest checkpoint.
+2025-05-22 00:07:44,256 - INFO - New best model saved! Val Acc: 0.6447
+2025-05-22 00:10:58,965 - INFO - Epoch 10/30 Train Loss: 1.2935 Acc: 0.7270 Val Loss: 1.4185 Acc: 0.6439 Time: 194.7s
+2025-05-22 00:10:59,251 - INFO - Saved latest checkpoint.
+2025-05-22 00:13:55,226 - INFO - Epoch 11/30 Train Loss: 1.2247 Acc: 0.7364 Val Loss: 1.4348 Acc: 0.6383 Time: 176.0s
+2025-05-22 00:13:55,509 - INFO - Saved latest checkpoint.
+2025-05-22 00:16:47,601 - INFO - Epoch 12/30 Train Loss: 1.1645 Acc: 0.7482 Val Loss: 1.4256 Acc: 0.6492 Time: 172.1s
+2025-05-22 00:16:47,882 - INFO - Saved latest checkpoint.
+2025-05-22 00:16:48,033 - INFO - New best model saved! Val Acc: 0.6492
+2025-05-22 00:19:40,074 - INFO - Epoch 13/30 Train Loss: 1.1220 Acc: 0.7595 Val Loss: 1.4249 Acc: 0.6408 Time: 172.0s
+2025-05-22 00:19:40,359 - INFO - Saved latest checkpoint.
+2025-05-22 00:22:32,689 - INFO - Epoch 14/30 Train Loss: 1.0659 Acc: 0.7681 Val Loss: 1.4223 Acc: 0.6495 Time: 172.3s
+2025-05-22 00:22:32,975 - INFO - Saved latest checkpoint.
+2025-05-22 00:22:33,130 - INFO - New best model saved! Val Acc: 0.6495
+2025-05-22 00:25:25,166 - INFO - Epoch 15/30 Train Loss: 1.0380 Acc: 0.7760 Val Loss: 1.4391 Acc: 0.6447 Time: 172.0s
+2025-05-22 00:25:25,446 - INFO - Saved latest checkpoint.
+2025-05-22 00:28:32,886 - INFO - Epoch 16/30 Train Loss: 0.9971 Acc: 0.7837 Val Loss: 1.4486 Acc: 0.6398 Time: 187.4s
+2025-05-22 00:28:33,182 - INFO - Saved latest checkpoint.
+2025-05-22 00:31:37,908 - INFO - Epoch 17/30 Train Loss: 0.9665 Acc: 0.7906 Val Loss: 1.4763 Acc: 0.6357 Time: 184.7s
+2025-05-22 00:31:38,195 - INFO - Saved latest checkpoint.
+2025-05-22 00:34:35,510 - INFO - Epoch 18/30 Train Loss: 0.9485 Acc: 0.7937 Val Loss: 1.4814 Acc: 0.6355 Time: 177.3s
+2025-05-22 00:34:35,791 - INFO - Saved latest checkpoint.
+2025-05-22 00:37:29,722 - INFO - Epoch 19/30 Train Loss: 0.9101 Acc: 0.8047 Val Loss: 1.4934 Acc: 0.6368 Time: 173.9s
+2025-05-22 00:37:30,007 - INFO - Saved latest checkpoint.
+2025-05-22 00:40:23,337 - INFO - Epoch 20/30 Train Loss: 0.8785 Acc: 0.8095 Val Loss: 1.4765 Acc: 0.6406 Time: 173.3s
+2025-05-22 00:40:23,630 - INFO - Saved latest checkpoint.
+2025-05-22 00:43:16,989 - INFO - Epoch 21/30 Train Loss: 0.8638 Acc: 0.8147 Val Loss: 1.5114 Acc: 0.6304 Time: 173.4s
+2025-05-22 00:43:17,273 - INFO - Saved latest checkpoint.
+2025-05-22 00:46:09,359 - INFO - Epoch 22/30 Train Loss: 0.8435 Acc: 0.8193 Val Loss: 1.5136 Acc: 0.6403 Time: 172.1s
+2025-05-22 00:46:09,648 - INFO - Saved latest checkpoint.
+2025-05-22 00:49:01,849 - INFO - Epoch 23/30 Train Loss: 0.8142 Acc: 0.8235 Val Loss: 1.5258 Acc: 0.6373 Time: 172.2s
+2025-05-22 00:49:02,128 - INFO - Saved latest checkpoint.
+2025-05-22 00:51:57,172 - INFO - Epoch 24/30 Train Loss: 0.7882 Acc: 0.8305 Val Loss: 1.5237 Acc: 0.6289 Time: 175.0s
+2025-05-22 00:51:57,456 - INFO - Saved latest checkpoint.
+2025-05-22 00:54:51,104 - INFO - Epoch 25/30 Train Loss: 0.7782 Acc: 0.8318 Val Loss: 1.5554 Acc: 0.6281 Time: 173.6s
+2025-05-22 00:54:51,390 - INFO - Saved latest checkpoint.
+2025-05-22 00:57:44,769 - INFO - Epoch 26/30 Train Loss: 0.7678 Acc: 0.8362 Val Loss: 1.5614 Acc: 0.6309 Time: 173.4s
+2025-05-22 00:57:45,050 - INFO - Saved latest checkpoint.
+2025-05-22 01:00:38,727 - INFO - Epoch 27/30 Train Loss: 0.7423 Acc: 0.8416 Val Loss: 1.5780 Acc: 0.6238 Time: 173.7s
+2025-05-22 01:00:39,006 - INFO - Saved latest checkpoint.
+2025-05-22 01:03:34,457 - INFO - Epoch 28/30 Train Loss: 0.7225 Acc: 0.8473 Val Loss: 1.5750 Acc: 0.6192 Time: 175.4s
+2025-05-22 01:03:34,753 - INFO - Saved latest checkpoint.
+2025-05-22 01:06:32,477 - INFO - Epoch 29/30 Train Loss: 0.7109 Acc: 0.8468 Val Loss: 1.5626 Acc: 0.6375 Time: 177.7s
+2025-05-22 01:06:32,749 - INFO - Saved latest checkpoint.
+2025-05-22 01:09:31,898 - INFO - Epoch 30/30 Train Loss: 0.7055 Acc: 0.8501 Val Loss: 1.5890 Acc: 0.6283 Time: 179.1s
+2025-05-22 01:09:32,207 - INFO - Saved latest checkpoint.
+2025-05-22 01:09:32,208 - INFO - Training completed in 5364.8 seconds
+2025-05-22 01:23:55,283 - INFO - === Final Model Evaluation ===
+2025-05-22 01:23:55,890 - INFO - Successfully loaded model from resnet50_baseline_e30_run\best_model.pth
+2025-05-22 01:24:21,861 - INFO - Final Validation Loss: 1.4223, Accuracy: 0.6495
+2025-05-22 01:24:21,862 - INFO - Measuring inference speed...
+2025-05-22 01:24:31,505 - INFO - Final metrics saved to: resnet50_baseline_e30_run\final_metrics.json
+2025-05-22 01:24:31,506 - INFO - --- Final Summary ---
+2025-05-22 01:24:31,506 - INFO - Model Evaluated: best_model.pth
+2025-05-22 01:24:31,506 - INFO - Validation Accuracy: 0.6495
+2025-05-22 01:24:31,506 - INFO - Validation Loss: 1.4223
+2025-05-22 01:24:31,507 - INFO - Model size: 97.79 MB
+2025-05-22 01:24:31,507 - INFO - Inference speed: 185.9 images/sec
+2025-05-22 01:24:31,507 - INFO - Inference latency: 5.38 ms/image

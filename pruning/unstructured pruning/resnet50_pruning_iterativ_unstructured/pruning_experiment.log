@@ -1,0 +1,462 @@
+2025-05-22 21:28:15,736 - INFO - Using device: cuda
+2025-05-22 21:28:15,741 - INFO - === Starting Iterative L1 Pruning Experiment ===
+2025-05-22 21:28:15,741 - INFO - === Configuration ===
+2025-05-22 21:28:15,741 - INFO - data_dir: C:\Uni\deep_model_optimization\imagenet-mini
+2025-05-22 21:28:15,742 - INFO - save_dir: pruning_runs\resnet50_iterative_l1_90pct_finalSP_3stages_30epochs_ft_20250522-212815
+2025-05-22 21:28:15,742 - INFO - num_epochs: 30
+2025-05-22 21:28:15,742 - INFO - batch_size: 32
+2025-05-22 21:28:15,742 - INFO - learning_rate: 0.001
+2025-05-22 21:28:15,742 - INFO - num_workers: 4
+2025-05-22 21:28:15,743 - INFO - use_pretrained: True
+2025-05-22 21:28:15,743 - INFO - evaluate_only: False
+2025-05-22 21:28:15,743 - INFO - use_sparse_storage: True
+2025-05-22 21:28:15,743 - INFO - baseline_model_path: ./resnet50_baseline_e30_run/best_model.pth
+2025-05-22 21:28:15,743 - INFO - pruning_strategy_type: iterative_l1
+2025-05-22 21:28:15,744 - INFO - sparsity_rates: [0.9]
+2025-05-22 21:28:15,744 - INFO - ft_epochs: 15
+2025-05-22 21:28:15,744 - INFO - ft_learning_rate: 5e-05
+2025-05-22 21:28:15,744 - INFO - ft_momentum: 0.9
+2025-05-22 21:28:15,744 - INFO - ft_weight_decay: 0.0001
+2025-05-22 21:28:15,744 - INFO - iterative_stages: [{'target_sparsity': 0.5, 'epochs': 5}, {'target_sparsity': 0.75, 'epochs': 10}, {'target_sparsity': 0.9, 'epochs': 15}]
+2025-05-22 21:28:15,744 - INFO - resume_pruning: True
+2025-05-22 21:28:15,745 - INFO - skip_completed: False
+2025-05-22 21:28:15,746 - INFO - Config saved to pruning_runs\resnet50_iterative_l1_90pct_finalSP_3stages_30epochs_ft_20250522-212815\config.json
+2025-05-22 21:28:16,743 - INFO - === Dataset Information ===
+2025-05-22 21:28:16,743 - INFO - Number of classes: 1000
+2025-05-22 21:28:16,744 - INFO - Training samples: 34,745
+2025-05-22 21:28:16,744 - INFO - Validation samples: 3,923
+2025-05-22 21:28:16,744 - INFO - === Evaluating Baseline Model ===
+2025-05-22 21:28:51,616 - INFO - Baseline - Acc: 0.6495, Val Loss: 1.4223, Size: 97.70 MB
+2025-05-22 21:28:51,617 - INFO - Baseline - Params (Total): 25,503,912, Speed: 193.9 img/s
+2025-05-22 21:28:51,620 - INFO - Running experiments for sparsities: ['90.0%']
+2025-05-22 21:28:51,620 - INFO - 
+=== Pruning Experiment: 90.0% Target Overall Sparsity (iterative_l1) ===
+2025-05-22 21:28:52,123 - INFO - Parameters before pruning: Total=25,503,912, Non-Zero=25,503,912
+2025-05-22 21:28:52,123 - INFO - Starting iterative pruning towards 90.0% overall sparsity.
+2025-05-22 21:28:52,124 - INFO - 
+--- Iterative Stage 1/3 ---
+2025-05-22 21:28:52,124 - INFO - Target cumulative sparsity for this stage: 50.0%
+2025-05-22 21:28:52,124 - INFO - Pruning 50.00% of remaining weights to reach cumulative sparsity.
+2025-05-22 21:28:52,232 - INFO - Pruning applied for stage 1.
+2025-05-22 21:28:52,246 - INFO - Achieved sparsity after stage 1: 50.00%
+2025-05-22 21:28:52,246 - INFO - Fine-tuning for 5 epochs after stage 1 pruning...
+2025-05-22 21:28:52,247 - INFO - Starting fine-tuning for 5 epochs (Sparsity: 50.0%, Suffix: _iter_stage1)...
+2025-05-22 21:29:24,176 - INFO - FT Phase _iter_stage1 Epoch 1 [100/1086] Batch Loss: 0.9241
+2025-05-22 21:29:35,541 - INFO - FT Phase _iter_stage1 Epoch 1 [200/1086] Batch Loss: 1.0110
+2025-05-22 21:29:47,096 - INFO - FT Phase _iter_stage1 Epoch 1 [300/1086] Batch Loss: 1.1305
+2025-05-22 21:29:58,831 - INFO - FT Phase _iter_stage1 Epoch 1 [400/1086] Batch Loss: 1.3918
+2025-05-22 21:30:10,206 - INFO - FT Phase _iter_stage1 Epoch 1 [500/1086] Batch Loss: 0.6492
+2025-05-22 21:30:21,477 - INFO - FT Phase _iter_stage1 Epoch 1 [600/1086] Batch Loss: 0.9670
+2025-05-22 21:30:32,741 - INFO - FT Phase _iter_stage1 Epoch 1 [700/1086] Batch Loss: 1.3750
+2025-05-22 21:30:44,013 - INFO - FT Phase _iter_stage1 Epoch 1 [800/1086] Batch Loss: 1.1585
+2025-05-22 21:30:56,157 - INFO - FT Phase _iter_stage1 Epoch 1 [900/1086] Batch Loss: 1.2374
+2025-05-22 21:31:07,398 - INFO - FT Phase _iter_stage1 Epoch 1 [1000/1086] Batch Loss: 1.0539
+2025-05-22 21:31:17,071 - INFO - FT Phase _iter_stage1 Epoch 1 [1086/1086] Batch Loss: 1.1206
+2025-05-22 21:31:23,558 - INFO - FT Phase _iter_stage1 Epoch 1/5 Train Loss: 1.0783 Acc: 0.7867 | Val Loss: 1.4149 Acc: 0.6526 | Time: 151.3s
+2025-05-22 21:31:34,978 - INFO - FT Phase _iter_stage1 Epoch 2 [100/1086] Batch Loss: 1.3258
+2025-05-22 21:31:46,215 - INFO - FT Phase _iter_stage1 Epoch 2 [200/1086] Batch Loss: 1.1965
+2025-05-22 21:31:57,448 - INFO - FT Phase _iter_stage1 Epoch 2 [300/1086] Batch Loss: 1.8983
+2025-05-22 21:32:08,684 - INFO - FT Phase _iter_stage1 Epoch 2 [400/1086] Batch Loss: 0.6051
+2025-05-22 21:32:19,917 - INFO - FT Phase _iter_stage1 Epoch 2 [500/1086] Batch Loss: 1.4277
+2025-05-22 21:32:31,155 - INFO - FT Phase _iter_stage1 Epoch 2 [600/1086] Batch Loss: 1.3307
+2025-05-22 21:32:42,391 - INFO - FT Phase _iter_stage1 Epoch 2 [700/1086] Batch Loss: 0.9904
+2025-05-22 21:32:53,635 - INFO - FT Phase _iter_stage1 Epoch 2 [800/1086] Batch Loss: 0.8774
+2025-05-22 21:33:04,867 - INFO - FT Phase _iter_stage1 Epoch 2 [900/1086] Batch Loss: 1.0954
+2025-05-22 21:33:16,101 - INFO - FT Phase _iter_stage1 Epoch 2 [1000/1086] Batch Loss: 1.4222
+2025-05-22 21:33:25,740 - INFO - FT Phase _iter_stage1 Epoch 2 [1086/1086] Batch Loss: 0.8418
+2025-05-22 21:33:32,071 - INFO - FT Phase _iter_stage1 Epoch 2/5 Train Loss: 1.0250 Acc: 0.7988 | Val Loss: 1.3981 Acc: 0.6531 | Time: 128.5s
+2025-05-22 21:33:43,484 - INFO - FT Phase _iter_stage1 Epoch 3 [100/1086] Batch Loss: 1.1048
+2025-05-22 21:33:54,715 - INFO - FT Phase _iter_stage1 Epoch 3 [200/1086] Batch Loss: 1.3308
+2025-05-22 21:34:05,950 - INFO - FT Phase _iter_stage1 Epoch 3 [300/1086] Batch Loss: 1.2511
+2025-05-22 21:34:17,179 - INFO - FT Phase _iter_stage1 Epoch 3 [400/1086] Batch Loss: 1.3498
+2025-05-22 21:34:28,424 - INFO - FT Phase _iter_stage1 Epoch 3 [500/1086] Batch Loss: 1.3543
+2025-05-22 21:34:39,665 - INFO - FT Phase _iter_stage1 Epoch 3 [600/1086] Batch Loss: 1.0779
+2025-05-22 21:34:50,903 - INFO - FT Phase _iter_stage1 Epoch 3 [700/1086] Batch Loss: 0.5969
+2025-05-22 21:35:02,140 - INFO - FT Phase _iter_stage1 Epoch 3 [800/1086] Batch Loss: 1.0295
+2025-05-22 21:35:13,382 - INFO - FT Phase _iter_stage1 Epoch 3 [900/1086] Batch Loss: 1.1950
+2025-05-22 21:35:24,617 - INFO - FT Phase _iter_stage1 Epoch 3 [1000/1086] Batch Loss: 0.6579
+2025-05-22 21:35:34,262 - INFO - FT Phase _iter_stage1 Epoch 3 [1086/1086] Batch Loss: 0.6469
+2025-05-22 21:35:40,607 - INFO - FT Phase _iter_stage1 Epoch 3/5 Train Loss: 0.9973 Acc: 0.8008 | Val Loss: 1.3853 Acc: 0.6536 | Time: 128.5s
+2025-05-22 21:35:52,004 - INFO - FT Phase _iter_stage1 Epoch 4 [100/1086] Batch Loss: 0.9719
+2025-05-22 21:36:03,248 - INFO - FT Phase _iter_stage1 Epoch 4 [200/1086] Batch Loss: 0.6533
+2025-05-22 21:36:14,485 - INFO - FT Phase _iter_stage1 Epoch 4 [300/1086] Batch Loss: 0.8337
+2025-05-22 21:36:25,717 - INFO - FT Phase _iter_stage1 Epoch 4 [400/1086] Batch Loss: 0.8675
+2025-05-22 21:36:36,953 - INFO - FT Phase _iter_stage1 Epoch 4 [500/1086] Batch Loss: 0.8231
+2025-05-22 21:36:48,189 - INFO - FT Phase _iter_stage1 Epoch 4 [600/1086] Batch Loss: 1.4608
+2025-05-22 21:36:59,421 - INFO - FT Phase _iter_stage1 Epoch 4 [700/1086] Batch Loss: 1.1979
+2025-05-22 21:37:10,657 - INFO - FT Phase _iter_stage1 Epoch 4 [800/1086] Batch Loss: 0.7676
+2025-05-22 21:37:21,891 - INFO - FT Phase _iter_stage1 Epoch 4 [900/1086] Batch Loss: 1.0597
+2025-05-22 21:37:33,128 - INFO - FT Phase _iter_stage1 Epoch 4 [1000/1086] Batch Loss: 0.7645
+2025-05-22 21:37:42,764 - INFO - FT Phase _iter_stage1 Epoch 4 [1086/1086] Batch Loss: 1.0125
+2025-05-22 21:37:48,954 - INFO - FT Phase _iter_stage1 Epoch 4/5 Train Loss: 0.9756 Acc: 0.8067 | Val Loss: 1.3776 Acc: 0.6554 | Time: 128.3s
+2025-05-22 21:38:00,349 - INFO - FT Phase _iter_stage1 Epoch 5 [100/1086] Batch Loss: 1.2221
+2025-05-22 21:38:11,582 - INFO - FT Phase _iter_stage1 Epoch 5 [200/1086] Batch Loss: 1.2648
+2025-05-22 21:38:22,831 - INFO - FT Phase _iter_stage1 Epoch 5 [300/1086] Batch Loss: 1.0755
+2025-05-22 21:38:34,067 - INFO - FT Phase _iter_stage1 Epoch 5 [400/1086] Batch Loss: 1.0709
+2025-05-22 21:38:45,298 - INFO - FT Phase _iter_stage1 Epoch 5 [500/1086] Batch Loss: 0.8585
+2025-05-22 21:38:56,535 - INFO - FT Phase _iter_stage1 Epoch 5 [600/1086] Batch Loss: 0.9161
+2025-05-22 21:39:07,768 - INFO - FT Phase _iter_stage1 Epoch 5 [700/1086] Batch Loss: 1.4612
+2025-05-22 21:39:19,009 - INFO - FT Phase _iter_stage1 Epoch 5 [800/1086] Batch Loss: 0.8106
+2025-05-22 21:39:30,242 - INFO - FT Phase _iter_stage1 Epoch 5 [900/1086] Batch Loss: 0.7587
+2025-05-22 21:39:41,475 - INFO - FT Phase _iter_stage1 Epoch 5 [1000/1086] Batch Loss: 0.8580
+2025-05-22 21:39:51,115 - INFO - FT Phase _iter_stage1 Epoch 5 [1086/1086] Batch Loss: 1.3327
+2025-05-22 21:39:57,380 - INFO - FT Phase _iter_stage1 Epoch 5/5 Train Loss: 0.9696 Acc: 0.8081 | Val Loss: 1.3770 Acc: 0.6605 | Time: 128.4s
+2025-05-22 21:39:57,768 - INFO - Fine-tuning checkpoint saved at epoch 5 for phase _iter_stage1 to pruning_runs\resnet50_iterative_l1_90pct_finalSP_3stages_30epochs_ft_20250522-212815\ft_checkpoint_50_iterative_l1_iter_stage1.pth
+2025-05-22 21:39:57,768 - INFO - Fine-tuning phase _iter_stage1 fully completed. Removing checkpoint: pruning_runs\resnet50_iterative_l1_90pct_finalSP_3stages_30epochs_ft_20250522-212815\ft_checkpoint_50_iterative_l1_iter_stage1.pth
+2025-05-22 21:39:57,768 - INFO - Fine-tuning phase _iter_stage1 finished.
+2025-05-22 21:39:57,769 - INFO - 
+--- Iterative Stage 2/3 ---
+2025-05-22 21:39:57,770 - INFO - Target cumulative sparsity for this stage: 75.0%
+2025-05-22 21:39:57,770 - INFO - Pruning 50.00% of remaining weights to reach cumulative sparsity.
+2025-05-22 21:39:57,794 - INFO - Pruning applied for stage 2.
+2025-05-22 21:39:57,809 - INFO - Achieved sparsity after stage 2: 75.00%
+2025-05-22 21:39:57,809 - INFO - Fine-tuning for 10 epochs after stage 2 pruning...
+2025-05-22 21:39:57,809 - INFO - Starting fine-tuning for 10 epochs (Sparsity: 75.0%, Suffix: _iter_stage2)...
+2025-05-22 21:40:09,294 - INFO - FT Phase _iter_stage2 Epoch 1 [100/1086] Batch Loss: 1.7132
+2025-05-22 21:40:20,539 - INFO - FT Phase _iter_stage2 Epoch 1 [200/1086] Batch Loss: 1.8011
+2025-05-22 21:40:31,787 - INFO - FT Phase _iter_stage2 Epoch 1 [300/1086] Batch Loss: 1.9357
+2025-05-22 21:40:43,037 - INFO - FT Phase _iter_stage2 Epoch 1 [400/1086] Batch Loss: 1.6444
+2025-05-22 21:40:54,282 - INFO - FT Phase _iter_stage2 Epoch 1 [500/1086] Batch Loss: 1.8778
+2025-05-22 21:41:05,532 - INFO - FT Phase _iter_stage2 Epoch 1 [600/1086] Batch Loss: 1.7695
+2025-05-22 21:41:16,777 - INFO - FT Phase _iter_stage2 Epoch 1 [700/1086] Batch Loss: 1.7567
+2025-05-22 21:41:28,028 - INFO - FT Phase _iter_stage2 Epoch 1 [800/1086] Batch Loss: 1.7840
+2025-05-22 21:41:39,272 - INFO - FT Phase _iter_stage2 Epoch 1 [900/1086] Batch Loss: 1.7267
+2025-05-22 21:41:50,515 - INFO - FT Phase _iter_stage2 Epoch 1 [1000/1086] Batch Loss: 1.3010
+2025-05-22 21:42:00,163 - INFO - FT Phase _iter_stage2 Epoch 1 [1086/1086] Batch Loss: 2.0424
+2025-05-22 21:42:06,541 - INFO - FT Phase _iter_stage2 Epoch 1/10 Train Loss: 1.8184 Acc: 0.7105 | Val Loss: 1.7446 Acc: 0.6016 | Time: 128.7s
+2025-05-22 21:42:17,934 - INFO - FT Phase _iter_stage2 Epoch 2 [100/1086] Batch Loss: 1.3536
+2025-05-22 21:42:29,169 - INFO - FT Phase _iter_stage2 Epoch 2 [200/1086] Batch Loss: 1.7420
+2025-05-22 21:42:40,407 - INFO - FT Phase _iter_stage2 Epoch 2 [300/1086] Batch Loss: 1.4656
+2025-05-22 21:42:51,644 - INFO - FT Phase _iter_stage2 Epoch 2 [400/1086] Batch Loss: 1.6326
+2025-05-22 21:43:02,883 - INFO - FT Phase _iter_stage2 Epoch 2 [500/1086] Batch Loss: 1.5869
+2025-05-22 21:43:14,112 - INFO - FT Phase _iter_stage2 Epoch 2 [600/1086] Batch Loss: 1.6372
+2025-05-22 21:43:25,349 - INFO - FT Phase _iter_stage2 Epoch 2 [700/1086] Batch Loss: 1.6917
+2025-05-22 21:43:36,589 - INFO - FT Phase _iter_stage2 Epoch 2 [800/1086] Batch Loss: 2.0611
+2025-05-22 21:43:47,825 - INFO - FT Phase _iter_stage2 Epoch 2 [900/1086] Batch Loss: 1.3672
+2025-05-22 21:43:59,064 - INFO - FT Phase _iter_stage2 Epoch 2 [1000/1086] Batch Loss: 1.8238
+2025-05-22 21:44:08,703 - INFO - FT Phase _iter_stage2 Epoch 2 [1086/1086] Batch Loss: 1.9234
+2025-05-22 21:44:15,022 - INFO - FT Phase _iter_stage2 Epoch 2/10 Train Loss: 1.6521 Acc: 0.7184 | Val Loss: 1.6786 Acc: 0.6087 | Time: 128.5s
+2025-05-22 21:44:26,432 - INFO - FT Phase _iter_stage2 Epoch 3 [100/1086] Batch Loss: 1.8266
+2025-05-22 21:44:37,670 - INFO - FT Phase _iter_stage2 Epoch 3 [200/1086] Batch Loss: 1.4634
+2025-05-22 21:44:48,910 - INFO - FT Phase _iter_stage2 Epoch 3 [300/1086] Batch Loss: 1.4570
+2025-05-22 21:45:00,234 - INFO - FT Phase _iter_stage2 Epoch 3 [400/1086] Batch Loss: 1.5109
+2025-05-22 21:45:11,455 - INFO - FT Phase _iter_stage2 Epoch 3 [500/1086] Batch Loss: 1.3265
+2025-05-22 21:45:22,668 - INFO - FT Phase _iter_stage2 Epoch 3 [600/1086] Batch Loss: 1.5220
+2025-05-22 21:45:33,889 - INFO - FT Phase _iter_stage2 Epoch 3 [700/1086] Batch Loss: 1.7608
+2025-05-22 21:45:45,106 - INFO - FT Phase _iter_stage2 Epoch 3 [800/1086] Batch Loss: 1.6538
+2025-05-22 21:45:56,325 - INFO - FT Phase _iter_stage2 Epoch 3 [900/1086] Batch Loss: 1.2425
+2025-05-22 21:46:07,539 - INFO - FT Phase _iter_stage2 Epoch 3 [1000/1086] Batch Loss: 1.6219
+2025-05-22 21:46:17,163 - INFO - FT Phase _iter_stage2 Epoch 3 [1086/1086] Batch Loss: 1.0976
+2025-05-22 21:46:23,400 - INFO - FT Phase _iter_stage2 Epoch 3/10 Train Loss: 1.5877 Acc: 0.7185 | Val Loss: 1.6541 Acc: 0.6095 | Time: 128.4s
+2025-05-22 21:46:34,799 - INFO - FT Phase _iter_stage2 Epoch 4 [100/1086] Batch Loss: 1.5430
+2025-05-22 21:46:46,015 - INFO - FT Phase _iter_stage2 Epoch 4 [200/1086] Batch Loss: 0.9364
+2025-05-22 21:46:57,232 - INFO - FT Phase _iter_stage2 Epoch 4 [300/1086] Batch Loss: 1.4138
+2025-05-22 21:47:08,457 - INFO - FT Phase _iter_stage2 Epoch 4 [400/1086] Batch Loss: 1.8579
+2025-05-22 21:47:19,676 - INFO - FT Phase _iter_stage2 Epoch 4 [500/1086] Batch Loss: 1.3840
+2025-05-22 21:47:30,888 - INFO - FT Phase _iter_stage2 Epoch 4 [600/1086] Batch Loss: 1.5620
+2025-05-22 21:47:42,102 - INFO - FT Phase _iter_stage2 Epoch 4 [700/1086] Batch Loss: 1.5746
+2025-05-22 21:47:53,322 - INFO - FT Phase _iter_stage2 Epoch 4 [800/1086] Batch Loss: 1.4689
+2025-05-22 21:48:04,540 - INFO - FT Phase _iter_stage2 Epoch 4 [900/1086] Batch Loss: 1.3083
+2025-05-22 21:48:15,754 - INFO - FT Phase _iter_stage2 Epoch 4 [1000/1086] Batch Loss: 1.7149
+2025-05-22 21:48:25,376 - INFO - FT Phase _iter_stage2 Epoch 4 [1086/1086] Batch Loss: 1.6072
+2025-05-22 21:48:31,610 - INFO - FT Phase _iter_stage2 Epoch 4/10 Train Loss: 1.5576 Acc: 0.7231 | Val Loss: 1.6313 Acc: 0.6156 | Time: 128.2s
+2025-05-22 21:48:42,989 - INFO - FT Phase _iter_stage2 Epoch 5 [100/1086] Batch Loss: 1.4416
+2025-05-22 21:48:54,202 - INFO - FT Phase _iter_stage2 Epoch 5 [200/1086] Batch Loss: 1.3418
+2025-05-22 21:49:05,416 - INFO - FT Phase _iter_stage2 Epoch 5 [300/1086] Batch Loss: 1.2937
+2025-05-22 21:49:16,624 - INFO - FT Phase _iter_stage2 Epoch 5 [400/1086] Batch Loss: 1.7647
+2025-05-22 21:49:27,839 - INFO - FT Phase _iter_stage2 Epoch 5 [500/1086] Batch Loss: 1.8301
+2025-05-22 21:49:39,056 - INFO - FT Phase _iter_stage2 Epoch 5 [600/1086] Batch Loss: 1.7700
+2025-05-22 21:49:50,270 - INFO - FT Phase _iter_stage2 Epoch 5 [700/1086] Batch Loss: 1.2305
+2025-05-22 21:50:01,485 - INFO - FT Phase _iter_stage2 Epoch 5 [800/1086] Batch Loss: 1.7090
+2025-05-22 21:50:12,697 - INFO - FT Phase _iter_stage2 Epoch 5 [900/1086] Batch Loss: 1.3505
+2025-05-22 21:50:23,920 - INFO - FT Phase _iter_stage2 Epoch 5 [1000/1086] Batch Loss: 1.3149
+2025-05-22 21:50:36,488 - INFO - FT Phase _iter_stage2 Epoch 5 [1086/1086] Batch Loss: 1.3881
+2025-05-22 21:50:43,087 - INFO - FT Phase _iter_stage2 Epoch 5/10 Train Loss: 1.5037 Acc: 0.7337 | Val Loss: 1.6210 Acc: 0.6123 | Time: 131.5s
+2025-05-22 21:50:43,460 - INFO - Fine-tuning checkpoint saved at epoch 5 for phase _iter_stage2 to pruning_runs\resnet50_iterative_l1_90pct_finalSP_3stages_30epochs_ft_20250522-212815\ft_checkpoint_75_iterative_l1_iter_stage2.pth
+2025-05-22 21:50:55,099 - INFO - FT Phase _iter_stage2 Epoch 6 [100/1086] Batch Loss: 1.7211
+2025-05-22 21:51:06,839 - INFO - FT Phase _iter_stage2 Epoch 6 [200/1086] Batch Loss: 1.3915
+2025-05-22 21:51:18,243 - INFO - FT Phase _iter_stage2 Epoch 6 [300/1086] Batch Loss: 1.6766
+2025-05-22 21:51:29,705 - INFO - FT Phase _iter_stage2 Epoch 6 [400/1086] Batch Loss: 1.3850
+2025-05-22 21:51:41,382 - INFO - FT Phase _iter_stage2 Epoch 6 [500/1086] Batch Loss: 1.6195
+2025-05-22 21:51:55,191 - INFO - FT Phase _iter_stage2 Epoch 6 [600/1086] Batch Loss: 1.8820
+2025-05-22 21:52:09,364 - INFO - FT Phase _iter_stage2 Epoch 6 [700/1086] Batch Loss: 1.1875
+2025-05-22 21:52:21,609 - INFO - FT Phase _iter_stage2 Epoch 6 [800/1086] Batch Loss: 1.5009
+2025-05-22 21:52:33,786 - INFO - FT Phase _iter_stage2 Epoch 6 [900/1086] Batch Loss: 1.6799
+2025-05-22 21:52:45,914 - INFO - FT Phase _iter_stage2 Epoch 6 [1000/1086] Batch Loss: 1.1328
+2025-05-22 21:52:56,304 - INFO - FT Phase _iter_stage2 Epoch 6 [1086/1086] Batch Loss: 1.9189
+2025-05-22 21:53:03,996 - INFO - FT Phase _iter_stage2 Epoch 6/10 Train Loss: 1.4846 Acc: 0.7320 | Val Loss: 1.6068 Acc: 0.6159 | Time: 140.5s
+2025-05-22 21:53:16,275 - INFO - FT Phase _iter_stage2 Epoch 7 [100/1086] Batch Loss: 1.1947
+2025-05-22 21:53:28,383 - INFO - FT Phase _iter_stage2 Epoch 7 [200/1086] Batch Loss: 1.3192
+2025-05-22 21:53:40,485 - INFO - FT Phase _iter_stage2 Epoch 7 [300/1086] Batch Loss: 1.3116
+2025-05-22 21:53:52,601 - INFO - FT Phase _iter_stage2 Epoch 7 [400/1086] Batch Loss: 1.4462
+2025-05-22 21:54:05,214 - INFO - FT Phase _iter_stage2 Epoch 7 [500/1086] Batch Loss: 1.4197
+2025-05-22 21:54:17,338 - INFO - FT Phase _iter_stage2 Epoch 7 [600/1086] Batch Loss: 1.4540
+2025-05-22 21:54:29,453 - INFO - FT Phase _iter_stage2 Epoch 7 [700/1086] Batch Loss: 1.3194
+2025-05-22 21:54:41,559 - INFO - FT Phase _iter_stage2 Epoch 7 [800/1086] Batch Loss: 1.7667
+2025-05-22 21:54:53,684 - INFO - FT Phase _iter_stage2 Epoch 7 [900/1086] Batch Loss: 1.5066
+2025-05-22 21:55:05,796 - INFO - FT Phase _iter_stage2 Epoch 7 [1000/1086] Batch Loss: 1.4703
+2025-05-22 21:55:16,184 - INFO - FT Phase _iter_stage2 Epoch 7 [1086/1086] Batch Loss: 1.4858
+2025-05-22 21:55:23,626 - INFO - FT Phase _iter_stage2 Epoch 7/10 Train Loss: 1.4626 Acc: 0.7318 | Val Loss: 1.5930 Acc: 0.6199 | Time: 139.6s
+2025-05-22 21:55:36,096 - INFO - FT Phase _iter_stage2 Epoch 8 [100/1086] Batch Loss: 1.3733
+2025-05-22 21:55:48,213 - INFO - FT Phase _iter_stage2 Epoch 8 [200/1086] Batch Loss: 1.9179
+2025-05-22 21:56:00,984 - INFO - FT Phase _iter_stage2 Epoch 8 [300/1086] Batch Loss: 1.2167
+2025-05-22 21:56:13,349 - INFO - FT Phase _iter_stage2 Epoch 8 [400/1086] Batch Loss: 1.0803
+2025-05-22 21:56:25,483 - INFO - FT Phase _iter_stage2 Epoch 8 [500/1086] Batch Loss: 1.2753
+2025-05-22 21:56:38,076 - INFO - FT Phase _iter_stage2 Epoch 8 [600/1086] Batch Loss: 1.3303
+2025-05-22 21:56:50,226 - INFO - FT Phase _iter_stage2 Epoch 8 [700/1086] Batch Loss: 1.3785
+2025-05-22 21:57:02,333 - INFO - FT Phase _iter_stage2 Epoch 8 [800/1086] Batch Loss: 1.3327
+2025-05-22 21:57:14,439 - INFO - FT Phase _iter_stage2 Epoch 8 [900/1086] Batch Loss: 1.3161
+2025-05-22 21:57:26,536 - INFO - FT Phase _iter_stage2 Epoch 8 [1000/1086] Batch Loss: 1.1744
+2025-05-22 21:57:36,919 - INFO - FT Phase _iter_stage2 Epoch 8 [1086/1086] Batch Loss: 1.2893
+2025-05-22 21:57:44,590 - INFO - FT Phase _iter_stage2 Epoch 8/10 Train Loss: 1.4393 Acc: 0.7381 | Val Loss: 1.5906 Acc: 0.6161 | Time: 141.0s
+2025-05-22 21:57:56,899 - INFO - FT Phase _iter_stage2 Epoch 9 [100/1086] Batch Loss: 1.3211
+2025-05-22 21:58:09,035 - INFO - FT Phase _iter_stage2 Epoch 9 [200/1086] Batch Loss: 2.1622
+2025-05-22 21:58:21,122 - INFO - FT Phase _iter_stage2 Epoch 9 [300/1086] Batch Loss: 1.8302
+2025-05-22 21:58:33,494 - INFO - FT Phase _iter_stage2 Epoch 9 [400/1086] Batch Loss: 1.1973
+2025-05-22 21:58:45,602 - INFO - FT Phase _iter_stage2 Epoch 9 [500/1086] Batch Loss: 1.6358
+2025-05-22 21:58:57,705 - INFO - FT Phase _iter_stage2 Epoch 9 [600/1086] Batch Loss: 1.1091
+2025-05-22 21:59:09,799 - INFO - FT Phase _iter_stage2 Epoch 9 [700/1086] Batch Loss: 1.5054
+2025-05-22 21:59:21,904 - INFO - FT Phase _iter_stage2 Epoch 9 [800/1086] Batch Loss: 1.4272
+2025-05-22 21:59:34,018 - INFO - FT Phase _iter_stage2 Epoch 9 [900/1086] Batch Loss: 1.4868
+2025-05-22 21:59:46,111 - INFO - FT Phase _iter_stage2 Epoch 9 [1000/1086] Batch Loss: 1.0179
+2025-05-22 21:59:56,491 - INFO - FT Phase _iter_stage2 Epoch 9 [1086/1086] Batch Loss: 1.4886
+2025-05-22 22:00:04,127 - INFO - FT Phase _iter_stage2 Epoch 9/10 Train Loss: 1.4332 Acc: 0.7368 | Val Loss: 1.5809 Acc: 0.6215 | Time: 139.5s
+2025-05-22 22:00:16,430 - INFO - FT Phase _iter_stage2 Epoch 10 [100/1086] Batch Loss: 1.4647
+2025-05-22 22:00:28,533 - INFO - FT Phase _iter_stage2 Epoch 10 [200/1086] Batch Loss: 1.3529
+2025-05-22 22:00:40,633 - INFO - FT Phase _iter_stage2 Epoch 10 [300/1086] Batch Loss: 1.4645
+2025-05-22 22:00:52,731 - INFO - FT Phase _iter_stage2 Epoch 10 [400/1086] Batch Loss: 1.5492
+2025-05-22 22:01:04,828 - INFO - FT Phase _iter_stage2 Epoch 10 [500/1086] Batch Loss: 2.2629
+2025-05-22 22:01:16,933 - INFO - FT Phase _iter_stage2 Epoch 10 [600/1086] Batch Loss: 1.0968
+2025-05-22 22:01:29,045 - INFO - FT Phase _iter_stage2 Epoch 10 [700/1086] Batch Loss: 1.1826
+2025-05-22 22:01:41,154 - INFO - FT Phase _iter_stage2 Epoch 10 [800/1086] Batch Loss: 1.4715
+2025-05-22 22:01:53,261 - INFO - FT Phase _iter_stage2 Epoch 10 [900/1086] Batch Loss: 1.5368
+2025-05-22 22:02:05,369 - INFO - FT Phase _iter_stage2 Epoch 10 [1000/1086] Batch Loss: 1.2663
+2025-05-22 22:02:15,754 - INFO - FT Phase _iter_stage2 Epoch 10 [1086/1086] Batch Loss: 1.9477
+2025-05-22 22:02:23,323 - INFO - FT Phase _iter_stage2 Epoch 10/10 Train Loss: 1.4247 Acc: 0.7356 | Val Loss: 1.5709 Acc: 0.6194 | Time: 139.2s
+2025-05-22 22:02:23,718 - INFO - Fine-tuning checkpoint saved at epoch 10 for phase _iter_stage2 to pruning_runs\resnet50_iterative_l1_90pct_finalSP_3stages_30epochs_ft_20250522-212815\ft_checkpoint_75_iterative_l1_iter_stage2.pth
+2025-05-22 22:02:23,719 - INFO - Fine-tuning phase _iter_stage2 fully completed. Removing checkpoint: pruning_runs\resnet50_iterative_l1_90pct_finalSP_3stages_30epochs_ft_20250522-212815\ft_checkpoint_75_iterative_l1_iter_stage2.pth
+2025-05-22 22:02:23,719 - INFO - Fine-tuning phase _iter_stage2 finished.
+2025-05-22 22:02:23,720 - INFO - 
+--- Iterative Stage 3/3 ---
+2025-05-22 22:02:23,720 - INFO - Target cumulative sparsity for this stage: 90.0%
+2025-05-22 22:02:23,721 - INFO - Pruning 60.00% of remaining weights to reach cumulative sparsity.
+2025-05-22 22:02:23,741 - INFO - Pruning applied for stage 3.
+2025-05-22 22:02:23,756 - INFO - Achieved sparsity after stage 3: 90.00%
+2025-05-22 22:02:23,757 - INFO - Fine-tuning for 15 epochs after stage 3 pruning...
+2025-05-22 22:02:23,757 - INFO - Starting fine-tuning for 15 epochs (Sparsity: 90.0%, Suffix: _iter_stage3)...
+2025-05-22 22:02:36,090 - INFO - FT Phase _iter_stage3 Epoch 1 [100/1086] Batch Loss: 4.7545
+2025-05-22 22:02:48,208 - INFO - FT Phase _iter_stage3 Epoch 1 [200/1086] Batch Loss: 4.4438
+2025-05-22 22:03:00,323 - INFO - FT Phase _iter_stage3 Epoch 1 [300/1086] Batch Loss: 4.4128
+2025-05-22 22:03:12,443 - INFO - FT Phase _iter_stage3 Epoch 1 [400/1086] Batch Loss: 4.3753
+2025-05-22 22:03:24,562 - INFO - FT Phase _iter_stage3 Epoch 1 [500/1086] Batch Loss: 4.2706
+2025-05-22 22:03:36,682 - INFO - FT Phase _iter_stage3 Epoch 1 [600/1086] Batch Loss: 4.2515
+2025-05-22 22:03:48,804 - INFO - FT Phase _iter_stage3 Epoch 1 [700/1086] Batch Loss: 3.8085
+2025-05-22 22:04:00,918 - INFO - FT Phase _iter_stage3 Epoch 1 [800/1086] Batch Loss: 3.8169
+2025-05-22 22:04:13,035 - INFO - FT Phase _iter_stage3 Epoch 1 [900/1086] Batch Loss: 4.0033
+2025-05-22 22:04:25,148 - INFO - FT Phase _iter_stage3 Epoch 1 [1000/1086] Batch Loss: 3.8405
+2025-05-22 22:04:35,541 - INFO - FT Phase _iter_stage3 Epoch 1 [1086/1086] Batch Loss: 4.0519
+2025-05-22 22:04:43,364 - INFO - FT Phase _iter_stage3 Epoch 1/15 Train Loss: 4.2385 Acc: 0.3820 | Val Loss: 3.4162 Acc: 0.3816 | Time: 139.6s
+2025-05-22 22:04:55,703 - INFO - FT Phase _iter_stage3 Epoch 2 [100/1086] Batch Loss: 4.1391
+2025-05-22 22:05:07,824 - INFO - FT Phase _iter_stage3 Epoch 2 [200/1086] Batch Loss: 4.2762
+2025-05-22 22:05:19,940 - INFO - FT Phase _iter_stage3 Epoch 2 [300/1086] Batch Loss: 3.7427
+2025-05-22 22:05:32,058 - INFO - FT Phase _iter_stage3 Epoch 2 [400/1086] Batch Loss: 3.7089
+2025-05-22 22:05:44,174 - INFO - FT Phase _iter_stage3 Epoch 2 [500/1086] Batch Loss: 3.4411
+2025-05-22 22:05:56,297 - INFO - FT Phase _iter_stage3 Epoch 2 [600/1086] Batch Loss: 3.6282
+2025-05-22 22:06:08,400 - INFO - FT Phase _iter_stage3 Epoch 2 [700/1086] Batch Loss: 3.7411
+2025-05-22 22:06:20,499 - INFO - FT Phase _iter_stage3 Epoch 2 [800/1086] Batch Loss: 3.5839
+2025-05-22 22:06:32,599 - INFO - FT Phase _iter_stage3 Epoch 2 [900/1086] Batch Loss: 3.7751
+2025-05-22 22:06:44,701 - INFO - FT Phase _iter_stage3 Epoch 2 [1000/1086] Batch Loss: 3.9773
+2025-05-22 22:06:55,099 - INFO - FT Phase _iter_stage3 Epoch 2 [1086/1086] Batch Loss: 3.5693
+2025-05-22 22:07:02,383 - INFO - FT Phase _iter_stage3 Epoch 2/15 Train Loss: 3.7343 Acc: 0.4023 | Val Loss: 3.1396 Acc: 0.3943 | Time: 139.0s
+2025-05-22 22:07:14,715 - INFO - FT Phase _iter_stage3 Epoch 3 [100/1086] Batch Loss: 3.5856
+2025-05-22 22:07:26,849 - INFO - FT Phase _iter_stage3 Epoch 3 [200/1086] Batch Loss: 3.7247
+2025-05-22 22:07:38,969 - INFO - FT Phase _iter_stage3 Epoch 3 [300/1086] Batch Loss: 3.2158
+2025-05-22 22:07:51,087 - INFO - FT Phase _iter_stage3 Epoch 3 [400/1086] Batch Loss: 3.3108
+2025-05-22 22:08:03,208 - INFO - FT Phase _iter_stage3 Epoch 3 [500/1086] Batch Loss: 3.4156
+2025-05-22 22:08:15,328 - INFO - FT Phase _iter_stage3 Epoch 3 [600/1086] Batch Loss: 3.9296
+2025-05-22 22:08:27,459 - INFO - FT Phase _iter_stage3 Epoch 3 [700/1086] Batch Loss: 3.8040
+2025-05-22 22:08:39,592 - INFO - FT Phase _iter_stage3 Epoch 3 [800/1086] Batch Loss: 2.7594
+2025-05-22 22:08:51,721 - INFO - FT Phase _iter_stage3 Epoch 3 [900/1086] Batch Loss: 3.4565
+2025-05-22 22:09:03,851 - INFO - FT Phase _iter_stage3 Epoch 3 [1000/1086] Batch Loss: 3.2308
+2025-05-22 22:09:14,257 - INFO - FT Phase _iter_stage3 Epoch 3 [1086/1086] Batch Loss: 3.2636
+2025-05-22 22:09:21,575 - INFO - FT Phase _iter_stage3 Epoch 3/15 Train Loss: 3.5274 Acc: 0.4138 | Val Loss: 2.9964 Acc: 0.4063 | Time: 139.2s
+2025-05-22 22:09:33,879 - INFO - FT Phase _iter_stage3 Epoch 4 [100/1086] Batch Loss: 3.9237
+2025-05-22 22:09:45,976 - INFO - FT Phase _iter_stage3 Epoch 4 [200/1086] Batch Loss: 3.8267
+2025-05-22 22:09:58,085 - INFO - FT Phase _iter_stage3 Epoch 4 [300/1086] Batch Loss: 3.5146
+2025-05-22 22:10:10,216 - INFO - FT Phase _iter_stage3 Epoch 4 [400/1086] Batch Loss: 3.9050
+2025-05-22 22:10:22,322 - INFO - FT Phase _iter_stage3 Epoch 4 [500/1086] Batch Loss: 3.2268
+2025-05-22 22:10:34,478 - INFO - FT Phase _iter_stage3 Epoch 4 [600/1086] Batch Loss: 3.1545
+2025-05-22 22:10:46,574 - INFO - FT Phase _iter_stage3 Epoch 4 [700/1086] Batch Loss: 3.3484
+2025-05-22 22:10:58,690 - INFO - FT Phase _iter_stage3 Epoch 4 [800/1086] Batch Loss: 3.5737
+2025-05-22 22:11:10,811 - INFO - FT Phase _iter_stage3 Epoch 4 [900/1086] Batch Loss: 3.6733
+2025-05-22 22:11:22,941 - INFO - FT Phase _iter_stage3 Epoch 4 [1000/1086] Batch Loss: 3.0725
+2025-05-22 22:11:33,341 - INFO - FT Phase _iter_stage3 Epoch 4 [1086/1086] Batch Loss: 3.1918
+2025-05-22 22:11:40,657 - INFO - FT Phase _iter_stage3 Epoch 4/15 Train Loss: 3.3956 Acc: 0.4229 | Val Loss: 2.8882 Acc: 0.4209 | Time: 139.1s
+2025-05-22 22:11:53,025 - INFO - FT Phase _iter_stage3 Epoch 5 [100/1086] Batch Loss: 2.8046
+2025-05-22 22:12:05,183 - INFO - FT Phase _iter_stage3 Epoch 5 [200/1086] Batch Loss: 2.8432
+2025-05-22 22:12:17,326 - INFO - FT Phase _iter_stage3 Epoch 5 [300/1086] Batch Loss: 3.0402
+2025-05-22 22:12:28,741 - INFO - FT Phase _iter_stage3 Epoch 5 [400/1086] Batch Loss: 3.4254
+2025-05-22 22:12:40,055 - INFO - FT Phase _iter_stage3 Epoch 5 [500/1086] Batch Loss: 2.9667
+2025-05-22 22:12:51,368 - INFO - FT Phase _iter_stage3 Epoch 5 [600/1086] Batch Loss: 3.0675
+2025-05-22 22:13:02,687 - INFO - FT Phase _iter_stage3 Epoch 5 [700/1086] Batch Loss: 3.2529
+2025-05-22 22:13:14,002 - INFO - FT Phase _iter_stage3 Epoch 5 [800/1086] Batch Loss: 3.3254
+2025-05-22 22:13:25,317 - INFO - FT Phase _iter_stage3 Epoch 5 [900/1086] Batch Loss: 3.2986
+2025-05-22 22:13:36,628 - INFO - FT Phase _iter_stage3 Epoch 5 [1000/1086] Batch Loss: 3.3718
+2025-05-22 22:13:46,335 - INFO - FT Phase _iter_stage3 Epoch 5 [1086/1086] Batch Loss: 3.1025
+2025-05-22 22:13:53,429 - INFO - FT Phase _iter_stage3 Epoch 5/15 Train Loss: 3.2915 Acc: 0.4355 | Val Loss: 2.8147 Acc: 0.4231 | Time: 132.8s
+2025-05-22 22:13:53,807 - INFO - Fine-tuning checkpoint saved at epoch 5 for phase _iter_stage3 to pruning_runs\resnet50_iterative_l1_90pct_finalSP_3stages_30epochs_ft_20250522-212815\ft_checkpoint_90_iterative_l1_iter_stage3.pth
+2025-05-22 22:14:05,290 - INFO - FT Phase _iter_stage3 Epoch 6 [100/1086] Batch Loss: 2.9937
+2025-05-22 22:14:16,580 - INFO - FT Phase _iter_stage3 Epoch 6 [200/1086] Batch Loss: 2.6955
+2025-05-22 22:14:27,869 - INFO - FT Phase _iter_stage3 Epoch 6 [300/1086] Batch Loss: 3.0301
+2025-05-22 22:14:39,400 - INFO - FT Phase _iter_stage3 Epoch 6 [400/1086] Batch Loss: 3.1067
+2025-05-22 22:14:52,052 - INFO - FT Phase _iter_stage3 Epoch 6 [500/1086] Batch Loss: 3.1077
+2025-05-22 22:15:04,168 - INFO - FT Phase _iter_stage3 Epoch 6 [600/1086] Batch Loss: 3.4929
+2025-05-22 22:15:16,261 - INFO - FT Phase _iter_stage3 Epoch 6 [700/1086] Batch Loss: 3.4878
+2025-05-22 22:15:28,361 - INFO - FT Phase _iter_stage3 Epoch 6 [800/1086] Batch Loss: 3.1171
+2025-05-22 22:15:40,466 - INFO - FT Phase _iter_stage3 Epoch 6 [900/1086] Batch Loss: 3.5149
+2025-05-22 22:15:52,565 - INFO - FT Phase _iter_stage3 Epoch 6 [1000/1086] Batch Loss: 2.9127
+2025-05-22 22:16:02,935 - INFO - FT Phase _iter_stage3 Epoch 6 [1086/1086] Batch Loss: 3.4175
+2025-05-22 22:16:10,560 - INFO - FT Phase _iter_stage3 Epoch 6/15 Train Loss: 3.2026 Acc: 0.4451 | Val Loss: 2.7416 Acc: 0.4339 | Time: 136.8s
+2025-05-22 22:16:22,857 - INFO - FT Phase _iter_stage3 Epoch 7 [100/1086] Batch Loss: 2.7758
+2025-05-22 22:16:34,965 - INFO - FT Phase _iter_stage3 Epoch 7 [200/1086] Batch Loss: 3.0723
+2025-05-22 22:16:47,062 - INFO - FT Phase _iter_stage3 Epoch 7 [300/1086] Batch Loss: 3.3384
+2025-05-22 22:16:59,154 - INFO - FT Phase _iter_stage3 Epoch 7 [400/1086] Batch Loss: 2.8170
+2025-05-22 22:17:11,258 - INFO - FT Phase _iter_stage3 Epoch 7 [500/1086] Batch Loss: 3.2923
+2025-05-22 22:17:23,357 - INFO - FT Phase _iter_stage3 Epoch 7 [600/1086] Batch Loss: 2.9337
+2025-05-22 22:17:35,468 - INFO - FT Phase _iter_stage3 Epoch 7 [700/1086] Batch Loss: 3.0284
+2025-05-22 22:17:47,568 - INFO - FT Phase _iter_stage3 Epoch 7 [800/1086] Batch Loss: 3.0648
+2025-05-22 22:17:59,678 - INFO - FT Phase _iter_stage3 Epoch 7 [900/1086] Batch Loss: 2.9670
+2025-05-22 22:18:12,222 - INFO - FT Phase _iter_stage3 Epoch 7 [1000/1086] Batch Loss: 3.2431
+2025-05-22 22:18:22,638 - INFO - FT Phase _iter_stage3 Epoch 7 [1086/1086] Batch Loss: 3.3014
+2025-05-22 22:18:29,946 - INFO - FT Phase _iter_stage3 Epoch 7/15 Train Loss: 3.1392 Acc: 0.4513 | Val Loss: 2.6855 Acc: 0.4392 | Time: 139.4s
+2025-05-22 22:18:42,226 - INFO - FT Phase _iter_stage3 Epoch 8 [100/1086] Batch Loss: 3.3493
+2025-05-22 22:18:54,329 - INFO - FT Phase _iter_stage3 Epoch 8 [200/1086] Batch Loss: 3.0466
+2025-05-22 22:19:06,429 - INFO - FT Phase _iter_stage3 Epoch 8 [300/1086] Batch Loss: 2.7501
+2025-05-22 22:19:20,019 - INFO - FT Phase _iter_stage3 Epoch 8 [400/1086] Batch Loss: 3.6191
+2025-05-22 22:19:32,328 - INFO - FT Phase _iter_stage3 Epoch 8 [500/1086] Batch Loss: 2.8012
+2025-05-22 22:19:46,018 - INFO - FT Phase _iter_stage3 Epoch 8 [600/1086] Batch Loss: 3.0302
+2025-05-22 22:19:58,208 - INFO - FT Phase _iter_stage3 Epoch 8 [700/1086] Batch Loss: 2.4420
+2025-05-22 22:20:10,351 - INFO - FT Phase _iter_stage3 Epoch 8 [800/1086] Batch Loss: 2.6578
+2025-05-22 22:20:22,460 - INFO - FT Phase _iter_stage3 Epoch 8 [900/1086] Batch Loss: 3.2292
+2025-05-22 22:20:34,584 - INFO - FT Phase _iter_stage3 Epoch 8 [1000/1086] Batch Loss: 3.0513
+2025-05-22 22:20:44,975 - INFO - FT Phase _iter_stage3 Epoch 8 [1086/1086] Batch Loss: 3.0878
+2025-05-22 22:20:52,276 - INFO - FT Phase _iter_stage3 Epoch 8/15 Train Loss: 3.0742 Acc: 0.4582 | Val Loss: 2.6315 Acc: 0.4402 | Time: 142.3s
+2025-05-22 22:21:04,670 - INFO - FT Phase _iter_stage3 Epoch 9 [100/1086] Batch Loss: 2.8026
+2025-05-22 22:21:17,423 - INFO - FT Phase _iter_stage3 Epoch 9 [200/1086] Batch Loss: 3.0997
+2025-05-22 22:21:29,544 - INFO - FT Phase _iter_stage3 Epoch 9 [300/1086] Batch Loss: 3.2149
+2025-05-22 22:21:41,668 - INFO - FT Phase _iter_stage3 Epoch 9 [400/1086] Batch Loss: 3.1555
+2025-05-22 22:21:53,798 - INFO - FT Phase _iter_stage3 Epoch 9 [500/1086] Batch Loss: 3.5809
+2025-05-22 22:22:05,914 - INFO - FT Phase _iter_stage3 Epoch 9 [600/1086] Batch Loss: 3.0721
+2025-05-22 22:22:18,047 - INFO - FT Phase _iter_stage3 Epoch 9 [700/1086] Batch Loss: 2.9284
+2025-05-22 22:22:30,172 - INFO - FT Phase _iter_stage3 Epoch 9 [800/1086] Batch Loss: 2.6849
+2025-05-22 22:22:42,291 - INFO - FT Phase _iter_stage3 Epoch 9 [900/1086] Batch Loss: 2.8276
+2025-05-22 22:22:54,411 - INFO - FT Phase _iter_stage3 Epoch 9 [1000/1086] Batch Loss: 2.8172
+2025-05-22 22:23:04,818 - INFO - FT Phase _iter_stage3 Epoch 9 [1086/1086] Batch Loss: 4.1260
+2025-05-22 22:23:12,155 - INFO - FT Phase _iter_stage3 Epoch 9/15 Train Loss: 3.0246 Acc: 0.4600 | Val Loss: 2.5892 Acc: 0.4458 | Time: 139.9s
+2025-05-22 22:23:24,557 - INFO - FT Phase _iter_stage3 Epoch 10 [100/1086] Batch Loss: 2.9394
+2025-05-22 22:23:36,675 - INFO - FT Phase _iter_stage3 Epoch 10 [200/1086] Batch Loss: 2.9743
+2025-05-22 22:23:48,805 - INFO - FT Phase _iter_stage3 Epoch 10 [300/1086] Batch Loss: 3.1205
+2025-05-22 22:24:01,307 - INFO - FT Phase _iter_stage3 Epoch 10 [400/1086] Batch Loss: 3.7058
+2025-05-22 22:24:13,605 - INFO - FT Phase _iter_stage3 Epoch 10 [500/1086] Batch Loss: 2.6077
+2025-05-22 22:24:26,026 - INFO - FT Phase _iter_stage3 Epoch 10 [600/1086] Batch Loss: 2.6446
+2025-05-22 22:24:38,283 - INFO - FT Phase _iter_stage3 Epoch 10 [700/1086] Batch Loss: 2.7929
+2025-05-22 22:24:51,064 - INFO - FT Phase _iter_stage3 Epoch 10 [800/1086] Batch Loss: 3.0411
+2025-05-22 22:25:03,613 - INFO - FT Phase _iter_stage3 Epoch 10 [900/1086] Batch Loss: 3.5590
+2025-05-22 22:25:16,041 - INFO - FT Phase _iter_stage3 Epoch 10 [1000/1086] Batch Loss: 2.9464
+2025-05-22 22:25:26,412 - INFO - FT Phase _iter_stage3 Epoch 10 [1086/1086] Batch Loss: 3.2444
+2025-05-22 22:25:33,749 - INFO - FT Phase _iter_stage3 Epoch 10/15 Train Loss: 2.9751 Acc: 0.4681 | Val Loss: 2.5673 Acc: 0.4486 | Time: 141.6s
+2025-05-22 22:25:34,141 - INFO - Fine-tuning checkpoint saved at epoch 10 for phase _iter_stage3 to pruning_runs\resnet50_iterative_l1_90pct_finalSP_3stages_30epochs_ft_20250522-212815\ft_checkpoint_90_iterative_l1_iter_stage3.pth
+2025-05-22 22:25:46,433 - INFO - FT Phase _iter_stage3 Epoch 11 [100/1086] Batch Loss: 2.7780
+2025-05-22 22:25:58,529 - INFO - FT Phase _iter_stage3 Epoch 11 [200/1086] Batch Loss: 3.2105
+2025-05-22 22:26:10,645 - INFO - FT Phase _iter_stage3 Epoch 11 [300/1086] Batch Loss: 2.9484
+2025-05-22 22:26:22,737 - INFO - FT Phase _iter_stage3 Epoch 11 [400/1086] Batch Loss: 3.3638
+2025-05-22 22:26:34,852 - INFO - FT Phase _iter_stage3 Epoch 11 [500/1086] Batch Loss: 3.2181
+2025-05-22 22:26:46,958 - INFO - FT Phase _iter_stage3 Epoch 11 [600/1086] Batch Loss: 2.6757
+2025-05-22 22:26:59,068 - INFO - FT Phase _iter_stage3 Epoch 11 [700/1086] Batch Loss: 3.0772
+2025-05-22 22:27:11,761 - INFO - FT Phase _iter_stage3 Epoch 11 [800/1086] Batch Loss: 2.4800
+2025-05-22 22:27:23,880 - INFO - FT Phase _iter_stage3 Epoch 11 [900/1086] Batch Loss: 3.0220
+2025-05-22 22:27:35,998 - INFO - FT Phase _iter_stage3 Epoch 11 [1000/1086] Batch Loss: 2.5616
+2025-05-22 22:27:46,383 - INFO - FT Phase _iter_stage3 Epoch 11 [1086/1086] Batch Loss: 3.1999
+2025-05-22 22:27:53,702 - INFO - FT Phase _iter_stage3 Epoch 11/15 Train Loss: 2.9154 Acc: 0.4757 | Val Loss: 2.5219 Acc: 0.4624 | Time: 139.6s
+2025-05-22 22:28:05,997 - INFO - FT Phase _iter_stage3 Epoch 12 [100/1086] Batch Loss: 2.8780
+2025-05-22 22:28:18,116 - INFO - FT Phase _iter_stage3 Epoch 12 [200/1086] Batch Loss: 3.0348
+2025-05-22 22:28:30,208 - INFO - FT Phase _iter_stage3 Epoch 12 [300/1086] Batch Loss: 3.3129
+2025-05-22 22:28:42,310 - INFO - FT Phase _iter_stage3 Epoch 12 [400/1086] Batch Loss: 2.8619
+2025-05-22 22:28:54,421 - INFO - FT Phase _iter_stage3 Epoch 12 [500/1086] Batch Loss: 3.1040
+2025-05-22 22:29:06,537 - INFO - FT Phase _iter_stage3 Epoch 12 [600/1086] Batch Loss: 2.7497
+2025-05-22 22:29:18,654 - INFO - FT Phase _iter_stage3 Epoch 12 [700/1086] Batch Loss: 2.6076
+2025-05-22 22:29:30,767 - INFO - FT Phase _iter_stage3 Epoch 12 [800/1086] Batch Loss: 2.5738
+2025-05-22 22:29:42,877 - INFO - FT Phase _iter_stage3 Epoch 12 [900/1086] Batch Loss: 3.1295
+2025-05-22 22:29:54,999 - INFO - FT Phase _iter_stage3 Epoch 12 [1000/1086] Batch Loss: 2.5789
+2025-05-22 22:30:05,385 - INFO - FT Phase _iter_stage3 Epoch 12 [1086/1086] Batch Loss: 2.9262
+2025-05-22 22:30:12,715 - INFO - FT Phase _iter_stage3 Epoch 12/15 Train Loss: 2.8969 Acc: 0.4747 | Val Loss: 2.4995 Acc: 0.4553 | Time: 139.0s
+2025-05-22 22:30:25,118 - INFO - FT Phase _iter_stage3 Epoch 13 [100/1086] Batch Loss: 3.3413
+2025-05-22 22:30:37,225 - INFO - FT Phase _iter_stage3 Epoch 13 [200/1086] Batch Loss: 2.7843
+2025-05-22 22:30:49,326 - INFO - FT Phase _iter_stage3 Epoch 13 [300/1086] Batch Loss: 2.6532
+2025-05-22 22:31:01,423 - INFO - FT Phase _iter_stage3 Epoch 13 [400/1086] Batch Loss: 2.7256
+2025-05-22 22:31:13,519 - INFO - FT Phase _iter_stage3 Epoch 13 [500/1086] Batch Loss: 2.3600
+2025-05-22 22:31:25,606 - INFO - FT Phase _iter_stage3 Epoch 13 [600/1086] Batch Loss: 2.4979
+2025-05-22 22:31:37,708 - INFO - FT Phase _iter_stage3 Epoch 13 [700/1086] Batch Loss: 2.4709
+2025-05-22 22:31:49,831 - INFO - FT Phase _iter_stage3 Epoch 13 [800/1086] Batch Loss: 3.0904
+2025-05-22 22:32:01,925 - INFO - FT Phase _iter_stage3 Epoch 13 [900/1086] Batch Loss: 3.1961
+2025-05-22 22:32:14,018 - INFO - FT Phase _iter_stage3 Epoch 13 [1000/1086] Batch Loss: 2.3866
+2025-05-22 22:32:24,399 - INFO - FT Phase _iter_stage3 Epoch 13 [1086/1086] Batch Loss: 2.6031
+2025-05-22 22:32:31,730 - INFO - FT Phase _iter_stage3 Epoch 13/15 Train Loss: 2.8531 Acc: 0.4806 | Val Loss: 2.4758 Acc: 0.4611 | Time: 139.0s
+2025-05-22 22:32:44,038 - INFO - FT Phase _iter_stage3 Epoch 14 [100/1086] Batch Loss: 2.2438
+2025-05-22 22:32:56,156 - INFO - FT Phase _iter_stage3 Epoch 14 [200/1086] Batch Loss: 2.7162
+2025-05-22 22:33:08,258 - INFO - FT Phase _iter_stage3 Epoch 14 [300/1086] Batch Loss: 3.1951
+2025-05-22 22:33:20,355 - INFO - FT Phase _iter_stage3 Epoch 14 [400/1086] Batch Loss: 2.9832
+2025-05-22 22:33:32,445 - INFO - FT Phase _iter_stage3 Epoch 14 [500/1086] Batch Loss: 2.6093
+2025-05-22 22:33:44,540 - INFO - FT Phase _iter_stage3 Epoch 14 [600/1086] Batch Loss: 2.7898
+2025-05-22 22:33:56,636 - INFO - FT Phase _iter_stage3 Epoch 14 [700/1086] Batch Loss: 2.7249
+2025-05-22 22:34:08,748 - INFO - FT Phase _iter_stage3 Epoch 14 [800/1086] Batch Loss: 2.6075
+2025-05-22 22:34:20,841 - INFO - FT Phase _iter_stage3 Epoch 14 [900/1086] Batch Loss: 3.0723
+2025-05-22 22:34:32,941 - INFO - FT Phase _iter_stage3 Epoch 14 [1000/1086] Batch Loss: 2.9319
+2025-05-22 22:34:43,313 - INFO - FT Phase _iter_stage3 Epoch 14 [1086/1086] Batch Loss: 2.7499
+2025-05-22 22:34:50,622 - INFO - FT Phase _iter_stage3 Epoch 14/15 Train Loss: 2.8187 Acc: 0.4872 | Val Loss: 2.4393 Acc: 0.4621 | Time: 138.9s
+2025-05-22 22:35:02,971 - INFO - FT Phase _iter_stage3 Epoch 15 [100/1086] Batch Loss: 2.9164
+2025-05-22 22:35:15,068 - INFO - FT Phase _iter_stage3 Epoch 15 [200/1086] Batch Loss: 2.9336
+2025-05-22 22:35:27,159 - INFO - FT Phase _iter_stage3 Epoch 15 [300/1086] Batch Loss: 2.5518
+2025-05-22 22:35:39,264 - INFO - FT Phase _iter_stage3 Epoch 15 [400/1086] Batch Loss: 3.1049
+2025-05-22 22:35:51,367 - INFO - FT Phase _iter_stage3 Epoch 15 [500/1086] Batch Loss: 2.4719
+2025-05-22 22:36:03,482 - INFO - FT Phase _iter_stage3 Epoch 15 [600/1086] Batch Loss: 3.1906
+2025-05-22 22:36:15,582 - INFO - FT Phase _iter_stage3 Epoch 15 [700/1086] Batch Loss: 3.2201
+2025-05-22 22:36:27,675 - INFO - FT Phase _iter_stage3 Epoch 15 [800/1086] Batch Loss: 2.4152
+2025-05-22 22:36:39,787 - INFO - FT Phase _iter_stage3 Epoch 15 [900/1086] Batch Loss: 3.1627
+2025-05-22 22:36:51,889 - INFO - FT Phase _iter_stage3 Epoch 15 [1000/1086] Batch Loss: 2.3121
+2025-05-22 22:37:02,277 - INFO - FT Phase _iter_stage3 Epoch 15 [1086/1086] Batch Loss: 3.0170
+2025-05-22 22:37:09,599 - INFO - FT Phase _iter_stage3 Epoch 15/15 Train Loss: 2.7851 Acc: 0.4926 | Val Loss: 2.4271 Acc: 0.4650 | Time: 139.0s
+2025-05-22 22:37:10,008 - INFO - Fine-tuning checkpoint saved at epoch 15 for phase _iter_stage3 to pruning_runs\resnet50_iterative_l1_90pct_finalSP_3stages_30epochs_ft_20250522-212815\ft_checkpoint_90_iterative_l1_iter_stage3.pth
+2025-05-22 22:37:10,009 - INFO - Fine-tuning phase _iter_stage3 fully completed. Removing checkpoint: pruning_runs\resnet50_iterative_l1_90pct_finalSP_3stages_30epochs_ft_20250522-212815\ft_checkpoint_90_iterative_l1_iter_stage3.pth
+2025-05-22 22:37:10,009 - INFO - Fine-tuning phase _iter_stage3 finished.
+2025-05-22 22:37:10,010 - INFO - All iterative pruning stages completed for 90.0% target sparsity.
+2025-05-22 22:37:10,024 - INFO - Achieved sparsity (with masks, counting zeros) after pruning steps: 90.00%
+2025-05-22 22:37:10,025 - INFO - Parameters after masking: Total=25,503,912, Non-Zero (effective)=2,551,291
+2025-05-22 22:37:10,025 - INFO - Removing pruning masks for iterative pruning...
+2025-05-22 22:37:10,031 - INFO - Removed pruning masks from 54 modules.
+2025-05-22 22:37:10,032 - INFO - Converted pruned weights to sparse tensors (if supported by backend).
+2025-05-22 22:37:10,034 - INFO - Total sparse tensors in state_dict: 0
+2025-05-22 22:37:10,048 - INFO - Final physical sparsity (masks removed): 90.00%
+2025-05-22 22:37:10,048 - INFO - Parameters after mask removal: Total=25,503,912, Non-Zero=2,551,291
+2025-05-22 22:37:10,199 - INFO - Pruned model saved: pruning_runs\resnet50_iterative_l1_90pct_finalSP_3stages_30epochs_ft_20250522-212815\resnet50_pruned_90_iterative_l1_ft.pth
+2025-05-22 22:37:27,659 - INFO - Final Evaluation - Acc: 0.4650, Val Loss: 2.4271
+2025-05-22 22:37:27,659 - INFO - Final Evaluation - Speed: 176.8 img/s
+2025-05-22 22:37:27,660 - INFO - Final Evaluation - Dense Size: 97.70 MB, Sparse Size: 10.14 MB
+2025-05-22 22:37:27,669 - INFO - 
+====================================================================================================
+2025-05-22 22:37:27,669 - INFO - PRUNING EXPERIMENT SUMMARY
+2025-05-22 22:37:27,669 - INFO - ====================================================================================================
+2025-05-22 22:37:27,670 - INFO - 
+Baseline Model:
+2025-05-22 22:37:27,670 - INFO -   Accuracy: 0.6495 | Loss: 1.4223 | Size: 97.70 MB
+2025-05-22 22:37:27,670 - INFO -   Params (Total): 25,503,912 | Params (Non-Zero): 25,503,912 | Speed: 193.9 img/s
+2025-05-22 22:37:27,670 - INFO - 
+Pruning Results (Sorted by Target Sparsity):
+2025-05-22 22:37:27,670 - INFO - -------------------------------------------------------------------------------------------------------------------
+2025-05-22 22:37:27,671 - INFO - Target SP%   Achieved SP%   Accuracy   Loss     Dense(MB)  Sparse(MB) Params(NZ)   Speed      Speedup   FT Time(min)
+2025-05-22 22:37:27,671 - INFO - -------------------------------------------------------------------------------------------------------------------
+2025-05-22 22:37:27,671 - INFO -        90.0          90.0    0.4650  2.4271     97.70      10.14    2,551,291      176.8      0.91x        68.3
+2025-05-22 22:37:27,671 - INFO - -------------------------------------------------------------------------------------------------------------------
+2025-05-22 22:37:27,672 - INFO - ====================================================================================================
+2025-05-22 22:37:27,675 - INFO - 
+Experiment completed! Full summary saved to pruning_runs\resnet50_iterative_l1_90pct_finalSP_3stages_30epochs_ft_20250522-212815\complete_experiment_summary_iterative_l1.json

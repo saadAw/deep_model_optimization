@@ -1,0 +1,53 @@
+{
+  "run_type": "baseline_re_eval",
+  "model_path": "./resnet50_baseline_e30_run/best_model.pth",
+  "val_accuracy": 0.649502931430028,
+  "val_loss": 1.422297681742349,
+  "model_size_mb": 97.69538116455078,
+  "parameter_counts": {
+    "total_params": 25503912,
+    "non_zero_params": 25503912
+  },
+  "inference_metrics": {
+    "images_per_second": 193.92682748106316,
+    "latency_ms_per_image": 5.156584124997607,
+    "total_images_measured": 1600,
+    "total_time_seconds": 8.250534599996172
+  },
+  "config": {
+    "data_dir": "C:\\Uni\\deep_model_optimization\\imagenet-mini",
+    "save_dir": "pruning_runs\\resnet50_iterative_l1_90pct_finalSP_3stages_30epochs_ft_20250522-212815",
+    "num_epochs": 30,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "num_workers": 4,
+    "use_pretrained": true,
+    "evaluate_only": false,
+    "use_sparse_storage": true,
+    "baseline_model_path": "./resnet50_baseline_e30_run/best_model.pth",
+    "pruning_strategy_type": "iterative_l1",
+    "sparsity_rates": [
+      0.9
+    ],
+    "ft_epochs": 15,
+    "ft_learning_rate": 5e-05,
+    "ft_momentum": 0.9,
+    "ft_weight_decay": 0.0001,
+    "iterative_stages": [
+      {
+        "target_sparsity": 0.5,
+        "epochs": 5
+      },
+      {
+        "target_sparsity": 0.75,
+        "epochs": 10
+      },
+      {
+        "target_sparsity": 0.9,
+        "epochs": 15
+      }
+    ],
+    "resume_pruning": true,
+    "skip_completed": false
+  }
+}

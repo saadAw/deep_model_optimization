@@ -1,0 +1,280 @@
+{
+  "experiment_type": "iterative_structured_pruning_torch_pruning",
+  "config": {
+    "data_dir": "./imagenet-mini",
+    "save_dir": "resnet50_pruning_structured_run",
+    "baseline_model_path": "./best_model.pth",
+    "log_file_name": "iterative_structured_pruning_results.json",
+    "batch_size": 32,
+    "num_workers": 4,
+    "iterative_step_rates": [
+      0.3,
+      0.3,
+      0.4
+    ],
+    "iterative_ft_epochs": [
+      5,
+      10,
+      15
+    ],
+    "iterative_target_overall_sparsities_approx": [
+      0.5,
+      0.75,
+      0.9
+    ],
+    "ft_learning_rate": 5e-05,
+    "ft_momentum": 0.9,
+    "ft_weight_decay": 0.0001
+  },
+  "baseline_metrics": {
+    "accuracy": 0.649502931430028,
+    "loss": 1.422297681742349,
+    "params": 25557032,
+    "size_mb": 97.69538116455078,
+    "inference_metrics": {
+      "images_per_second": 120.5461348671853,
+      "latency_ms_per_image": 8.295579124969663,
+      "total_images_measured": 1600,
+      "total_time_seconds": 13.272926599951461
+    }
+  },
+  "iterative_stages": [
+    {
+      "stage_number": 1,
+      "applied_step_rate": 0.3,
+      "ft_epochs_this_stage": 5,
+      "target_overall_sparsity_approx": 0.5,
+      "achieved_overall_sparsity_percent": 49.38555854216561,
+      "params_after_pruning_this_step": 12935549,
+      "metrics_before_ft_this_stage": {
+        "accuracy": 0.0017843487127198571,
+        "loss": 7.1562834161597495,
+        "size_mb": 49.48725509643555
+      },
+      "fine_tuning_details": {
+        "total_time_seconds": 675.3933851718903,
+        "history": {
+          "loss": [
+            3.729412130493623,
+            2.9692699774098337,
+            2.7013303160547335,
+            2.5361350994862177,
+            2.4230484023542265
+          ],
+          "accuracy": [
+            0.3153547272988919,
+            0.43660958411282197,
+            0.48496186501654914,
+            0.5167937832781695,
+            0.5383796229673334
+          ],
+          "val_loss": [
+            2.920832466173622,
+            2.5780312918960333,
+            2.3994563533249114,
+            2.3030597989485635,
+            2.2260325830444034
+          ],
+          "val_accuracy": [
+            0.3915370889625287,
+            0.4435381085903645,
+            0.46800917665052255,
+            0.48304868722916133,
+            0.49936273260260006
+          ]
+        }
+      },
+      "final_metrics_this_stage": {
+        "accuracy": 0.49936273260260006,
+        "loss": 2.2260325830444034,
+        "params": 12935549,
+        "size_mb": 49.48725509643555,
+        "inference_metrics": {
+          "images_per_second": 117.61130844975256,
+          "latency_ms_per_image": 8.502583749650512,
+          "total_images_measured": 1600,
+          "total_time_seconds": 13.604133999440819
+        }
+      },
+      "model_saved_path": "resnet50_pruning_structured_run\\resnet50_iter_struct_stage1_overall_sparsity_49_ft.pth"
+    },
+    {
+      "stage_number": 2,
+      "applied_step_rate": 0.3,
+      "ft_epochs_this_stage": 10,
+      "target_overall_sparsity_approx": 0.75,
+      "achieved_overall_sparsity_percent": 74.07339005562147,
+      "params_after_pruning_this_step": 6626072,
+      "metrics_before_ft_this_stage": {
+        "accuracy": 0.0007647208768799389,
+        "loss": 7.077270530177536,
+        "size_mb": 25.3758544921875
+      },
+      "fine_tuning_details": {
+        "total_time_seconds": 1021.5683124065399,
+        "history": {
+          "loss": [
+            5.228194329721119,
+            4.639280049484194,
+            4.378073024667413,
+            4.190335555062189,
+            4.055500242798976,
+            3.9343588003821983,
+            3.859354010999314,
+            3.7695412615080124,
+            3.6953686569591,
+            3.6315762603963977
+          ],
+          "accuracy": [
+            0.08640092099582673,
+            0.15153259461793064,
+            0.18388257303209093,
+            0.21044754640955532,
+            0.23024895668441503,
+            0.24927327673046482,
+            0.2603540077709023,
+            0.27460066196575045,
+            0.28602676644121455,
+            0.3016836954957548
+          ],
+          "val_loss": [
+            4.583201928008675,
+            4.218619569478945,
+            4.009077153520684,
+            3.8369190368973234,
+            3.708327943258312,
+            3.611938705439474,
+            3.5188164322041384,
+            3.457378351898057,
+            3.385438923139278,
+            3.3372250311902794
+          ],
+          "val_accuracy": [
+            0.1315319908233495,
+            0.17282691817486617,
+            0.19602345144022432,
+            0.21947489166454245,
+            0.24139689013510068,
+            0.2566913076726995,
+            0.2645934234004588,
+            0.2783583991842977,
+            0.2933979097629365,
+            0.29824114198317614
+          ]
+        }
+      },
+      "final_metrics_this_stage": {
+        "accuracy": 0.29824114198317614,
+        "loss": 3.3372250311902794,
+        "params": 6626072,
+        "size_mb": 25.3758544921875,
+        "inference_metrics": {
+          "images_per_second": 121.51151731955531,
+          "latency_ms_per_image": 8.229672561574262,
+          "total_images_measured": 1600,
+          "total_time_seconds": 13.167476098518819
+        }
+      },
+      "model_saved_path": "resnet50_pruning_structured_run\\resnet50_iter_struct_stage2_overall_sparsity_74_ft.pth"
+    },
+    {
+      "stage_number": 3,
+      "applied_step_rate": 0.4,
+      "ft_epochs_this_stage": 15,
+      "target_overall_sparsity_approx": 0.9,
+      "achieved_overall_sparsity_percent": 89.70702466546193,
+      "params_after_pruning_this_step": 2630579,
+      "metrics_before_ft_this_stage": {
+        "accuracy": 0.0010196278358399185,
+        "loss": 7.1449775390712515,
+        "size_mb": 10.094593048095703
+      },
+      "fine_tuning_details": {
+        "total_time_seconds": 1358.4659762382507,
+        "history": {
+          "loss": [
+            6.126894878541708,
+            5.690382375249178,
+            5.492527447194226,
+            5.35627100496159,
+            5.25458279854103,
+            5.162957122614443,
+            5.074724627632189,
+            5.019467860150636,
+            4.9570055147781185,
+            4.903468675760249,
+            4.852542208678295,
+            4.805879259459457,
+            4.754237017560853,
+            4.715123191273012,
+            4.675762234950069
+          ],
+          "accuracy": [
+            0.020118002590300763,
+            0.03908476039717945,
+            0.05235285652611887,
+            0.06377896100158296,
+            0.0720679234422219,
+            0.08142178730752626,
+            0.08896244063894085,
+            0.09466110231688013,
+            0.0994675492876673,
+            0.10649014246654195,
+            0.1133400489279033,
+            0.116505972082314,
+            0.12361490861994531,
+            0.12447834220751187,
+            0.1318750899409987
+          ],
+          "val_loss": [
+            5.71750032856183,
+            5.431431543514068,
+            5.269216466612455,
+            5.135800427391369,
+            5.0332779170845106,
+            4.940866987163729,
+            4.862555201917226,
+            4.793887465455354,
+            4.737735886249255,
+            4.685074309442166,
+            4.6327483298491074,
+            4.578049378707462,
+            4.53267844927241,
+            4.498059914545413,
+            4.447474738088701
+          ],
+          "val_accuracy": [
+            0.027529951567677798,
+            0.04307927606423655,
+            0.05786387968391537,
+            0.06958959979607443,
+            0.07570736681111394,
+            0.08309966862095335,
+            0.08870762171807291,
+            0.09559010960999235,
+            0.10323731837879174,
+            0.1037471322967117,
+            0.11572775936783074,
+            0.1200611776701504,
+            0.12210043334183023,
+            0.12464950293143003,
+            0.13076726994646953
+          ]
+        }
+      },
+      "final_metrics_this_stage": {
+        "accuracy": 0.13076726994646953,
+        "loss": 4.447474738088701,
+        "params": 2630579,
+        "size_mb": 10.094593048095703,
+        "inference_metrics": {
+          "images_per_second": 122.97366681758726,
+          "latency_ms_per_image": 8.1318222500704,
+          "total_images_measured": 1600,
+          "total_time_seconds": 13.01091560011264
+        }
+      },
+      "model_saved_path": "resnet50_pruning_structured_run\\resnet50_iter_struct_stage3_overall_sparsity_89_ft.pth"
+    }
+  ]
+}

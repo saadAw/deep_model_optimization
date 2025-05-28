@@ -1,0 +1,659 @@
+2025-05-22 16:02:23,513 - INFO - Using device: cuda
+2025-05-22 16:02:23,521 - INFO - === Starting Unstructured Pruning Experiment ===
+2025-05-22 16:02:23,521 - INFO - === Configuration ===
+2025-05-22 16:02:23,522 - INFO - data_dir: C:\Uni\deep_model_optimization\imagenet-mini
+2025-05-22 16:02:23,522 - INFO - save_dir: resnet50_pruning_unstructured_run
+2025-05-22 16:02:23,522 - INFO - num_epochs: 30
+2025-05-22 16:02:23,522 - INFO - batch_size: 32
+2025-05-22 16:02:23,522 - INFO - learning_rate: 0.001
+2025-05-22 16:02:23,523 - INFO - num_workers: 4
+2025-05-22 16:02:23,523 - INFO - use_pretrained: True
+2025-05-22 16:02:23,523 - INFO - evaluate_only: False
+2025-05-22 16:02:23,523 - INFO - use_sparse_storage: True
+2025-05-22 16:02:23,523 - INFO - baseline_model_path: ./resnet50_baseline_e30_run/best_model.pth
+2025-05-22 16:02:23,523 - INFO - pruning_method: global_unstructured_l1
+2025-05-22 16:02:23,524 - INFO - sparsity_rates: [0.5, 0.75, 0.9]
+2025-05-22 16:02:23,524 - INFO - ft_epochs: 15
+2025-05-22 16:02:23,524 - INFO - ft_learning_rate: 5e-05
+2025-05-22 16:02:23,524 - INFO - ft_momentum: 0.9
+2025-05-22 16:02:23,524 - INFO - ft_weight_decay: 0.0001
+2025-05-22 16:02:23,524 - INFO - resume_pruning: False
+2025-05-22 16:02:23,524 - INFO - skip_completed: True
+2025-05-22 16:02:23,525 - INFO - Config saved to resnet50_pruning_unstructured_run\config.json
+2025-05-22 16:02:24,592 - INFO - === Dataset Information ===
+2025-05-22 16:02:24,592 - INFO - Number of classes: 1000
+2025-05-22 16:02:24,593 - INFO - Training samples: 34,745
+2025-05-22 16:02:24,593 - INFO - Validation samples: 3,923
+2025-05-22 16:02:24,593 - INFO - === Evaluating Baseline Model ===
+2025-05-22 16:02:58,879 - INFO - Baseline - Acc: 0.6495, Val Loss: 1.4223, Size: 97.70 MB
+2025-05-22 16:02:58,880 - INFO - Baseline - Params (Total): 25,503,912, Speed: 197.2 img/s
+2025-05-22 16:02:58,887 - INFO - Running experiments for sparsities: ['50.0%', '75.0%', '90.0%']
+2025-05-22 16:02:58,887 - INFO - 
+=== Pruning Experiment: 50.0% Target Sparsity ===
+2025-05-22 16:02:59,388 - INFO - Parameters before pruning: Total=25,503,912, Non-Zero=25,503,912
+2025-05-22 16:02:59,388 - INFO - Applying global unstructured pruning to 50.0% sparsity...
+2025-05-22 16:02:59,495 - INFO - Pruning applied to 54 parameter tensors.
+2025-05-22 16:02:59,508 - INFO - Achieved sparsity (with masks, counting zeros): 50.00%
+2025-05-22 16:02:59,509 - INFO - Parameters after masking: Total=25,503,912, Non-Zero (effective)=12,752,456
+2025-05-22 16:02:59,509 - INFO - Starting fine-tuning for 15 epochs
+2025-05-22 16:03:29,200 - INFO - FT Epoch 1 [100/1086] Batch Loss: 0.9239
+2025-05-22 16:03:40,630 - INFO - FT Epoch 1 [200/1086] Batch Loss: 1.0112
+2025-05-22 16:03:52,084 - INFO - FT Epoch 1 [300/1086] Batch Loss: 1.1304
+2025-05-22 16:04:03,564 - INFO - FT Epoch 1 [400/1086] Batch Loss: 1.3920
+2025-05-22 16:04:15,038 - INFO - FT Epoch 1 [500/1086] Batch Loss: 0.6492
+2025-05-22 16:04:26,510 - INFO - FT Epoch 1 [600/1086] Batch Loss: 0.9669
+2025-05-22 16:04:37,999 - INFO - FT Epoch 1 [700/1086] Batch Loss: 1.3745
+2025-05-22 16:04:49,494 - INFO - FT Epoch 1 [800/1086] Batch Loss: 1.1585
+2025-05-22 16:05:00,988 - INFO - FT Epoch 1 [900/1086] Batch Loss: 1.2375
+2025-05-22 16:05:12,474 - INFO - FT Epoch 1 [1000/1086] Batch Loss: 1.0540
+2025-05-22 16:05:22,390 - INFO - FT Epoch 1 [1086/1086] Batch Loss: 1.1212
+2025-05-22 16:05:28,856 - INFO - FT Epoch 1/15 Train Loss: 1.0783 Acc: 0.7867 | Val Loss: 1.4150 Acc: 0.6528 | Time: 149.3s
+2025-05-22 16:05:40,516 - INFO - FT Epoch 2 [100/1086] Batch Loss: 1.3257
+2025-05-22 16:05:52,005 - INFO - FT Epoch 2 [200/1086] Batch Loss: 1.1958
+2025-05-22 16:06:03,503 - INFO - FT Epoch 2 [300/1086] Batch Loss: 1.8987
+2025-05-22 16:06:14,990 - INFO - FT Epoch 2 [400/1086] Batch Loss: 0.6050
+2025-05-22 16:06:26,476 - INFO - FT Epoch 2 [500/1086] Batch Loss: 1.4282
+2025-05-22 16:06:37,970 - INFO - FT Epoch 2 [600/1086] Batch Loss: 1.3312
+2025-05-22 16:06:49,459 - INFO - FT Epoch 2 [700/1086] Batch Loss: 0.9897
+2025-05-22 16:07:00,947 - INFO - FT Epoch 2 [800/1086] Batch Loss: 0.8774
+2025-05-22 16:07:12,433 - INFO - FT Epoch 2 [900/1086] Batch Loss: 1.0955
+2025-05-22 16:07:23,945 - INFO - FT Epoch 2 [1000/1086] Batch Loss: 1.4228
+2025-05-22 16:07:33,821 - INFO - FT Epoch 2 [1086/1086] Batch Loss: 0.8421
+2025-05-22 16:07:40,230 - INFO - FT Epoch 2/15 Train Loss: 1.0250 Acc: 0.7987 | Val Loss: 1.3981 Acc: 0.6533 | Time: 131.4s
+2025-05-22 16:07:51,880 - INFO - FT Epoch 3 [100/1086] Batch Loss: 1.1043
+2025-05-22 16:08:03,378 - INFO - FT Epoch 3 [200/1086] Batch Loss: 1.3316
+2025-05-22 16:08:14,854 - INFO - FT Epoch 3 [300/1086] Batch Loss: 1.2516
+2025-05-22 16:08:26,334 - INFO - FT Epoch 3 [400/1086] Batch Loss: 1.3495
+2025-05-22 16:08:37,814 - INFO - FT Epoch 3 [500/1086] Batch Loss: 1.3539
+2025-05-22 16:08:49,289 - INFO - FT Epoch 3 [600/1086] Batch Loss: 1.0786
+2025-05-22 16:09:00,767 - INFO - FT Epoch 3 [700/1086] Batch Loss: 0.5972
+2025-05-22 16:09:12,250 - INFO - FT Epoch 3 [800/1086] Batch Loss: 1.0295
+2025-05-22 16:09:23,734 - INFO - FT Epoch 3 [900/1086] Batch Loss: 1.1953
+2025-05-22 16:09:35,226 - INFO - FT Epoch 3 [1000/1086] Batch Loss: 0.6571
+2025-05-22 16:09:45,098 - INFO - FT Epoch 3 [1086/1086] Batch Loss: 0.6462
+2025-05-22 16:09:51,603 - INFO - FT Epoch 3/15 Train Loss: 0.9973 Acc: 0.8009 | Val Loss: 1.3852 Acc: 0.6536 | Time: 131.4s
+2025-05-22 16:10:03,265 - INFO - FT Epoch 4 [100/1086] Batch Loss: 0.9716
+2025-05-22 16:10:14,753 - INFO - FT Epoch 4 [200/1086] Batch Loss: 0.6537
+2025-05-22 16:10:26,088 - INFO - FT Epoch 4 [300/1086] Batch Loss: 0.8338
+2025-05-22 16:10:37,433 - INFO - FT Epoch 4 [400/1086] Batch Loss: 0.8675
+2025-05-22 16:10:48,779 - INFO - FT Epoch 4 [500/1086] Batch Loss: 0.8232
+2025-05-22 16:11:00,118 - INFO - FT Epoch 4 [600/1086] Batch Loss: 1.4611
+2025-05-22 16:11:11,457 - INFO - FT Epoch 4 [700/1086] Batch Loss: 1.1976
+2025-05-22 16:11:22,801 - INFO - FT Epoch 4 [800/1086] Batch Loss: 0.7675
+2025-05-22 16:11:34,141 - INFO - FT Epoch 4 [900/1086] Batch Loss: 1.0601
+2025-05-22 16:11:45,476 - INFO - FT Epoch 4 [1000/1086] Batch Loss: 0.7648
+2025-05-22 16:11:55,210 - INFO - FT Epoch 4 [1086/1086] Batch Loss: 1.0125
+2025-05-22 16:12:01,619 - INFO - FT Epoch 4/15 Train Loss: 0.9756 Acc: 0.8066 | Val Loss: 1.3775 Acc: 0.6556 | Time: 130.0s
+2025-05-22 16:12:14,608 - INFO - FT Epoch 5 [100/1086] Batch Loss: 1.2216
+2025-05-22 16:12:28,327 - INFO - FT Epoch 5 [200/1086] Batch Loss: 1.2649
+2025-05-22 16:12:42,363 - INFO - FT Epoch 5 [300/1086] Batch Loss: 1.0754
+2025-05-22 16:12:56,026 - INFO - FT Epoch 5 [400/1086] Batch Loss: 1.0711
+2025-05-22 16:13:08,519 - INFO - FT Epoch 5 [500/1086] Batch Loss: 0.8584
+2025-05-22 16:13:22,023 - INFO - FT Epoch 5 [600/1086] Batch Loss: 0.9169
+2025-05-22 16:13:36,548 - INFO - FT Epoch 5 [700/1086] Batch Loss: 1.4611
+2025-05-22 16:13:48,882 - INFO - FT Epoch 5 [800/1086] Batch Loss: 0.8108
+2025-05-22 16:14:03,754 - INFO - FT Epoch 5 [900/1086] Batch Loss: 0.7584
+2025-05-22 16:14:15,540 - INFO - FT Epoch 5 [1000/1086] Batch Loss: 0.8583
+2025-05-22 16:14:26,280 - INFO - FT Epoch 5 [1086/1086] Batch Loss: 1.3331
+2025-05-22 16:14:33,552 - INFO - FT Epoch 5/15 Train Loss: 0.9696 Acc: 0.8082 | Val Loss: 1.3769 Acc: 0.6605 | Time: 151.9s
+2025-05-22 16:14:33,931 - INFO - Fine-tuning checkpoint saved at epoch 5 to resnet50_pruning_unstructured_run\ft_checkpoint_50.pth
+2025-05-22 16:14:46,755 - INFO - FT Epoch 6 [100/1086] Batch Loss: 0.5628
+2025-05-22 16:15:01,682 - INFO - FT Epoch 6 [200/1086] Batch Loss: 0.7826
+2025-05-22 16:15:16,217 - INFO - FT Epoch 6 [300/1086] Batch Loss: 0.9068
+2025-05-22 16:15:29,329 - INFO - FT Epoch 6 [400/1086] Batch Loss: 0.7047
+2025-05-22 16:15:43,164 - INFO - FT Epoch 6 [500/1086] Batch Loss: 1.2368
+2025-05-22 16:15:58,165 - INFO - FT Epoch 6 [600/1086] Batch Loss: 0.8550
+2025-05-22 16:16:11,862 - INFO - FT Epoch 6 [700/1086] Batch Loss: 0.8206
+2025-05-22 16:16:25,056 - INFO - FT Epoch 6 [800/1086] Batch Loss: 1.0267
+2025-05-22 16:16:39,192 - INFO - FT Epoch 6 [900/1086] Batch Loss: 0.9774
+2025-05-22 16:16:52,771 - INFO - FT Epoch 6 [1000/1086] Batch Loss: 0.8394
+2025-05-22 16:17:03,703 - INFO - FT Epoch 6 [1086/1086] Batch Loss: 1.3004
+2025-05-22 16:17:11,030 - INFO - FT Epoch 6/15 Train Loss: 0.9567 Acc: 0.8120 | Val Loss: 1.3745 Acc: 0.6582 | Time: 157.1s
+2025-05-22 16:17:23,631 - INFO - FT Epoch 7 [100/1086] Batch Loss: 0.6556
+2025-05-22 16:17:36,255 - INFO - FT Epoch 7 [200/1086] Batch Loss: 1.0912
+2025-05-22 16:17:48,315 - INFO - FT Epoch 7 [300/1086] Batch Loss: 0.8333
+2025-05-22 16:18:01,126 - INFO - FT Epoch 7 [400/1086] Batch Loss: 0.9328
+2025-05-22 16:18:13,262 - INFO - FT Epoch 7 [500/1086] Batch Loss: 0.9011
+2025-05-22 16:18:27,191 - INFO - FT Epoch 7 [600/1086] Batch Loss: 1.1452
+2025-05-22 16:18:39,318 - INFO - FT Epoch 7 [700/1086] Batch Loss: 1.0418
+2025-05-22 16:18:51,743 - INFO - FT Epoch 7 [800/1086] Batch Loss: 1.4732
+2025-05-22 16:19:09,389 - INFO - FT Epoch 7 [900/1086] Batch Loss: 0.6480
+2025-05-22 16:19:24,195 - INFO - FT Epoch 7 [1000/1086] Batch Loss: 1.0459
+2025-05-22 16:19:34,436 - INFO - FT Epoch 7 [1086/1086] Batch Loss: 1.3278
+2025-05-22 16:19:41,123 - INFO - FT Epoch 7/15 Train Loss: 0.9529 Acc: 0.8103 | Val Loss: 1.3653 Acc: 0.6610 | Time: 150.1s
+2025-05-22 16:19:53,162 - INFO - FT Epoch 8 [100/1086] Batch Loss: 1.0269
+2025-05-22 16:20:05,019 - INFO - FT Epoch 8 [200/1086] Batch Loss: 0.9209
+2025-05-22 16:20:16,957 - INFO - FT Epoch 8 [300/1086] Batch Loss: 0.6934
+2025-05-22 16:20:28,812 - INFO - FT Epoch 8 [400/1086] Batch Loss: 0.9447
+2025-05-22 16:20:40,796 - INFO - FT Epoch 8 [500/1086] Batch Loss: 0.6897
+2025-05-22 16:20:53,351 - INFO - FT Epoch 8 [600/1086] Batch Loss: 0.7133
+2025-05-22 16:21:05,838 - INFO - FT Epoch 8 [700/1086] Batch Loss: 1.0739
+2025-05-22 16:21:18,243 - INFO - FT Epoch 8 [800/1086] Batch Loss: 0.9129
+2025-05-22 16:21:30,212 - INFO - FT Epoch 8 [900/1086] Batch Loss: 0.7217
+2025-05-22 16:21:50,135 - INFO - FT Epoch 8 [1000/1086] Batch Loss: 0.9523
+2025-05-22 16:22:09,710 - INFO - FT Epoch 8 [1086/1086] Batch Loss: 0.4689
+2025-05-22 16:22:17,322 - INFO - FT Epoch 8/15 Train Loss: 0.9454 Acc: 0.8112 | Val Loss: 1.3678 Acc: 0.6592 | Time: 156.2s
+2025-05-22 16:22:29,616 - INFO - FT Epoch 9 [100/1086] Batch Loss: 0.8115
+2025-05-22 16:22:42,733 - INFO - FT Epoch 9 [200/1086] Batch Loss: 0.3869
+2025-05-22 16:22:54,538 - INFO - FT Epoch 9 [300/1086] Batch Loss: 0.8277
+2025-05-22 16:23:07,726 - INFO - FT Epoch 9 [400/1086] Batch Loss: 1.2820
+2025-05-22 16:23:21,979 - INFO - FT Epoch 9 [500/1086] Batch Loss: 0.7266
+2025-05-22 16:23:34,235 - INFO - FT Epoch 9 [600/1086] Batch Loss: 1.1127
+2025-05-22 16:23:46,497 - INFO - FT Epoch 9 [700/1086] Batch Loss: 0.9205
+2025-05-22 16:23:58,623 - INFO - FT Epoch 9 [800/1086] Batch Loss: 0.8851
+2025-05-22 16:24:11,242 - INFO - FT Epoch 9 [900/1086] Batch Loss: 0.7419
+2025-05-22 16:24:23,132 - INFO - FT Epoch 9 [1000/1086] Batch Loss: 1.1551
+2025-05-22 16:24:33,281 - INFO - FT Epoch 9 [1086/1086] Batch Loss: 1.0461
+2025-05-22 16:24:40,334 - INFO - FT Epoch 9/15 Train Loss: 0.9483 Acc: 0.8113 | Val Loss: 1.3624 Acc: 0.6648 | Time: 143.0s
+2025-05-22 16:24:52,642 - INFO - FT Epoch 10 [100/1086] Batch Loss: 0.8058
+2025-05-22 16:25:05,308 - INFO - FT Epoch 10 [200/1086] Batch Loss: 0.7663
+2025-05-22 16:25:17,578 - INFO - FT Epoch 10 [300/1086] Batch Loss: 0.7643
+2025-05-22 16:25:29,354 - INFO - FT Epoch 10 [400/1086] Batch Loss: 1.1682
+2025-05-22 16:25:41,229 - INFO - FT Epoch 10 [500/1086] Batch Loss: 1.2252
+2025-05-22 16:25:52,970 - INFO - FT Epoch 10 [600/1086] Batch Loss: 1.1425
+2025-05-22 16:26:04,313 - INFO - FT Epoch 10 [700/1086] Batch Loss: 0.7392
+2025-05-22 16:26:15,653 - INFO - FT Epoch 10 [800/1086] Batch Loss: 1.0583
+2025-05-22 16:26:26,995 - INFO - FT Epoch 10 [900/1086] Batch Loss: 0.7122
+2025-05-22 16:26:38,350 - INFO - FT Epoch 10 [1000/1086] Batch Loss: 0.6602
+2025-05-22 16:26:48,070 - INFO - FT Epoch 10 [1086/1086] Batch Loss: 0.6037
+2025-05-22 16:26:54,379 - INFO - FT Epoch 10/15 Train Loss: 0.9245 Acc: 0.8176 | Val Loss: 1.3664 Acc: 0.6663 | Time: 134.0s
+2025-05-22 16:26:54,742 - INFO - Fine-tuning checkpoint saved at epoch 10 to resnet50_pruning_unstructured_run\ft_checkpoint_50.pth
+2025-05-22 16:27:06,231 - INFO - FT Epoch 11 [100/1086] Batch Loss: 1.3033
+2025-05-22 16:27:17,545 - INFO - FT Epoch 11 [200/1086] Batch Loss: 0.8689
+2025-05-22 16:27:28,881 - INFO - FT Epoch 11 [300/1086] Batch Loss: 0.9200
+2025-05-22 16:27:40,223 - INFO - FT Epoch 11 [400/1086] Batch Loss: 0.9476
+2025-05-22 16:27:51,565 - INFO - FT Epoch 11 [500/1086] Batch Loss: 0.9533
+2025-05-22 16:28:02,911 - INFO - FT Epoch 11 [600/1086] Batch Loss: 1.3249
+2025-05-22 16:28:14,258 - INFO - FT Epoch 11 [700/1086] Batch Loss: 0.7162
+2025-05-22 16:28:25,602 - INFO - FT Epoch 11 [800/1086] Batch Loss: 0.9132
+2025-05-22 16:28:36,945 - INFO - FT Epoch 11 [900/1086] Batch Loss: 1.0456
+2025-05-22 16:28:48,293 - INFO - FT Epoch 11 [1000/1086] Batch Loss: 0.7490
+2025-05-22 16:28:58,025 - INFO - FT Epoch 11 [1086/1086] Batch Loss: 1.2237
+2025-05-22 16:29:04,445 - INFO - FT Epoch 11/15 Train Loss: 0.9217 Acc: 0.8174 | Val Loss: 1.3626 Acc: 0.6635 | Time: 129.7s
+2025-05-22 16:29:15,924 - INFO - FT Epoch 12 [100/1086] Batch Loss: 0.6439
+2025-05-22 16:29:27,247 - INFO - FT Epoch 12 [200/1086] Batch Loss: 0.6803
+2025-05-22 16:29:38,589 - INFO - FT Epoch 12 [300/1086] Batch Loss: 0.7803
+2025-05-22 16:29:49,924 - INFO - FT Epoch 12 [400/1086] Batch Loss: 0.8355
+2025-05-22 16:30:01,281 - INFO - FT Epoch 12 [500/1086] Batch Loss: 0.9147
+2025-05-22 16:30:12,624 - INFO - FT Epoch 12 [600/1086] Batch Loss: 0.9038
+2025-05-22 16:30:23,973 - INFO - FT Epoch 12 [700/1086] Batch Loss: 0.7671
+2025-05-22 16:30:35,317 - INFO - FT Epoch 12 [800/1086] Batch Loss: 0.9785
+2025-05-22 16:30:46,665 - INFO - FT Epoch 12 [900/1086] Batch Loss: 1.0164
+2025-05-22 16:30:58,015 - INFO - FT Epoch 12 [1000/1086] Batch Loss: 1.0499
+2025-05-22 16:31:07,754 - INFO - FT Epoch 12 [1086/1086] Batch Loss: 1.0943
+2025-05-22 16:31:14,117 - INFO - FT Epoch 12/15 Train Loss: 0.9192 Acc: 0.8169 | Val Loss: 1.3595 Acc: 0.6633 | Time: 129.7s
+2025-05-22 16:31:25,732 - INFO - FT Epoch 13 [100/1086] Batch Loss: 0.6947
+2025-05-22 16:31:37,046 - INFO - FT Epoch 13 [200/1086] Batch Loss: 1.2154
+2025-05-22 16:31:48,367 - INFO - FT Epoch 13 [300/1086] Batch Loss: 0.7101
+2025-05-22 16:31:59,688 - INFO - FT Epoch 13 [400/1086] Batch Loss: 0.6188
+2025-05-22 16:32:11,046 - INFO - FT Epoch 13 [500/1086] Batch Loss: 0.6492
+2025-05-22 16:32:22,396 - INFO - FT Epoch 13 [600/1086] Batch Loss: 0.7747
+2025-05-22 16:32:33,757 - INFO - FT Epoch 13 [700/1086] Batch Loss: 0.8982
+2025-05-22 16:32:45,112 - INFO - FT Epoch 13 [800/1086] Batch Loss: 0.6817
+2025-05-22 16:32:56,468 - INFO - FT Epoch 13 [900/1086] Batch Loss: 0.7345
+2025-05-22 16:33:07,836 - INFO - FT Epoch 13 [1000/1086] Batch Loss: 0.6912
+2025-05-22 16:33:17,575 - INFO - FT Epoch 13 [1086/1086] Batch Loss: 0.7374
+2025-05-22 16:33:23,908 - INFO - FT Epoch 13/15 Train Loss: 0.9092 Acc: 0.8197 | Val Loss: 1.3594 Acc: 0.6640 | Time: 129.8s
+2025-05-22 16:33:35,392 - INFO - FT Epoch 14 [100/1086] Batch Loss: 0.8423
+2025-05-22 16:33:46,704 - INFO - FT Epoch 14 [200/1086] Batch Loss: 1.8637
+2025-05-22 16:33:58,050 - INFO - FT Epoch 14 [300/1086] Batch Loss: 1.4048
+2025-05-22 16:34:09,404 - INFO - FT Epoch 14 [400/1086] Batch Loss: 0.7049
+2025-05-22 16:34:20,755 - INFO - FT Epoch 14 [500/1086] Batch Loss: 1.0972
+2025-05-22 16:34:32,111 - INFO - FT Epoch 14 [600/1086] Batch Loss: 0.6754
+2025-05-22 16:34:43,470 - INFO - FT Epoch 14 [700/1086] Batch Loss: 1.0447
+2025-05-22 16:34:54,829 - INFO - FT Epoch 14 [800/1086] Batch Loss: 0.9379
+2025-05-22 16:35:06,184 - INFO - FT Epoch 14 [900/1086] Batch Loss: 0.9064
+2025-05-22 16:35:17,541 - INFO - FT Epoch 14 [1000/1086] Batch Loss: 0.6577
+2025-05-22 16:35:27,283 - INFO - FT Epoch 14 [1086/1086] Batch Loss: 1.0820
+2025-05-22 16:35:33,667 - INFO - FT Epoch 14/15 Train Loss: 0.9163 Acc: 0.8188 | Val Loss: 1.3608 Acc: 0.6617 | Time: 129.8s
+2025-05-22 16:35:45,175 - INFO - FT Epoch 15 [100/1086] Batch Loss: 0.9689
+2025-05-22 16:35:56,523 - INFO - FT Epoch 15 [200/1086] Batch Loss: 0.8173
+2025-05-22 16:36:07,871 - INFO - FT Epoch 15 [300/1086] Batch Loss: 0.9676
+2025-05-22 16:36:19,212 - INFO - FT Epoch 15 [400/1086] Batch Loss: 1.1302
+2025-05-22 16:36:30,556 - INFO - FT Epoch 15 [500/1086] Batch Loss: 1.7250
+2025-05-22 16:36:41,902 - INFO - FT Epoch 15 [600/1086] Batch Loss: 0.5835
+2025-05-22 16:36:53,254 - INFO - FT Epoch 15 [700/1086] Batch Loss: 0.7440
+2025-05-22 16:37:04,606 - INFO - FT Epoch 15 [800/1086] Batch Loss: 0.9199
+2025-05-22 16:37:15,953 - INFO - FT Epoch 15 [900/1086] Batch Loss: 1.0654
+2025-05-22 16:37:27,308 - INFO - FT Epoch 15 [1000/1086] Batch Loss: 0.8142
+2025-05-22 16:37:37,440 - INFO - FT Epoch 15 [1086/1086] Batch Loss: 1.3858
+2025-05-22 16:37:44,721 - INFO - FT Epoch 15/15 Train Loss: 0.9184 Acc: 0.8167 | Val Loss: 1.3557 Acc: 0.6645 | Time: 131.1s
+2025-05-22 16:37:45,119 - INFO - Fine-tuning checkpoint saved at epoch 15 to resnet50_pruning_unstructured_run\ft_checkpoint_50.pth
+2025-05-22 16:37:45,119 - INFO - Fine-tuning fully completed. Removing checkpoint: resnet50_pruning_unstructured_run\ft_checkpoint_50.pth
+2025-05-22 16:37:45,138 - INFO - Fine-tuning process finished.
+2025-05-22 16:37:45,140 - INFO - Removing pruning masks...
+2025-05-22 16:37:45,145 - INFO - Removed pruning masks from 54 modules.
+2025-05-22 16:37:45,146 - INFO - Converted pruned weights to sparse tensors
+2025-05-22 16:37:45,148 - INFO - Total sparse tensors: 0
+2025-05-22 16:37:45,160 - INFO - Final physical sparsity (masks removed): 50.00%
+2025-05-22 16:37:45,161 - INFO - Parameters after mask removal: Total=25,503,912, Non-Zero=12,752,456
+2025-05-22 16:37:45,314 - INFO - Pruned model saved: resnet50_pruning_unstructured_run\resnet50_pruned_50unstructured_ft.pth
+2025-05-22 16:38:02,200 - INFO - Final Evaluation - Acc: 0.6645, Val Loss: 1.3557
+2025-05-22 16:38:02,200 - INFO - Final Evaluation - Speed: 189.2 img/s
+2025-05-22 16:38:02,200 - INFO - Final Evaluation - Dense Size: 97.70 MB, Sparse Size: 49.05 MB
+2025-05-22 16:38:02,207 - INFO - 
+=== Pruning Experiment: 75.0% Target Sparsity ===
+2025-05-22 16:38:02,914 - INFO - Parameters before pruning: Total=25,503,912, Non-Zero=25,503,912
+2025-05-22 16:38:02,914 - INFO - Applying global unstructured pruning to 75.0% sparsity...
+2025-05-22 16:38:02,956 - INFO - Pruning applied to 54 parameter tensors.
+2025-05-22 16:38:02,971 - INFO - Achieved sparsity (with masks, counting zeros): 75.00%
+2025-05-22 16:38:02,972 - INFO - Parameters after masking: Total=25,503,912, Non-Zero (effective)=6,376,728
+2025-05-22 16:38:02,972 - INFO - Starting fine-tuning for 15 epochs
+2025-05-22 16:38:15,624 - INFO - FT Epoch 1 [100/1086] Batch Loss: 2.3437
+2025-05-22 16:38:27,533 - INFO - FT Epoch 1 [200/1086] Batch Loss: 1.9385
+2025-05-22 16:38:39,353 - INFO - FT Epoch 1 [300/1086] Batch Loss: 2.3316
+2025-05-22 16:38:51,596 - INFO - FT Epoch 1 [400/1086] Batch Loss: 2.3777
+2025-05-22 16:39:03,344 - INFO - FT Epoch 1 [500/1086] Batch Loss: 1.6902
+2025-05-22 16:39:15,268 - INFO - FT Epoch 1 [600/1086] Batch Loss: 2.1490
+2025-05-22 16:39:27,390 - INFO - FT Epoch 1 [700/1086] Batch Loss: 1.4953
+2025-05-22 16:39:38,738 - INFO - FT Epoch 1 [800/1086] Batch Loss: 1.6914
+2025-05-22 16:39:50,078 - INFO - FT Epoch 1 [900/1086] Batch Loss: 1.8927
+2025-05-22 16:40:01,415 - INFO - FT Epoch 1 [1000/1086] Batch Loss: 1.9848
+2025-05-22 16:40:11,145 - INFO - FT Epoch 1 [1086/1086] Batch Loss: 1.4244
+2025-05-22 16:40:17,726 - INFO - FT Epoch 1/15 Train Loss: 2.0794 Acc: 0.6684 | Val Loss: 1.8388 Acc: 0.5921 | Time: 134.8s
+2025-05-22 16:40:29,310 - INFO - FT Epoch 2 [100/1086] Batch Loss: 1.6609
+2025-05-22 16:40:40,665 - INFO - FT Epoch 2 [200/1086] Batch Loss: 1.5761
+2025-05-22 16:40:52,024 - INFO - FT Epoch 2 [300/1086] Batch Loss: 1.7008
+2025-05-22 16:41:03,383 - INFO - FT Epoch 2 [400/1086] Batch Loss: 1.7959
+2025-05-22 16:41:14,740 - INFO - FT Epoch 2 [500/1086] Batch Loss: 1.2684
+2025-05-22 16:41:26,094 - INFO - FT Epoch 2 [600/1086] Batch Loss: 1.5100
+2025-05-22 16:41:37,446 - INFO - FT Epoch 2 [700/1086] Batch Loss: 1.9658
+2025-05-22 16:41:48,804 - INFO - FT Epoch 2 [800/1086] Batch Loss: 1.4712
+2025-05-22 16:42:00,157 - INFO - FT Epoch 2 [900/1086] Batch Loss: 1.5680
+2025-05-22 16:42:11,514 - INFO - FT Epoch 2 [1000/1086] Batch Loss: 1.9794
+2025-05-22 16:42:21,269 - INFO - FT Epoch 2 [1086/1086] Batch Loss: 1.7570
+2025-05-22 16:42:27,646 - INFO - FT Epoch 2/15 Train Loss: 1.7903 Acc: 0.6923 | Val Loss: 1.7512 Acc: 0.5988 | Time: 129.9s
+2025-05-22 16:42:39,149 - INFO - FT Epoch 3 [100/1086] Batch Loss: 1.7304
+2025-05-22 16:42:50,502 - INFO - FT Epoch 3 [200/1086] Batch Loss: 1.7272
+2025-05-22 16:43:01,861 - INFO - FT Epoch 3 [300/1086] Batch Loss: 1.4947
+2025-05-22 16:43:13,213 - INFO - FT Epoch 3 [400/1086] Batch Loss: 1.6968
+2025-05-22 16:43:24,568 - INFO - FT Epoch 3 [500/1086] Batch Loss: 1.5707
+2025-05-22 16:43:35,925 - INFO - FT Epoch 3 [600/1086] Batch Loss: 1.4105
+2025-05-22 16:43:47,280 - INFO - FT Epoch 3 [700/1086] Batch Loss: 1.4439
+2025-05-22 16:43:58,639 - INFO - FT Epoch 3 [800/1086] Batch Loss: 1.9643
+2025-05-22 16:44:09,989 - INFO - FT Epoch 3 [900/1086] Batch Loss: 1.9587
+2025-05-22 16:44:21,341 - INFO - FT Epoch 3 [1000/1086] Batch Loss: 1.3353
+2025-05-22 16:44:31,082 - INFO - FT Epoch 3 [1086/1086] Batch Loss: 1.5325
+2025-05-22 16:44:37,454 - INFO - FT Epoch 3/15 Train Loss: 1.6866 Acc: 0.7046 | Val Loss: 1.7014 Acc: 0.6069 | Time: 129.8s
+2025-05-22 16:44:48,967 - INFO - FT Epoch 4 [100/1086] Batch Loss: 1.3413
+2025-05-22 16:45:00,311 - INFO - FT Epoch 4 [200/1086] Batch Loss: 1.2837
+2025-05-22 16:45:11,654 - INFO - FT Epoch 4 [300/1086] Batch Loss: 2.0069
+2025-05-22 16:45:22,999 - INFO - FT Epoch 4 [400/1086] Batch Loss: 1.4211
+2025-05-22 16:45:34,345 - INFO - FT Epoch 4 [500/1086] Batch Loss: 1.5516
+2025-05-22 16:45:45,694 - INFO - FT Epoch 4 [600/1086] Batch Loss: 1.5849
+2025-05-22 16:45:57,039 - INFO - FT Epoch 4 [700/1086] Batch Loss: 1.2914
+2025-05-22 16:46:08,392 - INFO - FT Epoch 4 [800/1086] Batch Loss: 1.1456
+2025-05-22 16:46:19,743 - INFO - FT Epoch 4 [900/1086] Batch Loss: 1.5608
+2025-05-22 16:46:31,094 - INFO - FT Epoch 4 [1000/1086] Batch Loss: 1.6978
+2025-05-22 16:46:40,838 - INFO - FT Epoch 4 [1086/1086] Batch Loss: 1.2272
+2025-05-22 16:46:47,174 - INFO - FT Epoch 4/15 Train Loss: 1.6171 Acc: 0.7105 | Val Loss: 1.6698 Acc: 0.6095 | Time: 129.7s
+2025-05-22 16:46:58,724 - INFO - FT Epoch 5 [100/1086] Batch Loss: 1.2497
+2025-05-22 16:47:10,078 - INFO - FT Epoch 5 [200/1086] Batch Loss: 1.3379
+2025-05-22 16:47:21,427 - INFO - FT Epoch 5 [300/1086] Batch Loss: 1.6572
+2025-05-22 16:47:32,781 - INFO - FT Epoch 5 [400/1086] Batch Loss: 0.9257
+2025-05-22 16:47:44,134 - INFO - FT Epoch 5 [500/1086] Batch Loss: 1.4288
+2025-05-22 16:47:55,485 - INFO - FT Epoch 5 [600/1086] Batch Loss: 1.5703
+2025-05-22 16:48:06,838 - INFO - FT Epoch 5 [700/1086] Batch Loss: 1.4618
+2025-05-22 16:48:18,192 - INFO - FT Epoch 5 [800/1086] Batch Loss: 1.6499
+2025-05-22 16:48:29,542 - INFO - FT Epoch 5 [900/1086] Batch Loss: 1.6807
+2025-05-22 16:48:40,896 - INFO - FT Epoch 5 [1000/1086] Batch Loss: 1.5825
+2025-05-22 16:48:50,638 - INFO - FT Epoch 5 [1086/1086] Batch Loss: 1.4901
+2025-05-22 16:48:56,991 - INFO - FT Epoch 5/15 Train Loss: 1.5883 Acc: 0.7163 | Val Loss: 1.6429 Acc: 0.6087 | Time: 129.8s
+2025-05-22 16:48:57,376 - INFO - Fine-tuning checkpoint saved at epoch 5 to resnet50_pruning_unstructured_run\ft_checkpoint_75.pth
+2025-05-22 16:49:08,910 - INFO - FT Epoch 6 [100/1086] Batch Loss: 1.3042
+2025-05-22 16:49:20,258 - INFO - FT Epoch 6 [200/1086] Batch Loss: 1.3178
+2025-05-22 16:49:31,610 - INFO - FT Epoch 6 [300/1086] Batch Loss: 1.3151
+2025-05-22 16:49:42,969 - INFO - FT Epoch 6 [400/1086] Batch Loss: 1.6606
+2025-05-22 16:49:54,323 - INFO - FT Epoch 6 [500/1086] Batch Loss: 1.9624
+2025-05-22 16:50:05,674 - INFO - FT Epoch 6 [600/1086] Batch Loss: 2.2615
+2025-05-22 16:50:17,026 - INFO - FT Epoch 6 [700/1086] Batch Loss: 1.4342
+2025-05-22 16:50:28,386 - INFO - FT Epoch 6 [800/1086] Batch Loss: 1.6893
+2025-05-22 16:50:39,738 - INFO - FT Epoch 6 [900/1086] Batch Loss: 1.3251
+2025-05-22 16:50:51,084 - INFO - FT Epoch 6 [1000/1086] Batch Loss: 1.4623
+2025-05-22 16:51:00,828 - INFO - FT Epoch 6 [1086/1086] Batch Loss: 1.6256
+2025-05-22 16:51:07,219 - INFO - FT Epoch 6/15 Train Loss: 1.5374 Acc: 0.7241 | Val Loss: 1.6280 Acc: 0.6131 | Time: 129.8s
+2025-05-22 16:51:18,774 - INFO - FT Epoch 7 [100/1086] Batch Loss: 1.5114
+2025-05-22 16:51:30,127 - INFO - FT Epoch 7 [200/1086] Batch Loss: 1.7025
+2025-05-22 16:51:41,473 - INFO - FT Epoch 7 [300/1086] Batch Loss: 1.5642
+2025-05-22 16:51:52,831 - INFO - FT Epoch 7 [400/1086] Batch Loss: 1.5741
+2025-05-22 16:52:04,187 - INFO - FT Epoch 7 [500/1086] Batch Loss: 1.1735
+2025-05-22 16:52:15,531 - INFO - FT Epoch 7 [600/1086] Batch Loss: 1.4975
+2025-05-22 16:52:26,886 - INFO - FT Epoch 7 [700/1086] Batch Loss: 1.6121
+2025-05-22 16:52:38,247 - INFO - FT Epoch 7 [800/1086] Batch Loss: 0.9997
+2025-05-22 16:52:49,600 - INFO - FT Epoch 7 [900/1086] Batch Loss: 1.3770
+2025-05-22 16:53:00,954 - INFO - FT Epoch 7 [1000/1086] Batch Loss: 1.5324
+2025-05-22 16:53:10,694 - INFO - FT Epoch 7 [1086/1086] Batch Loss: 1.3825
+2025-05-22 16:53:17,175 - INFO - FT Epoch 7/15 Train Loss: 1.5245 Acc: 0.7216 | Val Loss: 1.6140 Acc: 0.6161 | Time: 130.0s
+2025-05-22 16:53:28,720 - INFO - FT Epoch 8 [100/1086] Batch Loss: 1.7664
+2025-05-22 16:53:40,071 - INFO - FT Epoch 8 [200/1086] Batch Loss: 1.4462
+2025-05-22 16:53:51,415 - INFO - FT Epoch 8 [300/1086] Batch Loss: 1.2332
+2025-05-22 16:54:02,758 - INFO - FT Epoch 8 [400/1086] Batch Loss: 1.8586
+2025-05-22 16:54:14,098 - INFO - FT Epoch 8 [500/1086] Batch Loss: 1.3948
+2025-05-22 16:54:25,437 - INFO - FT Epoch 8 [600/1086] Batch Loss: 1.5503
+2025-05-22 16:54:36,858 - INFO - FT Epoch 8 [700/1086] Batch Loss: 2.0291
+2025-05-22 16:54:48,097 - INFO - FT Epoch 8 [800/1086] Batch Loss: 1.2617
+2025-05-22 16:54:59,332 - INFO - FT Epoch 8 [900/1086] Batch Loss: 1.3257
+2025-05-22 16:55:10,566 - INFO - FT Epoch 8 [1000/1086] Batch Loss: 1.5074
+2025-05-22 16:55:20,207 - INFO - FT Epoch 8 [1086/1086] Batch Loss: 1.4501
+2025-05-22 16:55:26,525 - INFO - FT Epoch 8/15 Train Loss: 1.4990 Acc: 0.7265 | Val Loss: 1.6040 Acc: 0.6146 | Time: 129.3s
+2025-05-22 16:55:37,941 - INFO - FT Epoch 9 [100/1086] Batch Loss: 1.6650
+2025-05-22 16:55:49,197 - INFO - FT Epoch 9 [200/1086] Batch Loss: 1.2171
+2025-05-22 16:56:00,451 - INFO - FT Epoch 9 [300/1086] Batch Loss: 1.4839
+2025-05-22 16:56:11,709 - INFO - FT Epoch 9 [400/1086] Batch Loss: 1.4126
+2025-05-22 16:56:22,962 - INFO - FT Epoch 9 [500/1086] Batch Loss: 1.7850
+2025-05-22 16:56:34,214 - INFO - FT Epoch 9 [600/1086] Batch Loss: 1.1442
+2025-05-22 16:56:45,468 - INFO - FT Epoch 9 [700/1086] Batch Loss: 1.0907
+2025-05-22 16:56:56,714 - INFO - FT Epoch 9 [800/1086] Batch Loss: 1.7596
+2025-05-22 16:57:07,968 - INFO - FT Epoch 9 [900/1086] Batch Loss: 1.4909
+2025-05-22 16:57:19,216 - INFO - FT Epoch 9 [1000/1086] Batch Loss: 1.1946
+2025-05-22 16:57:28,872 - INFO - FT Epoch 9 [1086/1086] Batch Loss: 1.7255
+2025-05-22 16:57:35,231 - INFO - FT Epoch 9/15 Train Loss: 1.4822 Acc: 0.7280 | Val Loss: 1.5919 Acc: 0.6189 | Time: 128.7s
+2025-05-22 16:57:46,630 - INFO - FT Epoch 10 [100/1086] Batch Loss: 2.0262
+2025-05-22 16:57:57,883 - INFO - FT Epoch 10 [200/1086] Batch Loss: 1.2248
+2025-05-22 16:58:09,134 - INFO - FT Epoch 10 [300/1086] Batch Loss: 1.3833
+2025-05-22 16:58:20,385 - INFO - FT Epoch 10 [400/1086] Batch Loss: 1.0175
+2025-05-22 16:58:31,635 - INFO - FT Epoch 10 [500/1086] Batch Loss: 1.3835
+2025-05-22 16:58:42,894 - INFO - FT Epoch 10 [600/1086] Batch Loss: 1.2838
+2025-05-22 16:58:54,143 - INFO - FT Epoch 10 [700/1086] Batch Loss: 1.3231
+2025-05-22 16:59:05,395 - INFO - FT Epoch 10 [800/1086] Batch Loss: 1.3077
+2025-05-22 16:59:16,649 - INFO - FT Epoch 10 [900/1086] Batch Loss: 0.8449
+2025-05-22 16:59:27,904 - INFO - FT Epoch 10 [1000/1086] Batch Loss: 1.9904
+2025-05-22 16:59:37,555 - INFO - FT Epoch 10 [1086/1086] Batch Loss: 1.3837
+2025-05-22 16:59:43,865 - INFO - FT Epoch 10/15 Train Loss: 1.4507 Acc: 0.7325 | Val Loss: 1.5874 Acc: 0.6174 | Time: 128.6s
+2025-05-22 16:59:44,254 - INFO - Fine-tuning checkpoint saved at epoch 10 to resnet50_pruning_unstructured_run\ft_checkpoint_75.pth
+2025-05-22 16:59:55,665 - INFO - FT Epoch 11 [100/1086] Batch Loss: 1.2251
+2025-05-22 17:00:06,921 - INFO - FT Epoch 11 [200/1086] Batch Loss: 1.0896
+2025-05-22 17:00:18,181 - INFO - FT Epoch 11 [300/1086] Batch Loss: 1.2015
+2025-05-22 17:00:29,432 - INFO - FT Epoch 11 [400/1086] Batch Loss: 1.2498
+2025-05-22 17:00:40,684 - INFO - FT Epoch 11 [500/1086] Batch Loss: 1.4429
+2025-05-22 17:00:51,934 - INFO - FT Epoch 11 [600/1086] Batch Loss: 1.8921
+2025-05-22 17:01:03,193 - INFO - FT Epoch 11 [700/1086] Batch Loss: 1.4241
+2025-05-22 17:01:14,442 - INFO - FT Epoch 11 [800/1086] Batch Loss: 1.4683
+2025-05-22 17:01:25,695 - INFO - FT Epoch 11 [900/1086] Batch Loss: 1.4361
+2025-05-22 17:01:36,950 - INFO - FT Epoch 11 [1000/1086] Batch Loss: 0.9610
+2025-05-22 17:01:46,607 - INFO - FT Epoch 11 [1086/1086] Batch Loss: 1.3431
+2025-05-22 17:01:52,932 - INFO - FT Epoch 11/15 Train Loss: 1.4417 Acc: 0.7344 | Val Loss: 1.5806 Acc: 0.6194 | Time: 128.7s
+2025-05-22 17:02:04,370 - INFO - FT Epoch 12 [100/1086] Batch Loss: 1.1696
+2025-05-22 17:02:15,617 - INFO - FT Epoch 12 [200/1086] Batch Loss: 1.1133
+2025-05-22 17:02:26,869 - INFO - FT Epoch 12 [300/1086] Batch Loss: 1.1642
+2025-05-22 17:02:38,127 - INFO - FT Epoch 12 [400/1086] Batch Loss: 1.4047
+2025-05-22 17:02:49,378 - INFO - FT Epoch 12 [500/1086] Batch Loss: 1.6575
+2025-05-22 17:03:00,633 - INFO - FT Epoch 12 [600/1086] Batch Loss: 1.3461
+2025-05-22 17:03:11,884 - INFO - FT Epoch 12 [700/1086] Batch Loss: 1.4534
+2025-05-22 17:03:23,143 - INFO - FT Epoch 12 [800/1086] Batch Loss: 1.3182
+2025-05-22 17:03:34,391 - INFO - FT Epoch 12 [900/1086] Batch Loss: 1.5913
+2025-05-22 17:03:45,645 - INFO - FT Epoch 12 [1000/1086] Batch Loss: 1.3935
+2025-05-22 17:03:55,300 - INFO - FT Epoch 12 [1086/1086] Batch Loss: 1.7123
+2025-05-22 17:04:01,758 - INFO - FT Epoch 12/15 Train Loss: 1.4315 Acc: 0.7354 | Val Loss: 1.5796 Acc: 0.6192 | Time: 128.8s
+2025-05-22 17:04:13,185 - INFO - FT Epoch 13 [100/1086] Batch Loss: 1.7935
+2025-05-22 17:04:24,440 - INFO - FT Epoch 13 [200/1086] Batch Loss: 1.3783
+2025-05-22 17:04:35,690 - INFO - FT Epoch 13 [300/1086] Batch Loss: 1.1557
+2025-05-22 17:04:46,939 - INFO - FT Epoch 13 [400/1086] Batch Loss: 1.6834
+2025-05-22 17:04:58,192 - INFO - FT Epoch 13 [500/1086] Batch Loss: 1.4803
+2025-05-22 17:05:09,441 - INFO - FT Epoch 13 [600/1086] Batch Loss: 1.4799
+2025-05-22 17:05:20,694 - INFO - FT Epoch 13 [700/1086] Batch Loss: 1.2945
+2025-05-22 17:05:31,948 - INFO - FT Epoch 13 [800/1086] Batch Loss: 1.3361
+2025-05-22 17:05:43,206 - INFO - FT Epoch 13 [900/1086] Batch Loss: 1.3301
+2025-05-22 17:05:54,453 - INFO - FT Epoch 13 [1000/1086] Batch Loss: 1.0665
+2025-05-22 17:06:04,109 - INFO - FT Epoch 13 [1086/1086] Batch Loss: 1.1035
+2025-05-22 17:06:10,397 - INFO - FT Epoch 13/15 Train Loss: 1.4189 Acc: 0.7373 | Val Loss: 1.5679 Acc: 0.6248 | Time: 128.6s
+2025-05-22 17:06:21,841 - INFO - FT Epoch 14 [100/1086] Batch Loss: 0.9911
+2025-05-22 17:06:33,097 - INFO - FT Epoch 14 [200/1086] Batch Loss: 1.1811
+2025-05-22 17:06:44,346 - INFO - FT Epoch 14 [300/1086] Batch Loss: 1.4662
+2025-05-22 17:06:55,596 - INFO - FT Epoch 14 [400/1086] Batch Loss: 1.2724
+2025-05-22 17:07:06,848 - INFO - FT Epoch 14 [500/1086] Batch Loss: 1.1987
+2025-05-22 17:07:18,106 - INFO - FT Epoch 14 [600/1086] Batch Loss: 1.2064
+2025-05-22 17:07:29,364 - INFO - FT Epoch 14 [700/1086] Batch Loss: 1.3008
+2025-05-22 17:07:40,618 - INFO - FT Epoch 14 [800/1086] Batch Loss: 0.9639
+2025-05-22 17:07:51,867 - INFO - FT Epoch 14 [900/1086] Batch Loss: 1.3392
+2025-05-22 17:08:03,123 - INFO - FT Epoch 14 [1000/1086] Batch Loss: 0.8927
+2025-05-22 17:08:12,778 - INFO - FT Epoch 14 [1086/1086] Batch Loss: 1.0991
+2025-05-22 17:08:19,217 - INFO - FT Epoch 14/15 Train Loss: 1.4009 Acc: 0.7367 | Val Loss: 1.5598 Acc: 0.6210 | Time: 128.8s
+2025-05-22 17:08:30,630 - INFO - FT Epoch 15 [100/1086] Batch Loss: 1.0990
+2025-05-22 17:08:41,882 - INFO - FT Epoch 15 [200/1086] Batch Loss: 1.1871
+2025-05-22 17:08:53,150 - INFO - FT Epoch 15 [300/1086] Batch Loss: 1.0133
+2025-05-22 17:09:04,406 - INFO - FT Epoch 15 [400/1086] Batch Loss: 1.5912
+2025-05-22 17:09:15,658 - INFO - FT Epoch 15 [500/1086] Batch Loss: 1.7701
+2025-05-22 17:09:26,915 - INFO - FT Epoch 15 [600/1086] Batch Loss: 1.3743
+2025-05-22 17:09:38,174 - INFO - FT Epoch 15 [700/1086] Batch Loss: 1.3565
+2025-05-22 17:09:49,425 - INFO - FT Epoch 15 [800/1086] Batch Loss: 1.6428
+2025-05-22 17:10:00,680 - INFO - FT Epoch 15 [900/1086] Batch Loss: 0.9556
+2025-05-22 17:10:11,937 - INFO - FT Epoch 15 [1000/1086] Batch Loss: 1.0046
+2025-05-22 17:10:21,592 - INFO - FT Epoch 15 [1086/1086] Batch Loss: 1.5772
+2025-05-22 17:10:27,939 - INFO - FT Epoch 15/15 Train Loss: 1.3927 Acc: 0.7396 | Val Loss: 1.5553 Acc: 0.6240 | Time: 128.7s
+2025-05-22 17:10:28,331 - INFO - Fine-tuning checkpoint saved at epoch 15 to resnet50_pruning_unstructured_run\ft_checkpoint_75.pth
+2025-05-22 17:10:28,332 - INFO - Fine-tuning fully completed. Removing checkpoint: resnet50_pruning_unstructured_run\ft_checkpoint_75.pth
+2025-05-22 17:10:28,353 - INFO - Fine-tuning process finished.
+2025-05-22 17:10:28,354 - INFO - Removing pruning masks...
+2025-05-22 17:10:28,358 - INFO - Removed pruning masks from 54 modules.
+2025-05-22 17:10:28,359 - INFO - Converted pruned weights to sparse tensors
+2025-05-22 17:10:28,361 - INFO - Total sparse tensors: 0
+2025-05-22 17:10:28,372 - INFO - Final physical sparsity (masks removed): 75.00%
+2025-05-22 17:10:28,372 - INFO - Parameters after mask removal: Total=25,503,912, Non-Zero=6,376,728
+2025-05-22 17:10:28,513 - INFO - Pruned model saved: resnet50_pruning_unstructured_run\resnet50_pruned_75unstructured_ft.pth
+2025-05-22 17:10:44,325 - INFO - Final Evaluation - Acc: 0.6240, Val Loss: 1.5553
+2025-05-22 17:10:44,325 - INFO - Final Evaluation - Speed: 188.6 img/s
+2025-05-22 17:10:44,325 - INFO - Final Evaluation - Dense Size: 97.70 MB, Sparse Size: 24.73 MB
+2025-05-22 17:10:44,329 - INFO - 
+=== Pruning Experiment: 90.0% Target Sparsity ===
+2025-05-22 17:10:44,865 - INFO - Parameters before pruning: Total=25,503,912, Non-Zero=25,503,912
+2025-05-22 17:10:44,866 - INFO - Applying global unstructured pruning to 90.0% sparsity...
+2025-05-22 17:10:44,921 - INFO - Pruning applied to 54 parameter tensors.
+2025-05-22 17:10:44,937 - INFO - Achieved sparsity (with masks, counting zeros): 90.00%
+2025-05-22 17:10:44,937 - INFO - Parameters after masking: Total=25,503,912, Non-Zero (effective)=2,551,291
+2025-05-22 17:10:44,937 - INFO - Starting fine-tuning for 15 epochs
+2025-05-22 17:10:56,393 - INFO - FT Epoch 1 [100/1086] Batch Loss: 5.7511
+2025-05-22 17:11:07,607 - INFO - FT Epoch 1 [200/1086] Batch Loss: 6.1263
+2025-05-22 17:11:18,825 - INFO - FT Epoch 1 [300/1086] Batch Loss: 6.1300
+2025-05-22 17:11:30,086 - INFO - FT Epoch 1 [400/1086] Batch Loss: 5.9231
+2025-05-22 17:11:41,343 - INFO - FT Epoch 1 [500/1086] Batch Loss: 5.8487
+2025-05-22 17:11:52,602 - INFO - FT Epoch 1 [600/1086] Batch Loss: 5.4056
+2025-05-22 17:12:03,867 - INFO - FT Epoch 1 [700/1086] Batch Loss: 5.4079
+2025-05-22 17:12:15,126 - INFO - FT Epoch 1 [800/1086] Batch Loss: 5.7113
+2025-05-22 17:12:26,385 - INFO - FT Epoch 1 [900/1086] Batch Loss: 5.3181
+2025-05-22 17:12:37,648 - INFO - FT Epoch 1 [1000/1086] Batch Loss: 5.1412
+2025-05-22 17:12:47,309 - INFO - FT Epoch 1 [1086/1086] Batch Loss: 5.3765
+2025-05-22 17:12:54,076 - INFO - FT Epoch 1/15 Train Loss: 5.6425 Acc: 0.1974 | Val Loss: 5.0051 Acc: 0.2337 | Time: 129.1s
+2025-05-22 17:13:05,516 - INFO - FT Epoch 2 [100/1086] Batch Loss: 5.3048
+2025-05-22 17:13:16,775 - INFO - FT Epoch 2 [200/1086] Batch Loss: 5.1753
+2025-05-22 17:13:28,033 - INFO - FT Epoch 2 [300/1086] Batch Loss: 5.2203
+2025-05-22 17:13:39,293 - INFO - FT Epoch 2 [400/1086] Batch Loss: 5.2222
+2025-05-22 17:13:50,557 - INFO - FT Epoch 2 [500/1086] Batch Loss: 4.6814
+2025-05-22 17:14:01,819 - INFO - FT Epoch 2 [600/1086] Batch Loss: 5.0395
+2025-05-22 17:14:13,088 - INFO - FT Epoch 2 [700/1086] Batch Loss: 5.2635
+2025-05-22 17:14:24,343 - INFO - FT Epoch 2 [800/1086] Batch Loss: 4.5341
+2025-05-22 17:14:35,605 - INFO - FT Epoch 2 [900/1086] Batch Loss: 4.8377
+2025-05-22 17:14:46,867 - INFO - FT Epoch 2 [1000/1086] Batch Loss: 4.6869
+2025-05-22 17:14:56,525 - INFO - FT Epoch 2 [1086/1086] Batch Loss: 5.1241
+2025-05-22 17:15:03,244 - INFO - FT Epoch 2/15 Train Loss: 4.9479 Acc: 0.2627 | Val Loss: 4.3265 Acc: 0.2710 | Time: 129.2s
+2025-05-22 17:15:14,704 - INFO - FT Epoch 3 [100/1086] Batch Loss: 4.7779
+2025-05-22 17:15:25,964 - INFO - FT Epoch 3 [200/1086] Batch Loss: 4.7309
+2025-05-22 17:15:37,224 - INFO - FT Epoch 3 [300/1086] Batch Loss: 4.7221
+2025-05-22 17:15:48,492 - INFO - FT Epoch 3 [400/1086] Batch Loss: 4.5441
+2025-05-22 17:15:59,752 - INFO - FT Epoch 3 [500/1086] Batch Loss: 4.6087
+2025-05-22 17:16:11,011 - INFO - FT Epoch 3 [600/1086] Batch Loss: 4.3906
+2025-05-22 17:16:22,272 - INFO - FT Epoch 3 [700/1086] Batch Loss: 4.5354
+2025-05-22 17:16:33,534 - INFO - FT Epoch 3 [800/1086] Batch Loss: 4.5157
+2025-05-22 17:16:44,790 - INFO - FT Epoch 3 [900/1086] Batch Loss: 4.2092
+2025-05-22 17:16:56,048 - INFO - FT Epoch 3 [1000/1086] Batch Loss: 4.0828
+2025-05-22 17:17:05,708 - INFO - FT Epoch 3 [1086/1086] Batch Loss: 4.7875
+2025-05-22 17:17:12,360 - INFO - FT Epoch 3/15 Train Loss: 4.5124 Acc: 0.2886 | Val Loss: 3.9281 Acc: 0.2967 | Time: 129.1s
+2025-05-22 17:17:23,786 - INFO - FT Epoch 4 [100/1086] Batch Loss: 4.5406
+2025-05-22 17:17:35,043 - INFO - FT Epoch 4 [200/1086] Batch Loss: 4.3988
+2025-05-22 17:17:46,298 - INFO - FT Epoch 4 [300/1086] Batch Loss: 4.3697
+2025-05-22 17:17:57,560 - INFO - FT Epoch 4 [400/1086] Batch Loss: 3.9265
+2025-05-22 17:18:08,822 - INFO - FT Epoch 4 [500/1086] Batch Loss: 4.0491
+2025-05-22 17:18:20,076 - INFO - FT Epoch 4 [600/1086] Batch Loss: 4.3501
+2025-05-22 17:18:31,338 - INFO - FT Epoch 4 [700/1086] Batch Loss: 4.1768
+2025-05-22 17:18:42,596 - INFO - FT Epoch 4 [800/1086] Batch Loss: 4.5435
+2025-05-22 17:18:53,859 - INFO - FT Epoch 4 [900/1086] Batch Loss: 4.1251
+2025-05-22 17:19:05,118 - INFO - FT Epoch 4 [1000/1086] Batch Loss: 4.4005
+2025-05-22 17:19:14,775 - INFO - FT Epoch 4 [1086/1086] Batch Loss: 3.6708
+2025-05-22 17:19:21,364 - INFO - FT Epoch 4/15 Train Loss: 4.2329 Acc: 0.3069 | Val Loss: 3.6911 Acc: 0.3151 | Time: 129.0s
+2025-05-22 17:19:32,811 - INFO - FT Epoch 5 [100/1086] Batch Loss: 3.5847
+2025-05-22 17:19:44,075 - INFO - FT Epoch 5 [200/1086] Batch Loss: 4.5895
+2025-05-22 17:19:55,327 - INFO - FT Epoch 5 [300/1086] Batch Loss: 4.0100
+2025-05-22 17:20:06,587 - INFO - FT Epoch 5 [400/1086] Batch Loss: 4.1491
+2025-05-22 17:20:17,845 - INFO - FT Epoch 5 [500/1086] Batch Loss: 3.9957
+2025-05-22 17:20:29,106 - INFO - FT Epoch 5 [600/1086] Batch Loss: 4.0390
+2025-05-22 17:20:40,362 - INFO - FT Epoch 5 [700/1086] Batch Loss: 4.3101
+2025-05-22 17:20:51,619 - INFO - FT Epoch 5 [800/1086] Batch Loss: 3.9592
+2025-05-22 17:21:02,883 - INFO - FT Epoch 5 [900/1086] Batch Loss: 3.5080
+2025-05-22 17:21:14,142 - INFO - FT Epoch 5 [1000/1086] Batch Loss: 3.7419
+2025-05-22 17:21:23,803 - INFO - FT Epoch 5 [1086/1086] Batch Loss: 3.5946
+2025-05-22 17:21:30,478 - INFO - FT Epoch 5/15 Train Loss: 4.0170 Acc: 0.3303 | Val Loss: 3.4989 Acc: 0.3339 | Time: 129.1s
+2025-05-22 17:21:30,864 - INFO - Fine-tuning checkpoint saved at epoch 5 to resnet50_pruning_unstructured_run\ft_checkpoint_90.pth
+2025-05-22 17:21:42,307 - INFO - FT Epoch 6 [100/1086] Batch Loss: 3.8357
+2025-05-22 17:21:53,570 - INFO - FT Epoch 6 [200/1086] Batch Loss: 3.8656
+2025-05-22 17:22:04,828 - INFO - FT Epoch 6 [300/1086] Batch Loss: 3.3735
+2025-05-22 17:22:16,080 - INFO - FT Epoch 6 [400/1086] Batch Loss: 3.9496
+2025-05-22 17:22:27,333 - INFO - FT Epoch 6 [500/1086] Batch Loss: 3.9744
+2025-05-22 17:22:38,592 - INFO - FT Epoch 6 [600/1086] Batch Loss: 3.9513
+2025-05-22 17:22:49,850 - INFO - FT Epoch 6 [700/1086] Batch Loss: 4.1904
+2025-05-22 17:23:01,105 - INFO - FT Epoch 6 [800/1086] Batch Loss: 3.5368
+2025-05-22 17:23:12,364 - INFO - FT Epoch 6 [900/1086] Batch Loss: 3.7701
+2025-05-22 17:23:23,626 - INFO - FT Epoch 6 [1000/1086] Batch Loss: 3.5861
+2025-05-22 17:23:33,287 - INFO - FT Epoch 6 [1086/1086] Batch Loss: 3.7964
+2025-05-22 17:23:39,819 - INFO - FT Epoch 6/15 Train Loss: 3.8551 Acc: 0.3460 | Val Loss: 3.3769 Acc: 0.3428 | Time: 129.0s
+2025-05-22 17:23:51,249 - INFO - FT Epoch 7 [100/1086] Batch Loss: 3.6596
+2025-05-22 17:24:02,503 - INFO - FT Epoch 7 [200/1086] Batch Loss: 3.1835
+2025-05-22 17:24:13,758 - INFO - FT Epoch 7 [300/1086] Batch Loss: 3.7904
+2025-05-22 17:24:25,014 - INFO - FT Epoch 7 [400/1086] Batch Loss: 3.5332
+2025-05-22 17:24:36,270 - INFO - FT Epoch 7 [500/1086] Batch Loss: 3.6077
+2025-05-22 17:24:47,522 - INFO - FT Epoch 7 [600/1086] Batch Loss: 3.4555
+2025-05-22 17:24:58,783 - INFO - FT Epoch 7 [700/1086] Batch Loss: 3.7854
+2025-05-22 17:25:10,040 - INFO - FT Epoch 7 [800/1086] Batch Loss: 3.6393
+2025-05-22 17:25:21,301 - INFO - FT Epoch 7 [900/1086] Batch Loss: 3.6771
+2025-05-22 17:25:32,558 - INFO - FT Epoch 7 [1000/1086] Batch Loss: 3.1674
+2025-05-22 17:25:42,217 - INFO - FT Epoch 7 [1086/1086] Batch Loss: 3.7773
+2025-05-22 17:25:48,806 - INFO - FT Epoch 7/15 Train Loss: 3.7272 Acc: 0.3617 | Val Loss: 3.2314 Acc: 0.3655 | Time: 129.0s
+2025-05-22 17:26:00,212 - INFO - FT Epoch 8 [100/1086] Batch Loss: 3.5279
+2025-05-22 17:26:11,460 - INFO - FT Epoch 8 [200/1086] Batch Loss: 3.3801
+2025-05-22 17:26:22,702 - INFO - FT Epoch 8 [300/1086] Batch Loss: 3.5423
+2025-05-22 17:26:33,949 - INFO - FT Epoch 8 [400/1086] Batch Loss: 3.7854
+2025-05-22 17:26:45,196 - INFO - FT Epoch 8 [500/1086] Batch Loss: 3.9758
+2025-05-22 17:26:56,442 - INFO - FT Epoch 8 [600/1086] Batch Loss: 3.6917
+2025-05-22 17:27:07,682 - INFO - FT Epoch 8 [700/1086] Batch Loss: 3.3221
+2025-05-22 17:27:18,930 - INFO - FT Epoch 8 [800/1086] Batch Loss: 3.5165
+2025-05-22 17:27:30,173 - INFO - FT Epoch 8 [900/1086] Batch Loss: 3.7152
+2025-05-22 17:27:41,417 - INFO - FT Epoch 8 [1000/1086] Batch Loss: 3.9463
+2025-05-22 17:27:51,061 - INFO - FT Epoch 8 [1086/1086] Batch Loss: 3.7765
+2025-05-22 17:27:57,593 - INFO - FT Epoch 8/15 Train Loss: 3.6299 Acc: 0.3738 | Val Loss: 3.1534 Acc: 0.3676 | Time: 128.8s
+2025-05-22 17:28:09,412 - INFO - FT Epoch 9 [100/1086] Batch Loss: 3.8288
+2025-05-22 17:28:20,950 - INFO - FT Epoch 9 [200/1086] Batch Loss: 3.7276
+2025-05-22 17:28:32,562 - INFO - FT Epoch 9 [300/1086] Batch Loss: 3.5191
+2025-05-22 17:28:43,922 - INFO - FT Epoch 9 [400/1086] Batch Loss: 3.0929
+2025-05-22 17:28:55,252 - INFO - FT Epoch 9 [500/1086] Batch Loss: 3.4658
+2025-05-22 17:29:06,586 - INFO - FT Epoch 9 [600/1086] Batch Loss: 3.4788
+2025-05-22 17:29:17,920 - INFO - FT Epoch 9 [700/1086] Batch Loss: 3.8009
+2025-05-22 17:29:29,258 - INFO - FT Epoch 9 [800/1086] Batch Loss: 3.5789
+2025-05-22 17:29:40,598 - INFO - FT Epoch 9 [900/1086] Batch Loss: 3.3660
+2025-05-22 17:29:51,932 - INFO - FT Epoch 9 [1000/1086] Batch Loss: 3.4780
+2025-05-22 17:30:01,665 - INFO - FT Epoch 9 [1086/1086] Batch Loss: 3.1274
+2025-05-22 17:30:08,324 - INFO - FT Epoch 9/15 Train Loss: 3.5452 Acc: 0.3800 | Val Loss: 3.0591 Acc: 0.3839 | Time: 130.7s
+2025-05-22 17:30:19,832 - INFO - FT Epoch 10 [100/1086] Batch Loss: 3.5610
+2025-05-22 17:30:31,170 - INFO - FT Epoch 10 [200/1086] Batch Loss: 3.4810
+2025-05-22 17:30:42,507 - INFO - FT Epoch 10 [300/1086] Batch Loss: 3.0102
+2025-05-22 17:30:53,846 - INFO - FT Epoch 10 [400/1086] Batch Loss: 3.9268
+2025-05-22 17:31:05,189 - INFO - FT Epoch 10 [500/1086] Batch Loss: 3.8003
+2025-05-22 17:31:16,526 - INFO - FT Epoch 10 [600/1086] Batch Loss: 3.3847
+2025-05-22 17:31:27,980 - INFO - FT Epoch 10 [700/1086] Batch Loss: 3.1734
+2025-05-22 17:31:39,757 - INFO - FT Epoch 10 [800/1086] Batch Loss: 3.6126
+2025-05-22 17:31:51,750 - INFO - FT Epoch 10 [900/1086] Batch Loss: 3.3129
+2025-05-22 17:32:03,522 - INFO - FT Epoch 10 [1000/1086] Batch Loss: 3.2945
+2025-05-22 17:32:13,553 - INFO - FT Epoch 10 [1086/1086] Batch Loss: 3.7482
+2025-05-22 17:32:20,417 - INFO - FT Epoch 10/15 Train Loss: 3.4654 Acc: 0.3880 | Val Loss: 2.9900 Acc: 0.3867 | Time: 132.1s
+2025-05-22 17:32:20,807 - INFO - Fine-tuning checkpoint saved at epoch 10 to resnet50_pruning_unstructured_run\ft_checkpoint_90.pth
+2025-05-22 17:32:32,848 - INFO - FT Epoch 11 [100/1086] Batch Loss: 3.5107
+2025-05-22 17:32:44,555 - INFO - FT Epoch 11 [200/1086] Batch Loss: 2.9280
+2025-05-22 17:32:56,387 - INFO - FT Epoch 11 [300/1086] Batch Loss: 3.4207
+2025-05-22 17:33:08,583 - INFO - FT Epoch 11 [400/1086] Batch Loss: 3.5064
+2025-05-22 17:33:21,770 - INFO - FT Epoch 11 [500/1086] Batch Loss: 3.2488
+2025-05-22 17:33:34,297 - INFO - FT Epoch 11 [600/1086] Batch Loss: 3.6241
+2025-05-22 17:33:46,574 - INFO - FT Epoch 11 [700/1086] Batch Loss: 3.5406
+2025-05-22 17:33:59,218 - INFO - FT Epoch 11 [800/1086] Batch Loss: 3.5662
+2025-05-22 17:34:14,133 - INFO - FT Epoch 11 [900/1086] Batch Loss: 3.1087
+2025-05-22 17:34:28,351 - INFO - FT Epoch 11 [1000/1086] Batch Loss: 3.2325
+2025-05-22 17:34:39,221 - INFO - FT Epoch 11 [1086/1086] Batch Loss: 3.5551
+2025-05-22 17:34:46,680 - INFO - FT Epoch 11/15 Train Loss: 3.3877 Acc: 0.3976 | Val Loss: 2.9372 Acc: 0.3941 | Time: 145.9s
+2025-05-22 17:35:00,055 - INFO - FT Epoch 12 [100/1086] Batch Loss: 3.1178
+2025-05-22 17:35:12,564 - INFO - FT Epoch 12 [200/1086] Batch Loss: 3.4527
+2025-05-22 17:35:25,141 - INFO - FT Epoch 12 [300/1086] Batch Loss: 3.5970
+2025-05-22 17:35:39,722 - INFO - FT Epoch 12 [400/1086] Batch Loss: 3.1400
+2025-05-22 17:35:52,355 - INFO - FT Epoch 12 [500/1086] Batch Loss: 3.2299
+2025-05-22 17:36:04,866 - INFO - FT Epoch 12 [600/1086] Batch Loss: 3.2780
+2025-05-22 17:36:18,342 - INFO - FT Epoch 12 [700/1086] Batch Loss: 3.3896
+2025-05-22 17:36:33,467 - INFO - FT Epoch 12 [800/1086] Batch Loss: 3.2398
+2025-05-22 17:36:47,900 - INFO - FT Epoch 12 [900/1086] Batch Loss: 3.0787
+2025-05-22 17:37:03,066 - INFO - FT Epoch 12 [1000/1086] Batch Loss: 3.2232
+2025-05-22 17:37:15,369 - INFO - FT Epoch 12 [1086/1086] Batch Loss: 3.0861
+2025-05-22 17:37:22,677 - INFO - FT Epoch 12/15 Train Loss: 3.3276 Acc: 0.4041 | Val Loss: 2.8647 Acc: 0.4058 | Time: 156.0s
+2025-05-22 17:37:39,417 - INFO - FT Epoch 13 [100/1086] Batch Loss: 3.4370
+2025-05-22 17:37:53,800 - INFO - FT Epoch 13 [200/1086] Batch Loss: 3.6522
+2025-05-22 17:38:07,777 - INFO - FT Epoch 13 [300/1086] Batch Loss: 2.9851
+2025-05-22 17:38:20,128 - INFO - FT Epoch 13 [400/1086] Batch Loss: 3.4496
+2025-05-22 17:38:32,439 - INFO - FT Epoch 13 [500/1086] Batch Loss: 2.9239
+2025-05-22 17:38:44,761 - INFO - FT Epoch 13 [600/1086] Batch Loss: 2.9676
+2025-05-22 17:38:57,084 - INFO - FT Epoch 13 [700/1086] Batch Loss: 3.1881
+2025-05-22 17:39:09,393 - INFO - FT Epoch 13 [800/1086] Batch Loss: 3.4855
+2025-05-22 17:39:21,684 - INFO - FT Epoch 13 [900/1086] Batch Loss: 3.5424
+2025-05-22 17:39:33,517 - INFO - FT Epoch 13 [1000/1086] Batch Loss: 3.3337
+2025-05-22 17:39:43,224 - INFO - FT Epoch 13 [1086/1086] Batch Loss: 3.5586
+2025-05-22 17:39:49,781 - INFO - FT Epoch 13/15 Train Loss: 3.2762 Acc: 0.4144 | Val Loss: 2.8609 Acc: 0.4094 | Time: 147.1s
+2025-05-22 17:40:01,259 - INFO - FT Epoch 14 [100/1086] Batch Loss: 3.3996
+2025-05-22 17:40:12,571 - INFO - FT Epoch 14 [200/1086] Batch Loss: 3.2020
+2025-05-22 17:40:23,882 - INFO - FT Epoch 14 [300/1086] Batch Loss: 3.0030
+2025-05-22 17:40:35,188 - INFO - FT Epoch 14 [400/1086] Batch Loss: 3.4026
+2025-05-22 17:40:46,492 - INFO - FT Epoch 14 [500/1086] Batch Loss: 2.8854
+2025-05-22 17:40:57,802 - INFO - FT Epoch 14 [600/1086] Batch Loss: 3.6050
+2025-05-22 17:41:09,115 - INFO - FT Epoch 14 [700/1086] Batch Loss: 3.1558
+2025-05-22 17:41:20,424 - INFO - FT Epoch 14 [800/1086] Batch Loss: 2.9996
+2025-05-22 17:41:31,740 - INFO - FT Epoch 14 [900/1086] Batch Loss: 3.0412
+2025-05-22 17:41:43,052 - INFO - FT Epoch 14 [1000/1086] Batch Loss: 3.1097
+2025-05-22 17:41:52,752 - INFO - FT Epoch 14 [1086/1086] Batch Loss: 3.7011
+2025-05-22 17:41:59,303 - INFO - FT Epoch 14/15 Train Loss: 3.2125 Acc: 0.4227 | Val Loss: 2.7898 Acc: 0.4158 | Time: 129.5s
+2025-05-22 17:42:10,808 - INFO - FT Epoch 15 [100/1086] Batch Loss: 3.0632
+2025-05-22 17:42:22,126 - INFO - FT Epoch 15 [200/1086] Batch Loss: 3.4321
+2025-05-22 17:42:33,444 - INFO - FT Epoch 15 [300/1086] Batch Loss: 3.5591
+2025-05-22 17:42:44,751 - INFO - FT Epoch 15 [400/1086] Batch Loss: 2.9671
+2025-05-22 17:42:56,059 - INFO - FT Epoch 15 [500/1086] Batch Loss: 3.1293
+2025-05-22 17:43:07,368 - INFO - FT Epoch 15 [600/1086] Batch Loss: 3.1680
+2025-05-22 17:43:18,677 - INFO - FT Epoch 15 [700/1086] Batch Loss: 3.0891
+2025-05-22 17:43:29,986 - INFO - FT Epoch 15 [800/1086] Batch Loss: 2.9299
+2025-05-22 17:43:41,302 - INFO - FT Epoch 15 [900/1086] Batch Loss: 3.2534
+2025-05-22 17:43:52,609 - INFO - FT Epoch 15 [1000/1086] Batch Loss: 3.9661
+2025-05-22 17:44:02,315 - INFO - FT Epoch 15 [1086/1086] Batch Loss: 2.8410
+2025-05-22 17:44:08,957 - INFO - FT Epoch 15/15 Train Loss: 3.1747 Acc: 0.4279 | Val Loss: 2.7718 Acc: 0.4183 | Time: 129.7s
+2025-05-22 17:44:09,344 - INFO - Fine-tuning checkpoint saved at epoch 15 to resnet50_pruning_unstructured_run\ft_checkpoint_90.pth
+2025-05-22 17:44:09,344 - INFO - Fine-tuning fully completed. Removing checkpoint: resnet50_pruning_unstructured_run\ft_checkpoint_90.pth
+2025-05-22 17:44:09,364 - INFO - Fine-tuning process finished.
+2025-05-22 17:44:09,365 - INFO - Removing pruning masks...
+2025-05-22 17:44:09,369 - INFO - Removed pruning masks from 54 modules.
+2025-05-22 17:44:09,370 - INFO - Converted pruned weights to sparse tensors
+2025-05-22 17:44:09,372 - INFO - Total sparse tensors: 0
+2025-05-22 17:44:09,386 - INFO - Final physical sparsity (masks removed): 90.00%
+2025-05-22 17:44:09,386 - INFO - Parameters after mask removal: Total=25,503,912, Non-Zero=2,551,291
+2025-05-22 17:44:09,542 - INFO - Pruned model saved: resnet50_pruning_unstructured_run\resnet50_pruned_90unstructured_ft.pth
+2025-05-22 17:44:25,489 - INFO - Final Evaluation - Acc: 0.4183, Val Loss: 2.7718
+2025-05-22 17:44:25,489 - INFO - Final Evaluation - Speed: 190.0 img/s
+2025-05-22 17:44:25,490 - INFO - Final Evaluation - Dense Size: 97.70 MB, Sparse Size: 10.14 MB
+2025-05-22 17:44:25,495 - INFO - 
+====================================================================================================
+2025-05-22 17:44:25,495 - INFO - PRUNING EXPERIMENT SUMMARY
+2025-05-22 17:44:25,496 - INFO - ====================================================================================================
+2025-05-22 17:44:25,496 - INFO - 
+Baseline Model:
+2025-05-22 17:44:25,496 - INFO -   Accuracy: 0.6495 | Loss: 1.4223 | Size: 97.70 MB
+2025-05-22 17:44:25,496 - INFO -   Params (Total): 25,503,912 | Params (Non-Zero): 25,503,912 | Speed: 197.2 img/s
+2025-05-22 17:44:25,496 - INFO - 
+Pruning Results (Sorted by Target Sparsity):
+2025-05-22 17:44:25,497 - INFO - -------------------------------------------------------------------------------------------------------------------
+2025-05-22 17:44:25,497 - INFO - Target SP%   Achieved SP%   Accuracy   Loss     Dense(MB)  Sparse(MB) Params(NZ)   Speed     
+2025-05-22 17:44:25,497 - INFO - -------------------------------------------------------------------------------------------------------------------
+2025-05-22 17:44:25,497 - INFO -        50.0          50.0    0.6645  1.3557     97.70      49.05   12,752,456      189.2      0.96x      34.8
+2025-05-22 17:44:25,497 - INFO -        75.0          75.0    0.6240  1.5553     97.70      24.73    6,376,728      188.6      0.96x      32.4
+2025-05-22 17:44:25,498 - INFO -        90.0          90.0    0.4183  2.7718     97.70      10.14    2,551,291      190.0      0.96x      33.4
+2025-05-22 17:44:25,498 - INFO - -------------------------------------------------------------------------------------------------------------------
+2025-05-22 17:44:25,498 - INFO - ====================================================================================================
+2025-05-22 17:44:25,502 - INFO - 
+Experiment completed! Full summary saved to resnet50_pruning_unstructured_run\complete_experiment_summary.json
