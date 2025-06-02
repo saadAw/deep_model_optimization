@@ -1,5 +1,8 @@
 # .gitignore
 
+imagenet-mini/
+maybe/
+
 # Ignore PyTorch model files
 *.pth
 *.pt
