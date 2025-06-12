@@ -6,14 +6,17 @@ maybe/
 # Ignore PyTorch model files
 *.pth
 *.pt
+*.ts
 
-# You might also want to ignore other common Python/IDE files:
+
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .DS_Store
 .vscode/
+.conda/
+.ipynb_checkpoints/
 .idea/
 *.env
 venv/
