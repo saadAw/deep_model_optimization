@@ -2,6 +2,8 @@
 
 imagenet-mini/
 maybe/
+runs/
+plots/
 
 # Ignore PyTorch model files
 *.pth

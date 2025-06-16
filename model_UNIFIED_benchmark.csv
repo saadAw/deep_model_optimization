@@ -1,0 +1,43 @@
+Model,Device,Base_Model_Arch,Optimization_Category,Latency (ms),Throughput (FPS),Size (MB),GPU Mem (MB),Full_Model_Name
+R18-Distill-TRT-FP16,GPU,ResNet18,TensorRT (Distilled),2.487180781364441,12865.972686732139,31.016091346740723,18.3095703125,resnet18_distilled_trt_fp16
+R18-Distill-TRT-FP32,GPU,ResNet18,TensorRT (Distilled),8.545584011077882,3744.624119137732,96.01450443267822,27.4970703125,resnet18_distilled_trt_fp32
+R18-Distill+Quant,GPU,ResNet18,Combined (Distill + Quant),11.463651084899903,2791.431784080631,44.667327880859375,268.0654296875,resnet18pretrained_distilled_quant_kmeans_256clusters_post
+R50>R18-KD-Scratch,GPU,ResNet18,Knowledge Distillation,11.777225589752197,2717.10852068966,44.67077827453613,268.0654296875,resnet50_to_resnet18scratch_kd
+R50>R18-KD-Pre,GPU,ResNet18,Knowledge Distillation,11.950009727478028,2677.8220879953537,44.67077827453613,268.0654296875,resnet50_to_resnet18pretrained_kd
+R18-Baseline,GPU,ResNet18,Baseline,12.502323341369628,2559.5242681105065,44.66957664489746,268.0654296875,resnet18_baseline
+R50-TRT-FP16,GPU,ResNet50,TensorRT (Baseline),6.525343990325927,4903.956028592704,67.378737449646,18.3095703125,resnet50_trt_fp16
+R50-P.Struct-IT-sp90,GPU,ResNet50,Pruning (Structured),9.55318078994751,3349.6696758500084,10.211698532104492,423.72412109375,resnet50_prune_struct_it_l1filter_stage3_approx_sp90_ft
+R50-P.Struct-OS-fp55,GPU,ResNet50,Pruning (Structured),13.756992053985595,2326.089880289576,21.86063575744629,372.17236328125,resnet50_prune_struct_os_l1filter_fp55_ft
+R50-P.Struct-OS-fp70,GPU,ResNet50,Pruning (Structured),14.299113655090332,2237.9009477002332,10.561075210571289,314.923828125,resnet50_prune_struct_os_l1filter_fp70_ft
+R50-P.Struct-IT-sp75,GPU,ResNet50,Pruning (Structured),15.24202880859375,2099.4580447163166,25.492521286010742,500.90966796875,resnet50_prune_struct_it_l1filter_stage2_approx_sp75_ft
+R50-TRT-FP32,GPU,ResNet50,TensorRT (Baseline),18.09723815917969,1768.2256109210919,162.20472621917725,27.4970703125,resnet50_trt_fp32
+R50-P.Struct-IT-sp50,GPU,ResNet50,Pruning (Structured),24.6719970703125,1297.0170152340522,49.60372734069824,482.58056640625,resnet50_prune_struct_it_l1filter_stage1_approx_sp50_ft
+R50-P.Struct-OS-fp30,GPU,ResNet50,Pruning (Structured),25.119529914855956,1273.9091897207384,49.59604835510254,482.14208984375,resnet50_prune_struct_os_l1filter_fp30_ft
+R50-P.Unstruct-OS-sp90,GPU,ResNet50,Pruning (Unstructured),34.82609596252441,918.8511980910662,97.80330848693848,443.60302734375,resnet50_prune_unstruct_os_l1_sp90_ft
+R50-Quant.KMeans,GPU,ResNet50,Quantization (KMeans),34.86305274963379,917.877164395368,97.7956371307373,443.60302734375,resnet50_quant_kmeans_256clusters_post
+R50-P.Unstruct-OS-sp75,GPU,ResNet50,Pruning (Unstructured),35.011267471313474,913.9914750649699,97.80330848693848,443.60302734375,resnet50_prune_unstruct_os_l1_sp75_ft
+R50-Baseline,GPU,ResNet50,Baseline,35.01955871582031,913.7750780835452,97.79614067077637,443.60302734375,resnet50_baseline
+R50-P.Unstruct-IT-sp90,GPU,ResNet50,Pruning (Unstructured),35.079964828491214,912.2015987316574,97.80361747741699,443.60302734375,resnet50_prune_unstruct_it_l1_stage3_sp90_ft
+R50-P.Unstruct-IT-sp75,GPU,ResNet50,Pruning (Unstructured),35.091973876953126,911.8894283976485,97.79217720031738,443.60302734375,resnet50_prune_unstruct_it_l1_stage2_sp75_ft
+R50-P.Unstruct-OS-sp50,GPU,ResNet50,Pruning (Unstructured),35.37477798461914,904.5993168893813,97.80330848693848,443.60302734375,resnet50_prune_unstruct_os_l1_sp50_ft
+R50-P.Unstruct-IT-sp50,GPU,ResNet50,Pruning (Unstructured),35.48617935180664,901.7595183396616,97.79217720031738,446.10302734375,resnet50_prune_unstruct_it_l1_stage1_sp50_ft
+R50-P.NM(2:4),GPU,ResNet50,Pruning (N:M Sparsity),37.40304260253906,855.5453720716217,97.79861259460449,443.60302734375,resnet50_prune_nm24_ft
+R50>R18-KD-Pre,CPU,ResNet18,Knowledge Distillation,844.3238018000102,37.90015149611955,44.67077827453613,N/A,resnet50_to_resnet18pretrained_kd
+R18-Distill+Quant,CPU,ResNet18,Combined (Distill + Quant),844.4377210000539,37.895038561402636,44.667327880859375,N/A,resnet18pretrained_distilled_quant_kmeans_256clusters_post
+R50>R18-KD-Scratch,CPU,ResNet18,Knowledge Distillation,848.1297613000152,37.73007558530941,44.67077827453613,N/A,resnet50_to_resnet18scratch_kd
+R18-Baseline,CPU,ResNet18,Baseline,850.1898042999528,37.6386541430579,44.66957664489746,N/A,resnet18_baseline
+R50-P.Struct-IT-sp90,CPU,ResNet50,Pruning (Structured),385.3406533999987,83.04340514724447,10.211698532104492,N/A,resnet50_prune_struct_it_l1filter_stage3_approx_sp90_ft
+R50-P.Struct-OS-fp70,CPU,ResNet50,Pruning (Structured),393.9048566999645,81.23789147482954,10.561075210571289,N/A,resnet50_prune_struct_os_l1filter_fp70_ft
+R50-P.Struct-OS-fp55,CPU,ResNet50,Pruning (Structured),730.6796163000399,43.79484426025072,21.86063575744629,N/A,resnet50_prune_struct_os_l1filter_fp55_ft
+R50-P.Struct-IT-sp75,CPU,ResNet50,Pruning (Structured),791.6200722000212,40.423431799888036,25.492521286010742,N/A,resnet50_prune_struct_it_l1filter_stage2_approx_sp75_ft
+R50-P.Struct-OS-fp30,CPU,ResNet50,Pruning (Structured),1401.1242981000123,22.838801699030874,49.59604835510254,N/A,resnet50_prune_struct_os_l1filter_fp30_ft
+R50-P.Struct-IT-sp50,CPU,ResNet50,Pruning (Structured),1403.0741819000468,22.807062101781042,49.60372734069824,N/A,resnet50_prune_struct_it_l1filter_stage1_approx_sp50_ft
+R50-P.NM(2:4),CPU,ResNet50,Pruning (N:M Sparsity),2313.704657300059,13.830633006263598,97.79861259460449,N/A,resnet50_prune_nm24_ft
+R50-P.Unstruct-IT-sp75,CPU,ResNet50,Pruning (Unstructured),2355.324690199995,13.586237232236044,97.79217720031738,N/A,resnet50_prune_unstruct_it_l1_stage2_sp75_ft
+R50-P.Unstruct-OS-sp50,CPU,ResNet50,Pruning (Unstructured),2358.7750044999893,13.56636387063264,97.80330848693848,N/A,resnet50_prune_unstruct_os_l1_sp50_ft
+R50-P.Unstruct-OS-sp90,CPU,ResNet50,Pruning (Unstructured),2365.8638610000253,13.52571486783434,97.80330848693848,N/A,resnet50_prune_unstruct_os_l1_sp90_ft
+R50-P.Unstruct-IT-sp90,CPU,ResNet50,Pruning (Unstructured),2368.076406,13.513077499915768,97.80361747741699,N/A,resnet50_prune_unstruct_it_l1_stage3_sp90_ft
+R50-P.Unstruct-IT-sp50,CPU,ResNet50,Pruning (Unstructured),2368.8507468999887,13.508660282576688,97.79217720031738,N/A,resnet50_prune_unstruct_it_l1_stage1_sp50_ft
+R50-Baseline,CPU,ResNet50,Baseline,2369.790580200015,13.50330289408912,97.79614067077637,N/A,resnet50_baseline
+R50-P.Unstruct-OS-sp75,CPU,ResNet50,Pruning (Unstructured),2373.1224130999863,13.484344433036945,97.80330848693848,N/A,resnet50_prune_unstruct_os_l1_sp75_ft
+R50-Quant.KMeans,CPU,ResNet50,Quantization (KMeans),2383.0233524000505,13.428319939782106,97.7956371307373,N/A,resnet50_quant_kmeans_256clusters_post

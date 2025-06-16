@@ -586,5 +586,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-the problem is that it is not modular. is there anyways for you to change it seamless so my other scrips will keep working but i can extend this to add a new experiment like iterative pruning?
