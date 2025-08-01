@@ -133,33 +133,3 @@ The following tables show the latency and throughput of the optimized models on 
 | R50-Baseline | Baseline | 2369.79 | 13.50 | 97.80 |
 | R50-P.Unstruct-OS-sp75| Pruning (Unstructured)| 2373.12 | 13.48 | 97.80 |
 | `R50-Quant-KMeans` | Quantization (KMeans)| 2383.02 | 13.43 | 97.80 |
-
-## How to Reproduce
-
-To reproduce the results in this repository, follow these steps:
-
-1.  **Clone the repository:**
-    ```bash
-    git clone <repository-url>
-    cd <repository-name>
-    ```
-
-2.  **Set up the environment:**
-    *(Please provide instructions on setting up the environment, e.g., using `pip` or `conda`)*
-    ```bash
-    # Example:
-    pip install -r requirements.txt
-    ```
-
-3.  **Download Datasets:**
-    *(Please provide instructions on how to download and prepare any necessary datasets.)*
-
-4.  **Run Experiments:**
-    *(Please provide clear instructions or scripts to run the different optimization experiments.)*
-    ```bash
-    # Example for running a pruning experiment
-    python run_pruning.py --model resnet50 --method iterative_structured --sparsity 0.9
-
-    # Example for running a quantization experiment
-    python run_quantization.py --model resnet18 --method qat
-    ```
