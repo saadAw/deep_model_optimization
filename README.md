@@ -1,3 +1,6 @@
+Project: Exploring Model Optimization Techniques for ResNet Architectures
+Introduction
+
 This repository contains a series of experiments focused on optimizing deep learning models for efficiency without significant compromises in performance. The primary goal is to explore and quantify the impact of various optimization techniques on standard ResNet architectures. The techniques investigated include pruning, quantization, knowledge distillation, and the use of TensorRT for inference acceleration.
 
 The experiments are conducted on ResNet18 and ResNet50 models, providing a comprehensive analysis of how these optimization methods affect model size, accuracy, and inference speed on both CPU and GPU platforms.
@@ -11,12 +14,12 @@ The following baseline models are used for the experiments:
 
 Optimization Techniques Explored
 
-This project investigates several state-of-the-art model optimization techniques.[1] These methods aim to reduce the computational and memory requirements of deep learning models.[1][2]
+This project investigates several state-of-the-art model optimization techniques. These methods aim to reduce the computational and memory requirements of deep learning models.
 Pruning
 
-Pruning involves removing redundant or less important parameters from a neural network to reduce its size and improve inference speed.[3][4] The following pruning strategies were explored:
+Pruning involves removing redundant or less important parameters from a neural network to reduce its size and improve inference speed. The following pruning strategies were explored:
 
-    Structured Pruning: This method removes entire groups of weights, such as filters or channels. The experiments used L1-norm based filter pruning in both one-shot and iterative scenarios.[1]
+    Structured Pruning: This method removes entire groups of weights, such as filters or channels. The experiments used L1-norm based filter pruning in both one-shot and iterative scenarios.
 
     Unstructured Pruning: This technique removes individual weights based on their magnitude. The experiments implemented one-shot and iterative L1 unstructured pruning.
 
@@ -24,7 +27,7 @@ Pruning involves removing redundant or less important parameters from a neural n
 
 Quantization
 
-Quantization reduces the memory footprint and computation time by using lower-precision numerical formats for model weights and/or activations.[1][2]
+Quantization reduces the memory footprint and computation time by using lower-precision numerical formats for model weights and/or activations.
 
     Post-Training Quantization (PTQ): This technique quantizes a pre-trained model without requiring re-training. Both per-tensor and per-channel INT8 quantization were applied.
 
@@ -34,10 +37,10 @@ Quantization reduces the memory footprint and computation time by using lower-pr
 
 Knowledge Distillation
 
-Knowledge distillation is a technique where a smaller "student" model is trained to mimic the behavior of a larger, pre-trained "teacher" model.[1][2] This can transfer the knowledge from the larger model to a more compact one. Our experiments use a ResNet50 as the teacher to train a ResNet18 student.
+Knowledge distillation is a technique where a smaller "student" model is trained to mimic the behavior of a larger, pre-trained "teacher" model. This can transfer the knowledge from the larger model to a more compact one. Our experiments use a ResNet50 as the teacher to train a ResNet18 student.
 TensorRT Optimization
 
-NVIDIA TensorRT is a high-performance deep learning inference optimizer and runtime library that accelerates AI workloads on NVIDIA GPUs.[3][4] It applies various optimizations, including layer fusion, kernel auto-tuning, and precision calibration. Experiments were run using both FP32 and FP16 precision.
+NVIDIA TensorRT is a high-performance deep learning inference optimizer and runtime library that accelerates AI workloads on NVIDIA GPUs. It applies various optimizations, including layer fusion, kernel auto-tuning, and precision calibration. Experiments were run using both FP32 and FP16 precision.
 Combined Approaches
 
 Several experiments explore the benefits of combining multiple optimization techniques, such as applying TensorRT to a distilled model or quantizing a distilled model.
@@ -52,20 +55,20 @@ resnet18_baseline	ResNet18	Baseline	Baseline	0.5009	0.7632	44.67	11.69	11.69
 resnet50_baseline	ResNet50	Baseline	Baseline	0.6495	0.8748	97.80	25.56	25.56
 resnet50_to_resnet18pretrained_kd	ResNet18	Knowledge Distillation	T:resnet50->S:resnet18	0.5381	0.8027	44.67	11.69	11.69
 resnet50_to_resnet18scratch_kd	ResNet18	Knowledge Distillation	T:resnet50->S:resnet18	0.1764	0.4017	44.67	11.69	11.69
-resnet18pretrained_distilled_quant...	ResNet18	Combined	KMeans Quant (256)	0.5368	0.8032	44.67	11.69	11.69
-resnet18pretrained_distilled_quant...	ResNet18	Combined	PTQ INT8 (Per-Channel)	0.5078	0.7808	11.30	N/A	N/A
-resnet18pretrained_distilled_quant...	ResNet18	Combined	PTQ INT8 (Per-Tensor)	0.5335	0.8027	11.30	N/A	N/A
-resnet18pretrained_distilled_quant...	ResNet18	Combined	QAT INT8	0.5356	0.8045	11.30	N/A	N/A
+r18_distilled_quant_kmeans_256	ResNet18	Combined	KMeans Quant (256)	0.5368	0.8032	44.67	11.69	11.69
+r18_distilled_quant_ptq_int8_pc	ResNet18	Combined	PTQ INT8 (Per-Channel)	0.5078	0.7808	11.30	N/A	N/A
+r18_distilled_quant_ptq_int8_pt	ResNet18	Combined	PTQ INT8 (Per-Tensor)	0.5335	0.8027	11.30	N/A	N/A
+r18_distilled_quant_qat_int8	ResNet18	Combined	QAT INT8	0.5356	0.8045	11.30	N/A	N/A
 resnet18_distilled_trt_fp16	ResNet18	Combined	Distill + TRT FP16	0.5384	0.8027	31.02	11.69	11.69
 resnet18_distilled_trt_fp32	ResNet18	Combined	Distill + TRT FP32	0.5379	0.8027	96.01	11.69	11.69
 resnet50_prune_nm24_ft	ResNet50	Pruning	N:M Sparsity (2:4)	0.6426	0.8731	97.80	25.56	13.83
-resnet50_prune_struct_it_l1filter_...	ResNet50	Pruning	Iter. Struct. (L1, 90%)	0.1308	0.3406	10.21	2.63	2.63
-resnet50_prune_struct_os_l1filter_...	ResNet50	Pruning	One-Shot Struct. (L1, 70%)	0.0571	0.1947	10.56	2.72	2.72
-resnet50_prune_unstruct_it_l1_...	ResNet50	Pruning	Iter. Unstruct. (L1, 90%)	0.4650	0.7520	97.80	25.56	2.55
-resnet50_prune_unstruct_os_l1_...	ResNet50	Pruning	One-Shot Unstruct. (L1, 90%)	0.4183	0.7122	97.80	25.56	2.55
-resnet50_quant_kmeans_256clusters...	ResNet50	Quantization	KMeans Quant (256)	0.6492	0.8731	97.80	25.56	25.56
-resnet50_quant_ptq_int8_perchannel...	ResNet50	Quantization	PTQ INT8 (Per-Channel)	0.6069	0.8404	24.94	N/A	N/A
-resnet50_quant_ptq_int8_pertensor...	ResNet50	Quantization	PTQ INT8 (Per-Tensor)	0.6498	0.8736	24.94	N/A	N/A
+r50_prune_struct_it_l1_sp90	ResNet50	Pruning	Iter. Struct. (L1, 90%)	0.1308	0.3406	10.21	2.63	2.63
+r50_prune_struct_os_l1_fp70	ResNet50	Pruning	One-Shot Struct. (L1, 70%)	0.0571	0.1947	10.56	2.72	2.72
+r50_prune_unstruct_it_l1_sp90	ResNet50	Pruning	Iter. Unstruct. (L1, 90%)	0.4650	0.7520	97.80	25.56	2.55
+r50_prune_unstruct_os_l1_sp90	ResNet50	Pruning	One-Shot Unstruct. (L1, 90%)	0.4183	0.7122	97.80	25.56	2.55
+r50_quant_kmeans_256	ResNet50	Quantization	KMeans Quant (256)	0.6492	0.8731	97.80	25.56	25.56
+r50_quant_ptq_int8_pc	ResNet50	Quantization	PTQ INT8 (Per-Channel)	0.6069	0.8404	24.94	N/A	N/A
+r50_quant_ptq_int8_pt	ResNet50	Quantization	PTQ INT8 (Per-Tensor)	0.6498	0.8736	24.94	N/A	N/A
 resnet50_quant_qat_int8_epochs8	ResNet50	Quantization	QAT INT8	0.6635	0.8807	24.94	N/A	N/A
 resnet50_trt_fp16	ResNet50	TensorRT	TensorRT FP16	0.6505	0.8746	67.38	25.56	25.56
 resnet50_trt_fp32	ResNet50	TensorRT	TensorRT FP32	0.6492	0.8751	162.20	25.56	25.56
